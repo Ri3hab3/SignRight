@@ -1,1509 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ===== PRIMARY SEO ===== -->
-<title>SignRight — Free Online PDF Signature Tool | Sign Documents in Seconds</title>
-<meta name="description" content="Sign PDFs, Word documents, and images online in seconds. Free electronic signature tool — no signup required for first use. Legally binding, secure, works in your browser.">
-<meta name="keywords" content="sign pdf online, electronic signature, e-signature free, sign document online, esign pdf, digital signature tool, online signature, pdf signer, free signature maker">
-<meta name="author" content="SignRight">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<link rel="canonical" href="https://signright.app/">
-
-<!-- ===== OPEN GRAPH (Facebook, LinkedIn) ===== -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SignRight">
-<meta property="og:title" content="SignRight — Free Online PDF Signature Tool">
-<meta property="og:description" content="Upload a PDF, sign it, download it. Free, instant, and legally binding electronic signatures in your browser.">
-<meta property="og:url" content="https://signright.app/">
-<meta property="og:image" content="https://signright.app/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
-
-<!-- ===== TWITTER CARD ===== -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SignRight — Free Online PDF Signature Tool">
-<meta name="twitter:description" content="Sign any document online in seconds. Free, secure, legally binding.">
-<meta name="twitter:image" content="https://signright.app/og-image.png">
-
-<!-- ===== FAVICON ===== -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
-
-<!-- ===== JSON-LD: SoftwareApplication ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "SignRight",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Free online electronic signature tool for PDFs, Word documents, and images.",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "14-Day Pass",
-      "price": "7.99",
-      "priceCurrency": "USD"
-    },
-    {
-      "@type": "Offer",
-      "name": "Annual Pass",
-      "price": "47.99",
-      "priceCurrency": "USD"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "127"
-  }
-}
-</script>
-
-<!-- ===== JSON-LD: FAQ (for Google rich results) ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is SignRight free to use?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can sign your first document completely free with no signup required. Paid plans unlock templates, unlimited signatures, and a secure document vault."}
-    },
-    {
-      "@type": "Question",
-      "name": "Are electronic signatures legally binding?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Electronic signatures are legally binding in the US (E-SIGN Act), EU (eIDAS), and most countries worldwide for the vast majority of documents."}
-    },
-    {
-      "@type": "Question",
-      "name": "What file types does SignRight support?",
-      "acceptedAnswer": {"@type": "Answer", "text": "SignRight supports PDF, JPG, JPEG, and PNG files. Word documents can be converted to PDF first."}
-    },
-    {
-      "@type": "Question",
-      "name": "Is my document secure?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Yes. All signing happens in your browser — your documents never leave your device unless you choose to save them to your vault."}
-    }
-  ]
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- pdf-lib for real client-side PDF signing -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-<!-- PDF.js to render PDF pages for signature placement -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-<!-- ===== MICROSOFT CLARITY (analytics + session replay + heatmaps) ===== REPLACE XXXXXXXXXX with your Clarity Project ID -->
-<script>
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "wf378dn1ai");
-  // Custom event helper — call trackEvent('upload_started', {...}) anywhere in the app
-  window.trackEvent = function(name, params){
-    try {
-      if(window.clarity){
-        window.clarity('event', name);
-        // Clarity supports tagging sessions with custom data (searchable later)
-        if(params){
-          Object.keys(params).forEach(function(k){
-            window.clarity('set', k, String(params[k]));
-          });
-        }
-      }
-    } catch(e){}
-  };
-</script>
-
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#14162B;
-  --ink-2:#2A2D4A;
-  --white:#FFFFFF;
-  --bg:#FAFAF7;
-  --accent:#5B6CFF;
-  --accent-dark:#4552D9;
-  --accent-soft:#EEF0FF;
-  --surface:#F3F2EE;
-  --muted:#5C5F75;
-  --muted-2:#8A8D9F;
-  --border:#E2E0DA;
-  --card:#FFFFFF;
-  --footer-bg:#14162B;
-  --success:#2E7D32;
-  --danger:#C62828;
-  --nav-h:68px;
-  --max-w:1180px;
-  --gutter:clamp(1rem,4vw,2.5rem);
-  --shadow-sm:0 1px 2px rgba(20,22,43,.06),0 1px 3px rgba(20,22,43,.08);
-  --shadow-md:0 4px 12px rgba(20,22,43,.08),0 2px 4px rgba(20,22,43,.05);
-  --shadow-lg:0 20px 40px rgba(20,22,43,.12),0 8px 16px rgba(20,22,43,.08);
-}
-html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;width:100%;font-weight:450;line-height:1.55}
-img,svg{display:block;max-width:100%}
-button{font-family:inherit}
-
-.container{width:100%;max-width:var(--max-w);margin-inline:auto;padding-inline:var(--gutter)}
-
-/* ── NAV ── */
-nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:100}
-.nav-inner{max-width:var(--max-w);margin:0 auto;height:100%;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-0.02em;color:var(--ink);display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
-.logo-mark{width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center}
-.logo-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.4}
-.nav-links{display:flex;align-items:center;gap:1.8rem;flex:1;justify-content:center}
-.nav-links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .15s}
-.nav-links a:hover{color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn{display:inline-flex;align-items:center;gap:.45rem;border:none;cursor:pointer;font-family:inherit;font-weight:500;white-space:nowrap;border-radius:10px;transition:all .15s;text-decoration:none}
-.btn-primary{background:var(--accent);color:#fff;padding:.6rem 1.1rem;font-size:.9rem}
-.btn-primary:hover{background:var(--accent-dark)}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--ink);padding:.55rem 1rem;font-size:.9rem}
-.btn-ghost:hover{border-color:var(--ink);background:var(--white)}
-.btn-dark{background:var(--ink);color:#fff;padding:.6rem 1.1rem;font-size:.9rem}
-.btn-dark:hover{background:var(--ink-2)}
-.btn-lg{padding:.85rem 1.6rem;font-size:1rem;border-radius:12px}
-.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:all .25s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:1rem var(--gutter);flex-direction:column;gap:.3rem;z-index:99;box-shadow:var(--shadow-md)}
-.mobile-menu.open{display:flex}
-.mobile-menu a,.mobile-menu button{text-align:left;text-decoration:none;font-size:.95rem;font-weight:500;color:var(--ink);padding:.7rem .2rem;border-bottom:1px solid var(--border);background:none;border-left:none;border-right:none;border-top:none;cursor:pointer}
-.mobile-menu a:last-child,.mobile-menu button:last-child{border-bottom:none}
-
-/* ── HERO ── */
-.hero{padding:clamp(3rem,7vw,5rem) 0 clamp(2.5rem,5vw,3.5rem);text-align:center;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(91,108,255,.09) 0%,transparent 70%)}
-.hero-badge{display:inline-flex;align-items:center;gap:.45rem;background:var(--white);border:1px solid var(--border);color:var(--muted);font-size:.78rem;font-weight:500;padding:.4rem .9rem;border-radius:30px;margin-bottom:1.4rem;box-shadow:var(--shadow-sm)}
-.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5.8vw,4.2rem);line-height:1.06;letter-spacing:-0.035em;color:var(--ink);max-width:780px;margin:0 auto}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:clamp(.95rem,1.6vw,1.08rem);font-weight:450;color:var(--muted);max-width:520px;margin:1.2rem auto 0;line-height:1.65}
-
-/* ── UPLOAD ZONE ── */
-.upload-zone{margin:2.2rem auto 0;max-width:620px;width:100%;background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:clamp(1.4rem,3vw,2rem);transition:all .25s;display:flex;flex-direction:column;align-items:center;gap:1rem;box-shadow:var(--shadow-sm)}
-.upload-zone.dragover{border-color:var(--accent);background:var(--accent-soft);transform:scale(1.01)}
-.upload-zone-top{display:flex;flex-direction:column;align-items:center;gap:.55rem}
-.upload-icon-wrap{width:56px;height:56px;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
-.upload-icon-wrap svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.9}
-.upload-zone h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink)}
-.upload-zone .hint{font-size:.83rem;color:var(--muted);font-weight:450}
-.upload-or{font-size:.78rem;color:var(--muted-2);font-weight:500;letter-spacing:.04em}
-.upload-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-.upload-action{background:var(--accent);color:#fff;border:none;font-size:.9rem;font-weight:500;padding:.65rem 1.3rem;border-radius:10px;cursor:pointer;transition:background .15s;font-family:inherit}
-.upload-action:hover{background:var(--accent-dark)}
-.upload-action.outline{background:transparent;border:1.5px solid var(--border);color:var(--ink)}
-.upload-action.outline:hover{border-color:var(--ink);background:var(--white)}
-.upload-progress{display:none;width:100%;flex-direction:column;gap:.6rem}
-.progress-file{display:flex;align-items:center;gap:.8rem;width:100%}
-.progress-file-icon{width:38px;height:38px;border-radius:9px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.progress-file-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.9}
-.progress-info{flex:1;min-width:0}
-.progress-name{font-size:.9rem;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.progress-size{font-size:.77rem;color:var(--muted);font-weight:450}
-.progress-bar-wrap{width:100%;height:5px;background:var(--surface);border-radius:4px;overflow:hidden;margin-top:.3rem}
-.progress-bar{height:100%;background:var(--accent);border-radius:4px;width:0%;transition:width .35s ease}
-#fileInput,#replaceFileInput{display:none}
-
-/* ── SECTIONS ── */
-.section{padding:clamp(3rem,6vw,5rem) 0}
-.section-label{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
-.section-title{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.7rem,3.2vw,2.3rem);letter-spacing:-0.025em;line-height:1.15;color:var(--ink)}
-.section-sub{font-size:.96rem;color:var(--muted);font-weight:450;margin-top:.7rem;max-width:500px;line-height:1.65}
-
-/* services */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:1rem;margin-top:2.5rem}
-.service-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem;cursor:pointer;position:relative;overflow:hidden;transition:all .2s;text-align:left;font-family:inherit;color:inherit}
-.service-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.service-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;background:var(--accent-soft)}
-.service-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.9}
-.service-card h3{font-family:'Syne',sans-serif;font-weight:600;font-size:.98rem;color:var(--ink);margin-bottom:.35rem}
-.service-card p{font-size:.85rem;color:var(--muted);line-height:1.55;font-weight:450;padding-right:1rem}
-.card-arr{position:absolute;bottom:1rem;right:1rem;width:26px;height:26px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;transition:all .2s}
-.service-card:hover .card-arr{background:var(--accent)}
-.card-arr svg{width:11px;height:11px;stroke:var(--muted);fill:none;stroke-width:2.2;transition:stroke .2s}
-.service-card:hover .card-arr svg{stroke:#fff}
-
-/* dark strip */
-.strip{background:var(--ink);padding:clamp(3rem,6vw,4.5rem) 0;color:#F0F0F8}
-.strip-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.strip h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:#F5F5FA;line-height:1.18;letter-spacing:-.025em}
-.strip .section-label{color:#B4BDFF}
-.feat-list{display:flex;flex-direction:column;gap:1.2rem;margin-top:1.6rem}
-.feat-item{display:flex;align-items:flex-start;gap:.85rem}
-.feat-check{width:22px;height:22px;border-radius:50%;background:rgba(91,108,255,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.feat-check svg{width:11px;height:11px;stroke:#B4BDFF;fill:none;stroke-width:2.5}
-.feat-text strong{display:block;font-size:.95rem;font-weight:600;color:#F5F5FA;margin-bottom:.15rem}
-.feat-text span{font-size:.84rem;color:rgba(240,240,248,.6);font-weight:450}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
-.stat-item{text-align:center}
-.stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.5vw,3.2rem);color:#fff;letter-spacing:-0.04em;line-height:1}
-.stat-lbl{font-size:.82rem;color:rgba(240,240,248,.55);margin-top:.35rem;font-weight:500;letter-spacing:.03em}
-
-/* steps */
-.steps-wrap{margin-top:2.8rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.6rem}
-.step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:.4rem}
-.step-num{width:54px;height:54px;border-radius:50%;background:var(--card);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;transition:all .25s}
-.step:hover .step-num{background:var(--accent);border-color:var(--accent);color:#fff}
-.step h4{font-family:'Syne',sans-serif;font-weight:600;font-size:.98rem;color:var(--ink);margin-bottom:.35rem}
-.step p{font-size:.85rem;color:var(--muted);font-weight:450;line-height:1.55}
-
-/* pricing */
-.pricing-section{padding:clamp(3rem,6vw,5rem) 0;background:var(--surface)}
-.pricing-inner{max-width:820px;margin:0 auto;text-align:center;padding:0 var(--gutter)}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.2rem;margin-top:2.6rem}
-.price-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:clamp(1.4rem,2.5vw,1.9rem);text-align:left;position:relative;transition:all .2s}
-.price-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.price-card.featured{border:2px solid var(--accent);box-shadow:var(--shadow-md)}
-.feat-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.72rem;font-weight:600;padding:.25rem .85rem;border-radius:30px;letter-spacing:.04em}
-.price-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.02rem;color:var(--ink)}
-.price-desc{font-size:.85rem;color:var(--muted);font-weight:450;margin-top:.25rem;line-height:1.5}
-.price-amt{margin:1.2rem 0;display:flex;align-items:baseline;gap:.25rem}
-.price-amt .cur{font-size:1.1rem;font-weight:600;color:var(--ink)}
-.price-amt .val{font-family:'Syne',sans-serif;font-weight:800;font-size:2.6rem;letter-spacing:-0.04em;color:var(--ink)}
-.price-amt .per{font-size:.82rem;color:var(--muted);font-weight:450;margin-left:.2rem}
-.p-div{border:none;border-top:1px solid var(--border);margin:.8rem 0 1rem}
-.p-feats{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
-.p-feats li{display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:var(--ink);font-weight:450}
-.p-feats li svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2.5;flex-shrink:0}
-.p-feats li.dim{color:var(--muted-2)}
-.p-feats li.dim svg{stroke:var(--border)}
-.p-btn{width:100%;padding:.8rem;border-radius:10px;border:none;font-family:inherit;font-size:.95rem;font-weight:500;cursor:pointer;transition:all .15s}
-.p-btn.primary{background:var(--accent);color:#fff}
-.p-btn.primary:hover{background:var(--accent-dark)}
-.p-btn.outline{background:transparent;border:1.5px solid var(--border);color:var(--ink)}
-.p-btn.outline:hover{border-color:var(--ink);background:var(--surface)}
-
-/* trust bar */
-.trust-bar{background:var(--ink);padding:1.3rem 0;border-top:1px solid rgba(255,255,255,.06)}
-.trust-inner{display:flex;align-items:center;justify-content:center;gap:clamp(1rem,3vw,2.6rem);flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:.5rem;font-size:.84rem;color:rgba(230,230,255,.65);font-weight:500}
-.trust-item svg{width:14px;height:14px;stroke:#B4BDFF;fill:none;stroke-width:2.2}
-
-/* footer */
-footer{background:var(--footer-bg);padding:clamp(2.8rem,5vw,3.8rem) 0 1.8rem;color:#fff}
-.footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:2rem}
-.footer-brand .logo{color:#F5F5FA}
-.footer-brand p{font-size:.86rem;line-height:1.65;max-width:240px;font-weight:450;color:rgba(232,232,245,.55);margin-top:.8rem}
-.footer-col h5{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:600;color:#F5F5FA;margin-bottom:.9rem;letter-spacing:.02em}
-.footer-col a{display:block;font-size:.85rem;color:rgba(232,232,245,.55);text-decoration:none;margin-bottom:.5rem;transition:color .15s;font-weight:450;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;text-align:left}
-.footer-col a:hover{color:#F5F5FA}
-.footer-bottom{margin-top:2rem;border-top:1px solid rgba(200,202,232,.1);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;font-size:.8rem;color:rgba(232,232,245,.4);font-weight:450}
-
-/* ── MODALS ── */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,12,30,.7);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
-.modal-overlay.open{display:flex}
-.modal-box{background:var(--white);border-radius:20px;padding:clamp(1.6rem,3.5vw,2.2rem);width:100%;max-width:420px;position:relative;animation:mIn .22s ease;box-shadow:var(--shadow-lg);max-height:92vh;overflow-y:auto}
-.modal-box.wide{max-width:900px}
-.modal-close{position:absolute;top:.9rem;right:.9rem;width:32px;height:32px;border-radius:50%;background:var(--surface);border:none;cursor:pointer;font-size:1.05rem;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:2}
-.modal-close:hover{background:var(--border)}
-.modal-close svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4}
-.modal-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin-bottom:.3rem}
-.modal-sub{font-size:.9rem;color:var(--muted);font-weight:450;margin-bottom:1.4rem}
-.form-group{margin-bottom:.9rem}
-.form-group label{display:block;font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:.35rem}
-.form-group input{width:100%;padding:.7rem .95rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--ink);background:var(--white);outline:none;transition:border-color .15s}
-.form-group input:focus{border-color:var(--accent)}
-.form-submit{width:100%;padding:.85rem;background:var(--ink);color:var(--white);border:none;border-radius:10px;font-family:inherit;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.5rem;transition:background .15s}
-.form-submit:hover{background:var(--ink-2)}
-.m-tabs{display:flex;gap:.3rem;margin-bottom:1.4rem;background:var(--surface);padding:.3rem;border-radius:10px}
-.m-tab{flex:1;padding:.55rem;border-radius:8px;border:none;font-family:inherit;font-size:.88rem;font-weight:500;cursor:pointer;color:var(--muted);background:transparent;transition:all .15s}
-.m-tab.active{background:var(--white);color:var(--ink);box-shadow:var(--shadow-sm)}
-.form-alt{margin-top:1rem;text-align:center;font-size:.83rem;color:var(--muted)}
-.form-alt button{background:none;border:none;color:var(--accent);font-weight:500;cursor:pointer;font-family:inherit;font-size:inherit;padding:0}
-.form-alt button:hover{text-decoration:underline}
-.form-msg{padding:.6rem .8rem;border-radius:8px;font-size:.85rem;margin-bottom:.8rem;display:none}
-.form-msg.error{background:#FDEDED;color:var(--danger);display:block}
-.form-msg.success{background:#E8F5E9;color:var(--success);display:block}
-
-/* ── SIGN EDITOR ── */
-.editor-overlay{display:none;position:fixed;inset:0;background:#1A1B2E;z-index:300;flex-direction:column}
-.editor-overlay.open{display:flex}
-.editor-header{height:60px;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;color:#fff;flex-shrink:0}
-.editor-header .e-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;display:flex;align-items:center;gap:.7rem}
-.editor-header .e-filename{font-size:.85rem;color:rgba(255,255,255,.6);font-weight:450;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.editor-actions{display:flex;gap:.5rem;align-items:center}
-.editor-btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:8px;font-family:inherit;font-size:.88rem;font-weight:500;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:.4rem}
-.editor-btn:hover{background:rgba(255,255,255,.08)}
-.editor-btn.primary{background:var(--accent);border-color:var(--accent)}
-.editor-btn.primary:hover{background:var(--accent-dark)}
-.editor-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
-.editor-body{flex:1;display:flex;overflow:hidden;min-height:0}
-.editor-sidebar{width:280px;background:#1F2140;border-right:1px solid rgba(255,255,255,.08);padding:1.2rem;overflow-y:auto;color:#fff;flex-shrink:0}
-.editor-sidebar h4{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.8rem}
-.sig-tabs{display:flex;gap:.3rem;margin-bottom:1rem;background:rgba(0,0,0,.25);padding:.3rem;border-radius:8px}
-.sig-tab{flex:1;padding:.45rem;border-radius:6px;border:none;font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;color:rgba(255,255,255,.55);background:transparent;transition:all .15s}
-.sig-tab.active{background:rgba(255,255,255,.12);color:#fff}
-.sig-area{background:#fff;border-radius:8px;padding:.5rem;margin-bottom:.8rem}
-#sigCanvas{width:100%;height:150px;background:#fff;border-radius:6px;cursor:crosshair;touch-action:none;border:1px dashed var(--border)}
-#sigTypeInput{width:100%;padding:.8rem;border:1.5px solid var(--border);border-radius:8px;font-family:'Caveat',cursive;font-size:2rem;text-align:center;color:var(--ink);outline:none}
-#sigTypeInput:focus{border-color:var(--accent)}
-.sig-upload-area{display:flex;flex-direction:column;align-items:center;padding:1.5rem;border:1.5px dashed var(--border);border-radius:8px;cursor:pointer;transition:border-color .15s}
-.sig-upload-area:hover{border-color:var(--accent)}
-.sig-upload-area svg{width:28px;height:28px;stroke:var(--muted);fill:none;stroke-width:1.8;margin-bottom:.4rem}
-.sig-upload-area span{font-size:.82rem;color:var(--muted);font-weight:500}
-#sigImageInput{display:none}
-.sig-controls{display:flex;gap:.4rem;margin-bottom:1rem}
-.sig-btn-sm{flex:1;padding:.5rem;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.8);font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .15s}
-.sig-btn-sm:hover{background:rgba(255,255,255,.08);color:#fff}
-.sig-btn-sm.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.sig-btn-sm.primary:hover{background:var(--accent-dark)}
-.sidebar-hint{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.5;padding:.75rem;background:rgba(255,255,255,.05);border-radius:8px;margin-top:1rem}
-.sidebar-hint strong{color:rgba(255,255,255,.8);display:block;margin-bottom:.2rem}
-.page-controls{margin-top:1.2rem}
-.page-controls label{font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:.4rem;display:block;font-weight:500}
-.page-nav{display:flex;align-items:center;gap:.5rem}
-.page-nav button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;width:32px;height:32px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.page-nav button:disabled{opacity:.4;cursor:not-allowed}
-.page-nav button svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
-.page-nav span{flex:1;text-align:center;font-size:.85rem;color:rgba(255,255,255,.85);font-weight:500}
-
-.editor-canvas-wrap{flex:1;overflow:auto;background:#2A2B48;padding:2rem;display:flex;justify-content:center;align-items:flex-start}
-.doc-page{position:relative;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.4);margin-bottom:1rem}
-#docCanvas{display:block;max-width:100%}
-.sig-placed{position:absolute;cursor:move;border:2px dashed transparent;padding:4px;background:transparent;user-select:none;touch-action:none}
-.sig-placed:hover,.sig-placed.selected{border-color:var(--accent)}
-.sig-placed img{display:block;max-width:100%;pointer-events:none}
-.sig-placed .sig-remove{position:absolute;top:-12px;right:-12px;width:24px;height:24px;border-radius:50%;background:var(--danger);color:#fff;border:2px solid #fff;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:.7rem;padding:0}
-.sig-placed.selected .sig-remove{display:flex}
-.sig-placed .sig-resize{position:absolute;bottom:-8px;right:-8px;width:16px;height:16px;background:var(--accent);border:2px solid #fff;border-radius:50%;cursor:nwse-resize;display:none}
-.sig-placed.selected .sig-resize{display:block}
-
-/* templates modal */
-.templates-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1rem;margin-top:1.4rem}
-.template-card{border:1px solid var(--border);border-radius:12px;padding:1.1rem;cursor:pointer;transition:all .15s;text-align:left;background:var(--white);font-family:inherit}
-.template-card:hover{border-color:var(--accent);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
-.template-card .tpl-icon{width:38px;height:38px;border-radius:9px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:.7rem}
-.template-card .tpl-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.9}
-.template-card h4{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.25rem}
-.template-card p{font-size:.8rem;color:var(--muted);font-weight:450;line-height:1.5}
-
-/* success toast */
-.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--ink);color:#fff;padding:.85rem 1.3rem;border-radius:10px;font-size:.9rem;font-weight:500;box-shadow:var(--shadow-lg);z-index:400;display:flex;align-items:center;gap:.6rem;transition:transform .3s ease;max-width:90vw}
-.toast.show{transform:translateX(-50%) translateY(0)}
-.toast svg{width:16px;height:16px;stroke:#B4BDFF;fill:none;stroke-width:2.5;flex-shrink:0}
-.toast.error svg{stroke:#FF9B9B}
-
-/* responsive */
-@media(max-width:900px){
-  .nav-links{display:none}
-  .nav-right .btn-ghost,.nav-right .btn-primary{display:none}
-  .hamburger{display:flex}
-  .strip-inner{grid-template-columns:1fr;gap:2.5rem}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .editor-sidebar{width:240px}
-}
-@media(max-width:640px){
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .nav-right .btn-dark{display:block}
-  .editor-body{flex-direction:column}
-  .editor-sidebar{width:100%;max-height:40vh;border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
-  .editor-canvas-wrap{padding:1rem}
-  .editor-header .e-filename{display:none}
-}
-@keyframes mIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
-</style>
-</head>
-<body>
-
-<input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png">
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="#top">
-      <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
-      SignRight
-    </a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#" onclick="openTemplates(event)">Templates</a>
-    </div>
-    <div class="nav-right">
-      <button class="btn btn-primary" onclick="triggerFileInput()">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        Upload &amp; Sign
-      </button>
-      <button class="btn btn-ghost" onclick="openAuth('login')">Log in</button>
-      <button class="btn btn-dark" onclick="openAuth('signup')">Get started</button>
-    </div>
-    <button class="hamburger" id="hbg" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#how" onclick="toggleMenu()">How it works</a>
-  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
-  <button onclick="openTemplates();toggleMenu()">Templates</button>
-  <button onclick="triggerFileInput();toggleMenu()">Upload &amp; Sign</button>
-  <button onclick="openAuth('login');toggleMenu()">Log in</button>
-  <button onclick="openAuth('signup');toggleMenu()">Create account</button>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="container">
-    <div class="hero-badge"><span class="badge-dot"></span>Legally binding &middot; Instant &middot; Secure</div>
-    <h1>Sign anything.<br><em>In seconds.</em></h1>
-    <p class="hero-sub">Upload a PDF or image, add your signature, and download. No printer, no scanner, no waiting.</p>
-
-    <div class="upload-zone" id="uploadZone">
-      <div id="uploadDefault">
-        <div class="upload-zone-top">
-          <div class="upload-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-          <h3>Drop your document here</h3>
-          <span class="hint">PDF, JPG, or PNG &middot; up to 50 MB</span>
-        </div>
-        <div class="upload-or">— or —</div>
-        <div class="upload-row">
-          <button class="upload-action" onclick="triggerFileInput()">Browse files</button>
-          <button class="upload-action outline" onclick="openTemplates()">Use a template</button>
-        </div>
-      </div>
-      <div class="upload-progress" id="uploadProgress">
-        <div class="progress-file">
-          <div class="progress-file-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <div class="progress-info">
-            <div class="progress-name" id="progFileName">document.pdf</div>
-            <div class="progress-size" id="progFileSize">0 KB</div>
-            <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-label">What we do</div>
-    <h2 class="section-title">Every document task, one place.</h2>
-    <p class="section-sub">From a quick signature to full legal templates — SignRight handles the whole workflow.</p>
-    <div class="services-grid">
-      <button class="service-card" onclick="triggerFileInput()">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <h3>Sign a PDF</h3>
-        <p>Upload any PDF and add your legally binding signature in under 30 seconds.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="openTemplates()">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <h3>Legal Templates</h3>
-        <p>NDAs, contracts, offer letters, rental agreements — fill, sign, done.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="triggerFileInput()">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-        <h3>Sign an Image</h3>
-        <p>Drop any JPG or PNG and sign directly on top. Download as PDF.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="openAuth('signup')">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Request Signatures</h3>
-        <p>Send docs to others for their signature. Track status in real time.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="openAuth('signup')">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg></div>
-        <h3>Reusable Templates</h3>
-        <p>Save your most-used docs as templates. Fill and sign in seconds every time.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="openAuth('signup')">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Audit Trail</h3>
-        <p>Timestamped, tamper-evident records. Court-admissible and ESIGN compliant.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="openAuth('signup')">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
-        <h3>Secure Vault</h3>
-        <p>Encrypted cloud storage for all signed docs. Access from any device.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-      <button class="service-card" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>Simple Pricing</h3>
-        <p>Pay once or go monthly. No hidden fees, cancel anytime.</p>
-        <div class="card-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- DARK STRIP -->
-<div class="strip">
-  <div class="container">
-    <div class="strip-inner">
-      <div>
-        <div class="section-label">Why SignRight</div>
-        <h2>Built for people who don't have time to waste.</h2>
-        <div class="feat-list">
-          <div class="feat-item"><div class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="feat-text"><strong>No software to install</strong><span>100% browser-based, any device</span></div></div>
-          <div class="feat-item"><div class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="feat-text"><strong>Legally binding everywhere</strong><span>ESIGN Act, eIDAS, and UETA compliant</span></div></div>
-          <div class="feat-item"><div class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="feat-text"><strong>AES-256 encryption</strong><span>Encrypted at rest and in transit</span></div></div>
-          <div class="feat-item"><div class="feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="feat-text"><strong>Documents saved forever</strong><span>Access your vault from anywhere</span></div></div>
-        </div>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-item"><div class="stat-num">2M+</div><div class="stat-lbl">docs signed</div></div>
-        <div class="stat-item"><div class="stat-num">30s</div><div class="stat-lbl">avg sign time</div></div>
-        <div class="stat-item"><div class="stat-num">99.9%</div><div class="stat-lbl">uptime</div></div>
-        <div class="stat-item"><div class="stat-num">150+</div><div class="stat-lbl">countries</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HOW -->
-<section class="section" id="how" style="text-align:center">
-  <div class="container">
-    <div class="section-label" style="display:inline-block">Process</div>
-    <h2 class="section-title" style="margin-top:.4rem">From upload to signed in four steps.</h2>
-    <div class="steps-wrap">
-      <div class="step"><div class="step-num">01</div><h4>Upload your doc</h4><p>PDF or image — drag it in or browse your device.</p></div>
-      <div class="step"><div class="step-num">02</div><h4>Place your signature</h4><p>Draw, type, or upload. Position it anywhere on the page.</p></div>
-      <div class="step"><div class="step-num">03</div><h4>Review &amp; confirm</h4><p>Check placement, add dates or initials as needed.</p></div>
-      <div class="step"><div class="step-num">04</div><h4>Download signed</h4><p>Signed PDF in seconds. Ready to share or store.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="pricing-inner">
-    <div class="section-label" style="display:inline-block">Pricing</div>
-    <h2 class="section-title" style="margin-top:.4rem">Simple, honest pricing.</h2>
-    <p class="section-sub" style="margin:.7rem auto 0">No subscriptions you forget to cancel. Pay once, or unlock everything for a month.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">14-Day Pass</div>
-        <div class="price-desc">One-time payment. Full access for 14 days — no renewal.</div>
-        <div class="price-amt"><span class="cur">$</span><span class="val">7.99</span><span class="per">/ 14 days</span></div>
-        <hr class="p-div"/>
-        <ul class="p-feats">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Unlimited signing for 14 days</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>PDF download</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Audit trail included</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Access to all templates</li>
-          <li class="dim"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Vault (14 days only)</li>
-        </ul>
-        <button class="p-btn outline" onclick="trackEvent &amp;&amp; trackEvent('pricing_click', {plan:'14_day'}); openAuth('signup')">Get 14-day pass</button>
-      </div>
-      <div class="price-card featured">
-        <div class="feat-badge">BEST VALUE</div>
-        <div class="price-name">Annual Pass</div>
-        <div class="price-desc">Unlimited docs, templates, and vault — for a full year.</div>
-        <div class="price-amt"><span class="cur">$</span><span class="val">47.99</span><span class="per">/ year</span></div>
-        <hr class="p-div"/>
-        <ul class="p-feats">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Unlimited signing</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Legal template library</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Secure vault (forever)</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Signature requests</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
-        </ul>
-        <button class="p-btn primary" onclick="trackEvent &amp;&amp; trackEvent('pricing_click', {plan:'annual'}); openAuth('signup')">Start annual</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<div class="trust-bar">
-  <div class="container trust-inner">
-    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>ESIGN &amp; UETA Compliant</div>
-    <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>AES-256 Encrypted</div>
-    <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No hidden fees</div>
-    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Sign in under 60 seconds</div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="#top"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>SignRight</a>
-        <p>The fastest way to sign, send, and store documents — legally binding, anywhere in the world.</p>
-      </div>
-      <div class="footer-col"><h5>Product</h5>
-        <a href="#" onclick="triggerFileInput();return false">Sign a PDF</a>
-        <a href="#" onclick="openTemplates();return false">Legal Templates</a>
-        <a href="#" onclick="triggerFileInput();return false">Sign an Image</a>
-        <a href="#" onclick="openAuth('signup');return false">Document Vault</a>
-      </div>
-      <div class="footer-col"><h5>Company</h5>
-        <a href="#" onclick="showToast('About page coming soon');return false">About</a>
-        <a href="#" onclick="showToast('Blog coming soon');return false">Blog</a>
-        <a href="#" onclick="showToast('Careers page coming soon');return false">Careers</a>
-        <a href="mailto:hello@signright.app">Contact</a>
-      </div>
-      <div class="footer-col"><h5>Legal</h5>
-        <a href="#" onclick="showToast('Privacy policy coming soon');return false">Privacy Policy</a>
-        <a href="#" onclick="showToast('Terms coming soon');return false">Terms of Service</a>
-        <a href="#" onclick="showToast('Security details coming soon');return false">Security</a>
-        <a href="#" onclick="showToast('GDPR details coming soon');return false">GDPR</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 SignRight. All rights reserved.</span>
-      <span>Encrypted always &middot; Built with care</span>
-    </div>
-  </div>
-</footer>
-
-<!-- AUTH MODAL -->
-<div class="modal-overlay" id="authModal" onclick="closeModalOut(event,'authModal')">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('authModal')" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <h2 class="modal-title" id="mTitle">Welcome back</h2>
-    <p class="modal-sub" id="mSub">Sign in to access your vault and documents.</p>
-    <div class="m-tabs">
-      <button class="m-tab active" id="tLogin" onclick="switchTab('login')">Log in</button>
-      <button class="m-tab" id="tSignup" onclick="switchTab('signup')">Sign up</button>
-    </div>
-    <div class="form-msg" id="authMsg"></div>
-    <form id="loginF" onsubmit="handleAuth(event,'login')">
-      <div class="form-group"><label for="loginEmail">Email</label><input id="loginEmail" type="email" placeholder="you@example.com" required autocomplete="email"/></div>
-      <div class="form-group"><label for="loginPass">Password</label><input id="loginPass" type="password" placeholder="Your password" required autocomplete="current-password" minlength="6"/></div>
-      <button type="submit" class="form-submit">Log in</button>
-    </form>
-    <form id="signupF" style="display:none" onsubmit="handleAuth(event,'signup')">
-      <div class="form-group"><label for="suName">Full name</label><input id="suName" type="text" placeholder="Your name" required autocomplete="name"/></div>
-      <div class="form-group"><label for="suEmail">Email</label><input id="suEmail" type="email" placeholder="you@example.com" required autocomplete="email"/></div>
-      <div class="form-group"><label for="suPass">Password</label><input id="suPass" type="password" placeholder="At least 6 characters" required autocomplete="new-password" minlength="6"/></div>
-      <button type="submit" class="form-submit">Create account</button>
-    </form>
-  </div>
-</div>
-
-<!-- TEMPLATES MODAL -->
-<div class="modal-overlay" id="templatesModal" onclick="closeModalOut(event,'templatesModal')">
-  <div class="modal-box wide">
-    <button class="modal-close" onclick="closeModal('templatesModal')" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <h2 class="modal-title">Legal Templates</h2>
-    <p class="modal-sub">Pick a template, we'll generate a PDF, and you can sign it right away.</p>
-    <div class="templates-grid" id="templatesGrid"></div>
-  </div>
-</div>
-
-<!-- SIGN EDITOR -->
-<div class="editor-overlay" id="editorOverlay">
-  <div class="editor-header">
-    <div class="e-title">
-      <span class="logo-mark" style="width:24px;height:24px;border-radius:6px"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
-      Sign document
-      <span class="e-filename" id="editorFilename"></span>
-    </div>
-    <div class="editor-actions">
-      <button class="editor-btn" onclick="closeEditor()">
-        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        Cancel
-      </button>
-      <button class="editor-btn primary" onclick="downloadSigned()" id="downloadBtn">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download signed
-      </button>
-    </div>
-  </div>
-  <div class="editor-body">
-    <aside class="editor-sidebar">
-      <h4>Create signature</h4>
-      <div class="sig-tabs">
-        <button class="sig-tab active" data-sigtab="draw" onclick="switchSigTab('draw')">Draw</button>
-        <button class="sig-tab" data-sigtab="type" onclick="switchSigTab('type')">Type</button>
-        <button class="sig-tab" data-sigtab="upload" onclick="switchSigTab('upload')">Upload</button>
-      </div>
-      <div class="sig-area">
-        <div id="sigDrawPanel">
-          <canvas id="sigCanvas" width="500" height="200"></canvas>
-        </div>
-        <div id="sigTypePanel" style="display:none">
-          <input id="sigTypeInput" type="text" placeholder="Your name" maxlength="30">
-        </div>
-        <div id="sigUploadPanel" style="display:none">
-          <label class="sig-upload-area" for="sigImageInput">
-            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <span>Upload signature image</span>
-          </label>
-          <input type="file" id="sigImageInput" accept="image/png,image/jpeg">
-        </div>
-      </div>
-      <div class="sig-controls">
-        <button class="sig-btn-sm" onclick="clearSignature()">Clear</button>
-        <button class="sig-btn-sm primary" onclick="addSignatureToDoc()">Place on doc</button>
-      </div>
-      <div class="page-controls" id="pageControls" style="display:none">
-        <label>Page</label>
-        <div class="page-nav">
-          <button id="prevPage" onclick="changePage(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <span id="pageLabel">1 / 1</span>
-          <button id="nextPage" onclick="changePage(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-        </div>
-      </div>
-      <div class="sidebar-hint">
-        <strong>Tip</strong>
-        Click a placed signature to move, resize, or delete it. Then hit "Download signed".
-      </div>
-    </aside>
-    <div class="editor-canvas-wrap" id="canvasWrap">
-      <div class="doc-page" id="docPage">
-        <canvas id="docCanvas"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Toast -->
-<div class="toast" id="toast">
-  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-  <span id="toastMsg">Done</span>
-</div>
-
-<!-- Caveat font for typed signature -->
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-
-<script>
-/* ==================================================================
-   SignRight — client-side PDF/Image signing with pdf-lib + pdf.js
-   All processing happens in the browser. No server required for MVP.
-   ================================================================== */
-
-// ---------- Mobile menu ----------
-let menuOpen = false;
-function toggleMenu(){
-  menuOpen = !menuOpen;
-  document.getElementById('mobileMenu').classList.toggle('open', menuOpen);
-  document.getElementById('hbg').classList.toggle('open', menuOpen);
-}
-
-// ---------- Toast ----------
-let toastTimer;
-function showToast(msg, isError=false){
-  const t = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  t.classList.toggle('error', !!isError);
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(()=>t.classList.remove('show'), 2800);
-}
-
-// ---------- Auth modal ----------
-function openAuth(tab){
-  document.getElementById('authModal').classList.add('open');
-  switchTab(tab || 'login');
-  if(window.trackEvent) trackEvent('auth_modal_opened', {tab: tab || 'login'});
-}
-function switchTab(t){
-  const isLogin = t === 'login';
-  document.getElementById('tLogin').classList.toggle('active', isLogin);
-  document.getElementById('tSignup').classList.toggle('active', !isLogin);
-  document.getElementById('loginF').style.display = isLogin ? 'block' : 'none';
-  document.getElementById('signupF').style.display = isLogin ? 'none' : 'block';
-  document.getElementById('mTitle').textContent = isLogin ? 'Welcome back' : 'Create your account';
-  document.getElementById('mSub').textContent = isLogin ? 'Sign in to access your vault and documents.' : 'Start signing — no credit card needed.';
-  document.getElementById('authMsg').className = 'form-msg';
-  document.getElementById('authMsg').textContent = '';
-}
-function closeModal(id){ document.getElementById(id).classList.remove('open'); }
-function closeModalOut(e, id){ if(e.target.id === id) closeModal(id); }
-
-function handleAuth(e, kind){
-  e.preventDefault();
-  const msg = document.getElementById('authMsg');
-  // Local demo auth — stores user in localStorage. Swap for real API when backend is ready.
-  if(kind === 'signup'){
-    const name = document.getElementById('suName').value.trim();
-    const email = document.getElementById('suEmail').value.trim();
-    const pass = document.getElementById('suPass').value;
-    if(pass.length < 6){ msg.className='form-msg error'; msg.textContent='Password must be at least 6 characters.'; return; }
-    localStorage.setItem('sr_user', JSON.stringify({name, email}));
-    msg.className='form-msg success';
-    msg.textContent='Account created! Redirecting...';
-    setTimeout(()=>{ closeModal('authModal'); showToast('Welcome, '+name+'!'); }, 700);
-  } else {
-    const email = document.getElementById('loginEmail').value.trim();
-    msg.className='form-msg success';
-    msg.textContent='Logged in! Redirecting...';
-    localStorage.setItem('sr_user', JSON.stringify({name: email.split('@')[0], email}));
-    setTimeout(()=>{ closeModal('authModal'); showToast('Logged in'); }, 700);
-  }
-}
-
-// Escape closes modals
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape'){
-    document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open'));
-  }
-});
-
-// ---------- Templates ----------
-const TEMPLATES = [
-  {id:'nda', name:'Non-Disclosure Agreement', desc:'Mutual NDA between two parties.', icon:'lock',
-   body: `NON-DISCLOSURE AGREEMENT\n\nThis Non-Disclosure Agreement ("Agreement") is entered into on ______________, between:\n\nDisclosing Party: _______________________________\nReceiving Party: _______________________________\n\n1. CONFIDENTIAL INFORMATION. The Receiving Party agrees to keep confidential all information disclosed by the Disclosing Party.\n\n2. OBLIGATIONS. The Receiving Party shall not use the Confidential Information for any purpose other than evaluating the business relationship between the parties.\n\n3. TERM. This Agreement shall remain in effect for a period of two (2) years from the date signed below.\n\n4. RETURN OF MATERIALS. Upon request, the Receiving Party shall return or destroy all Confidential Information.\n\n5. GOVERNING LAW. This Agreement shall be governed by applicable laws.\n\n\nSigned:\n\nDisclosing Party: _______________________  Date: ____________\n\nReceiving Party: _______________________  Date: ____________`},
-  {id:'offer', name:'Offer Letter', desc:'Standard employment offer letter.', icon:'briefcase',
-   body: `OFFER OF EMPLOYMENT\n\nDate: ______________\n\nDear ______________,\n\nWe are pleased to offer you the position of ______________ at ______________ (the "Company"), reporting to ______________.\n\nTerms of Employment:\n\n1. Start Date: ______________\n2. Annual Salary: ______________\n3. Work Location: ______________\n4. Employment Type: Full-time\n5. Probation Period: 90 days\n\nThis offer is contingent upon successful completion of background verification and reference checks.\n\nPlease sign below to accept this offer.\n\n\nAccepted and agreed:\n\nCandidate signature: _______________________  Date: ____________\n\nCompany representative: _______________________  Date: ____________`},
-  {id:'rental', name:'Rental Agreement', desc:'Short-term residential rental.', icon:'home',
-   body: `RESIDENTIAL RENTAL AGREEMENT\n\nThis Rental Agreement is made on ______________, between:\n\nLandlord: _______________________________\nTenant: _______________________________\n\nProperty Address: _______________________________\n\n1. TERM. The lease shall begin on ______________ and end on ______________.\n\n2. RENT. Monthly rent is $____________, payable on the 1st of each month.\n\n3. SECURITY DEPOSIT. A deposit of $____________ is required, refundable subject to condition of property.\n\n4. UTILITIES. Tenant is responsible for all utilities unless otherwise stated.\n\n5. MAINTENANCE. Tenant shall maintain the property in good condition.\n\n6. PETS. Pets are / are not permitted (circle one).\n\n7. TERMINATION. Either party may terminate with 30 days written notice.\n\n\nSigned:\n\nLandlord: _______________________  Date: ____________\n\nTenant: _______________________  Date: ____________`},
-  {id:'contractor', name:'Contractor Agreement', desc:'Independent contractor services.', icon:'tool',
-   body: `INDEPENDENT CONTRACTOR AGREEMENT\n\nDate: ______________\n\nClient: _______________________________\nContractor: _______________________________\n\n1. SERVICES. Contractor agrees to provide the following services:\n______________________________________________________________\n______________________________________________________________\n\n2. COMPENSATION. Client shall pay Contractor $____________ for the services, payable within 30 days of invoice.\n\n3. TERM. This Agreement begins on ______________ and continues until services are complete.\n\n4. INDEPENDENT CONTRACTOR. Contractor is an independent contractor, not an employee.\n\n5. CONFIDENTIALITY. Contractor shall maintain confidentiality of all Client information.\n\n6. INTELLECTUAL PROPERTY. All work product shall belong to the Client upon full payment.\n\n\nSigned:\n\nClient: _______________________  Date: ____________\n\nContractor: _______________________  Date: ____________`},
-  {id:'invoice', name:'Simple Invoice', desc:'Bill for goods or services.', icon:'receipt',
-   body: `INVOICE\n\nInvoice #: ______________\nDate: ______________\nDue Date: ______________\n\nFrom:\n_______________________________\n_______________________________\n\nBill To:\n_______________________________\n_______________________________\n\nDescription                                 Amount\n______________________________      $____________\n______________________________      $____________\n______________________________      $____________\n\nSubtotal:                                  $____________\nTax:                                       $____________\nTotal Due:                                 $____________\n\nPayment terms: Net 30\n\n\nAuthorized signature: _______________________  Date: ____________`},
-  {id:'consent', name:'Photo Consent Form', desc:'Permission to use photos/videos.', icon:'camera',
-   body: `PHOTO & VIDEO CONSENT FORM\n\nI, ______________________________, hereby grant ______________________________ ("Organization") permission to use my photograph and/or video recording in the following ways:\n\n[ ] Website and social media\n[ ] Marketing materials\n[ ] Press releases and publications\n[ ] Internal communications\n\nI understand that:\n- I will not receive compensation for use of my image.\n- The Organization may edit, crop, or alter my image.\n- This consent is valid indefinitely unless revoked in writing.\n\nI am of legal age and have read and understood this consent form.\n\n\nSigned: _______________________  Date: ____________\n\nPrinted name: _______________________`}
-];
-
-const ICONS = {
-  lock:'<path d="M19 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2z"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
-  briefcase:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
-  home:'<path d="M3 9.5L12 2l9 7.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V9.5z"/>',
-  tool:'<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
-  receipt:'<path d="M14 2H6a2 2 0 0 0-2 2v16l3-2 3 2 3-2 3 2V8z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="14" y2="14"/>',
-  camera:'<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>'
-};
-
-function openTemplates(e){
-  if(e) e.preventDefault();
-  const grid = document.getElementById('templatesGrid');
-  grid.innerHTML = TEMPLATES.map(t =>
-    `<button class="template-card" onclick="useTemplate('${t.id}')">
-      <div class="tpl-icon"><svg viewBox="0 0 24 24">${ICONS[t.icon]||''}</svg></div>
-      <h4>${t.name}</h4>
-      <p>${t.desc}</p>
-    </button>`
-  ).join('');
-  document.getElementById('templatesModal').classList.add('open');
-}
-
-async function useTemplate(id){
-  const tpl = TEMPLATES.find(t=>t.id===id);
-  if(!tpl) return;
-  closeModal('templatesModal');
-  showToast('Preparing ' + tpl.name + '...');
-  // Generate a PDF from the template body using pdf-lib
-  try {
-    const { PDFDocument, StandardFonts, rgb } = PDFLib;
-    const pdfDoc = await PDFDocument.create();
-    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-    const boldFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-    const page = pdfDoc.addPage([612, 792]); // US Letter
-    const { width, height } = page.getSize();
-    const margin = 60;
-    const fontSize = 11;
-    const lineHeight = 16;
-    let y = height - margin;
-
-    const lines = tpl.body.split('\n');
-    for(const line of lines){
-      if(y < margin){ // new page if needed
-        const p = pdfDoc.addPage([612, 792]);
-        y = p.getSize().height - margin;
-        // draw on the new page
-        const words = wrapText(line, font, fontSize, width - margin*2);
-        for(const w of words){
-          p.drawText(w, {x: margin, y, size: fontSize, font, color: rgb(0.08,0.09,0.17)});
-          y -= lineHeight;
-        }
-        continue;
-      }
-      const isTitle = lines.indexOf(line) === 0 && line.trim().length > 0;
-      const useFont = isTitle ? boldFont : font;
-      const useSize = isTitle ? 14 : fontSize;
-      const wrapped = wrapText(line, useFont, useSize, width - margin*2);
-      for(const w of wrapped){
-        page.drawText(w, {x: margin, y, size: useSize, font: useFont, color: rgb(0.08,0.09,0.17)});
-        y -= isTitle ? 22 : lineHeight;
-      }
-    }
-
-    const bytes = await pdfDoc.save();
-    const blob = new Blob([bytes], {type:'application/pdf'});
-    const file = new File([blob], tpl.name.replace(/\s+/g,'_') + '.pdf', {type:'application/pdf'});
-    handleFile(file);
-  } catch(err){
-    console.error(err);
-    showToast('Could not generate template', true);
-  }
-}
-
-function wrapText(text, font, size, maxWidth){
-  if(!text || !text.trim()) return [''];
-  const words = text.split(' ');
-  const lines = [];
-  let current = '';
-  for(const w of words){
-    const test = current ? current + ' ' + w : w;
-    const tw = font.widthOfTextAtSize(test, size);
-    if(tw > maxWidth && current){
-      lines.push(current);
-      current = w;
-    } else {
-      current = test;
-    }
-  }
-  if(current) lines.push(current);
-  return lines.length ? lines : [''];
-}
-
-// ---------- File upload ----------
-function triggerFileInput(){ document.getElementById('fileInput').click(); }
-document.getElementById('fileInput').addEventListener('change', (e)=>{
-  if(e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
-  e.target.value = ''; // allow re-selecting same file
-});
-
-const zone = document.getElementById('uploadZone');
-zone.addEventListener('dragover', (e)=>{ e.preventDefault(); zone.classList.add('dragover'); });
-zone.addEventListener('dragleave', ()=>zone.classList.remove('dragover'));
-zone.addEventListener('drop', (e)=>{
-  e.preventDefault(); zone.classList.remove('dragover');
-  if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
-});
-
-function formatSize(bytes){
-  if(bytes >= 1048576) return (bytes/1048576).toFixed(1) + ' MB';
-  return (bytes/1024).toFixed(0) + ' KB';
-}
-
-function handleFile(file){
-  const name = file.name.toLowerCase();
-  const okPdf = name.endsWith('.pdf');
-  const okImg = /\.(jpg|jpeg|png)$/.test(name);
-  if(!okPdf && !okImg){
-    showToast('Please upload a PDF or image (JPG/PNG)', true);
-    if(window.trackEvent) trackEvent('upload_rejected', {reason: 'invalid_type'});
-    return;
-  }
-  if(file.size > 50 * 1024 * 1024){
-    showToast('File too large — max 50 MB', true);
-    if(window.trackEvent) trackEvent('upload_rejected', {reason: 'too_large'});
-    return;
-  }
-  if(window.trackEvent) trackEvent('upload_started', {file_type: okPdf ? 'pdf' : 'image', file_size_kb: Math.round(file.size/1024)});
-  // show progress
-  document.getElementById('progFileName').textContent = file.name;
-  document.getElementById('progFileSize').textContent = formatSize(file.size);
-  document.getElementById('uploadDefault').style.display = 'none';
-  document.getElementById('uploadProgress').style.display = 'flex';
-  const bar = document.getElementById('progressBar');
-  let p = 0;
-  const iv = setInterval(()=>{
-    p += Math.random()*20 + 10;
-    if(p >= 100){
-      p = 100;
-      clearInterval(iv);
-      bar.style.width = '100%';
-      setTimeout(()=>{
-        // reset upload UI
-        document.getElementById('uploadDefault').style.display = 'flex';
-        document.getElementById('uploadProgress').style.display = 'none';
-        bar.style.width = '0%';
-        openEditor(file);
-      }, 300);
-    } else {
-      bar.style.width = p + '%';
-    }
-  }, 90);
-}
-
-// ==================================================================
-// SIGNATURE EDITOR
-// ==================================================================
-let currentFile = null;
-let currentFileType = null; // 'pdf' | 'image'
-let pdfDoc = null;          // pdfjs doc
-let currentPage = 1;
-let totalPages = 1;
-let pageScale = 1.5;
-let placedSignatures = []; // {el, dataUrl, xRatio, yRatio, wRatio, hRatio, page}
-let activeSigDataUrl = null;
-let currentSigMode = 'draw';
-
-async function openEditor(file){
-  currentFile = file;
-  currentFileType = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image';
-  document.getElementById('editorFilename').textContent = file.name;
-  document.getElementById('editorOverlay').classList.add('open');
-  placedSignatures.forEach(s => s.el.remove());
-  placedSignatures = [];
-  activeSigDataUrl = null;
-  clearSignature();
-
-  if(currentFileType === 'pdf'){
-    await loadPdf(file);
-    document.getElementById('pageControls').style.display = totalPages > 1 ? 'block' : 'none';
-  } else {
-    await loadImage(file);
-    document.getElementById('pageControls').style.display = 'none';
-  }
-}
-
-function closeEditor(){
-  document.getElementById('editorOverlay').classList.remove('open');
-  placedSignatures.forEach(s => s.el.remove());
-  placedSignatures = [];
-  currentFile = null;
-  pdfDoc = null;
-}
-
-async function loadPdf(file){
-  const buf = await file.arrayBuffer();
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-  pdfDoc = await pdfjsLib.getDocument({data: buf.slice(0)}).promise;
-  totalPages = pdfDoc.numPages;
-  currentPage = 1;
-  await renderPdfPage(currentPage);
-}
-
-async function renderPdfPage(pageNum){
-  const page = await pdfDoc.getPage(pageNum);
-  const canvas = document.getElementById('docCanvas');
-  const viewport = page.getViewport({scale: pageScale});
-  canvas.width = viewport.width;
-  canvas.height = viewport.height;
-  document.getElementById('docPage').style.width = viewport.width + 'px';
-  document.getElementById('docPage').style.height = viewport.height + 'px';
-  const ctx = canvas.getContext('2d');
-  await page.render({canvasContext: ctx, viewport}).promise;
-  document.getElementById('pageLabel').textContent = pageNum + ' / ' + totalPages;
-  document.getElementById('prevPage').disabled = pageNum <= 1;
-  document.getElementById('nextPage').disabled = pageNum >= totalPages;
-  // Show/hide signatures based on current page
-  placedSignatures.forEach(s => {
-    s.el.style.display = s.page === pageNum ? 'block' : 'none';
-  });
-}
-
-async function loadImage(file){
-  const url = URL.createObjectURL(file);
-  const img = new Image();
-  await new Promise((res, rej)=>{ img.onload = res; img.onerror = rej; img.src = url; });
-  const canvas = document.getElementById('docCanvas');
-  // scale so max width is 900
-  const maxW = 900;
-  const scale = Math.min(1, maxW / img.width);
-  canvas.width = img.width * scale;
-  canvas.height = img.height * scale;
-  document.getElementById('docPage').style.width = canvas.width + 'px';
-  document.getElementById('docPage').style.height = canvas.height + 'px';
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  URL.revokeObjectURL(url);
-  totalPages = 1;
-  currentPage = 1;
-}
-
-async function changePage(delta){
-  const next = currentPage + delta;
-  if(next < 1 || next > totalPages) return;
-  currentPage = next;
-  await renderPdfPage(currentPage);
-}
-
-// ---------- Signature pad (draw) ----------
-const sigCanvas = document.getElementById('sigCanvas');
-const sigCtx = sigCanvas.getContext('2d');
-let drawing = false, lastX = 0, lastY = 0;
-
-function resizeSigCanvas(){
-  const rect = sigCanvas.getBoundingClientRect();
-  const ratio = window.devicePixelRatio || 1;
-  sigCanvas.width = rect.width * ratio;
-  sigCanvas.height = rect.height * ratio;
-  sigCtx.scale(ratio, ratio);
-  sigCtx.strokeStyle = '#14162B';
-  sigCtx.lineWidth = 2.2;
-  sigCtx.lineCap = 'round';
-  sigCtx.lineJoin = 'round';
-}
-// call after panel visible
-setTimeout(resizeSigCanvas, 100);
-window.addEventListener('resize', ()=>{
-  // Only re-init if draw panel visible
-  if(document.getElementById('sigDrawPanel').style.display !== 'none') resizeSigCanvas();
-});
-
-function getPos(e){
-  const rect = sigCanvas.getBoundingClientRect();
-  const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-  const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
-  return {x, y};
-}
-function startDraw(e){ e.preventDefault(); drawing = true; const p = getPos(e); lastX = p.x; lastY = p.y; }
-function moveDraw(e){
-  if(!drawing) return;
-  e.preventDefault();
-  const p = getPos(e);
-  sigCtx.beginPath();
-  sigCtx.moveTo(lastX, lastY);
-  sigCtx.lineTo(p.x, p.y);
-  sigCtx.stroke();
-  lastX = p.x; lastY = p.y;
-}
-function endDraw(){ drawing = false; }
-sigCanvas.addEventListener('mousedown', startDraw);
-sigCanvas.addEventListener('mousemove', moveDraw);
-sigCanvas.addEventListener('mouseup', endDraw);
-sigCanvas.addEventListener('mouseleave', endDraw);
-sigCanvas.addEventListener('touchstart', startDraw, {passive:false});
-sigCanvas.addEventListener('touchmove', moveDraw, {passive:false});
-sigCanvas.addEventListener('touchend', endDraw);
-
-function clearSignature(){
-  sigCtx.clearRect(0,0,sigCanvas.width, sigCanvas.height);
-  document.getElementById('sigTypeInput').value = '';
-  activeSigDataUrl = null;
-}
-
-function switchSigTab(mode){
-  currentSigMode = mode;
-  document.querySelectorAll('.sig-tab').forEach(t=>t.classList.toggle('active', t.dataset.sigtab === mode));
-  document.getElementById('sigDrawPanel').style.display = mode === 'draw' ? 'block' : 'none';
-  document.getElementById('sigTypePanel').style.display = mode === 'type' ? 'block' : 'none';
-  document.getElementById('sigUploadPanel').style.display = mode === 'upload' ? 'block' : 'none';
-  if(mode === 'draw') setTimeout(resizeSigCanvas, 50);
-}
-
-document.getElementById('sigImageInput').addEventListener('change', async (e)=>{
-  if(!e.target.files[0]) return;
-  const f = e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = () => { activeSigDataUrl = reader.result; showToast('Signature image ready — click Place on doc'); };
-  reader.readAsDataURL(f);
-});
-
-function getTypedSignatureDataUrl(text){
-  // Render typed text with Caveat font to canvas
-  const c = document.createElement('canvas');
-  c.width = 500; c.height = 150;
-  const ctx = c.getContext('2d');
-  ctx.fillStyle = '#14162B';
-  ctx.font = '700 64px Caveat, cursive';
-  ctx.textBaseline = 'middle';
-  ctx.textAlign = 'center';
-  ctx.fillText(text, c.width/2, c.height/2);
-  return c.toDataURL('image/png');
-}
-
-function isCanvasEmpty(canvas){
-  const ctx = canvas.getContext('2d');
-  const data = ctx.getImageData(0,0,canvas.width,canvas.height).data;
-  for(let i = 3; i < data.length; i += 4){ if(data[i] !== 0) return false; }
-  return true;
-}
-
-function getTrimmedCanvasDataUrl(canvas){
-  // Trim transparent pixels from a canvas to tight bounds
-  const ctx = canvas.getContext('2d');
-  const data = ctx.getImageData(0,0,canvas.width,canvas.height);
-  const {width, height} = canvas;
-  let top=height, bottom=0, left=width, right=0;
-  for(let y=0; y<height; y++){
-    for(let x=0; x<width; x++){
-      const a = data.data[(y*width+x)*4 + 3];
-      if(a !== 0){
-        if(y < top) top = y;
-        if(y > bottom) bottom = y;
-        if(x < left) left = x;
-        if(x > right) right = x;
-      }
-    }
-  }
-  if(right < left || bottom < top) return canvas.toDataURL();
-  const w = right - left + 1, h = bottom - top + 1;
-  const out = document.createElement('canvas');
-  out.width = w + 20; out.height = h + 20;
-  const octx = out.getContext('2d');
-  octx.drawImage(canvas, left, top, w, h, 10, 10, w, h);
-  return out.toDataURL('image/png');
-}
-
-function addSignatureToDoc(){
-  let dataUrl = null;
-  if(currentSigMode === 'draw'){
-    if(isCanvasEmpty(sigCanvas)){ showToast('Please draw your signature first', true); return; }
-    dataUrl = getTrimmedCanvasDataUrl(sigCanvas);
-  } else if(currentSigMode === 'type'){
-    const text = document.getElementById('sigTypeInput').value.trim();
-    if(!text){ showToast('Please type your signature', true); return; }
-    dataUrl = getTypedSignatureDataUrl(text);
-  } else if(currentSigMode === 'upload'){
-    if(!activeSigDataUrl){ showToast('Please upload an image first', true); return; }
-    dataUrl = activeSigDataUrl;
-  }
-  if(!dataUrl) return;
-  placeSignatureOnPage(dataUrl);
-  showToast('Drag to position, corner to resize');
-}
-
-function placeSignatureOnPage(dataUrl){
-  const docPage = document.getElementById('docPage');
-  const img = new Image();
-  img.onload = () => {
-    const el = document.createElement('div');
-    el.className = 'sig-placed';
-    // default size ~ 180px wide, preserve aspect
-    const defW = 180;
-    const defH = defW * (img.height / img.width);
-    const startX = 40, startY = 40;
-    el.style.left = startX + 'px';
-    el.style.top = startY + 'px';
-    el.style.width = defW + 'px';
-    el.style.height = defH + 'px';
-    el.innerHTML = `<img src="${dataUrl}" draggable="false"><button class="sig-remove" type="button">&times;</button><div class="sig-resize"></div>`;
-    docPage.appendChild(el);
-
-    const sigObj = {el, dataUrl, page: currentPage,
-      imgW: img.width, imgH: img.height};
-    placedSignatures.push(sigObj);
-
-    makeDraggable(el, sigObj);
-    el.querySelector('.sig-remove').addEventListener('click', (ev)=>{
-      ev.stopPropagation();
-      el.remove();
-      placedSignatures = placedSignatures.filter(s => s !== sigObj);
-    });
-    selectSignature(el);
-  };
-  img.src = dataUrl;
-}
-
-function selectSignature(el){
-  document.querySelectorAll('.sig-placed').forEach(n => n.classList.remove('selected'));
-  el.classList.add('selected');
-}
-document.getElementById('canvasWrap').addEventListener('click', (e)=>{
-  if(!e.target.closest('.sig-placed')){
-    document.querySelectorAll('.sig-placed').forEach(n => n.classList.remove('selected'));
-  }
-});
-
-function makeDraggable(el, sigObj){
-  let isDown = false, isResize = false;
-  let startX, startY, startLeft, startTop, startW, startH;
-  const page = document.getElementById('docPage');
-
-  el.addEventListener('mousedown', down);
-  el.addEventListener('touchstart', down, {passive:false});
-
-  function down(e){
-    e.stopPropagation();
-    selectSignature(el);
-    if(e.target.classList.contains('sig-remove')) return;
-    const p = e.touches ? e.touches[0] : e;
-    isResize = e.target.classList.contains('sig-resize');
-    isDown = true;
-    startX = p.clientX; startY = p.clientY;
-    startLeft = parseFloat(el.style.left);
-    startTop = parseFloat(el.style.top);
-    startW = parseFloat(el.style.width);
-    startH = parseFloat(el.style.height);
-    document.addEventListener('mousemove', move);
-    document.addEventListener('mouseup', up);
-    document.addEventListener('touchmove', move, {passive:false});
-    document.addEventListener('touchend', up);
-    e.preventDefault();
-  }
-  function move(e){
-    if(!isDown) return;
-    const p = e.touches ? e.touches[0] : e;
-    const dx = p.clientX - startX;
-    const dy = p.clientY - startY;
-    const pageW = page.clientWidth;
-    const pageH = page.clientHeight;
-    if(isResize){
-      const newW = Math.max(40, startW + dx);
-      const ratio = sigObj.imgH / sigObj.imgW;
-      el.style.width = newW + 'px';
-      el.style.height = (newW * ratio) + 'px';
-    } else {
-      const newL = Math.max(0, Math.min(pageW - startW, startLeft + dx));
-      const newT = Math.max(0, Math.min(pageH - startH, startTop + dy));
-      el.style.left = newL + 'px';
-      el.style.top = newT + 'px';
-    }
-    e.preventDefault();
-  }
-  function up(){
-    isDown = false; isResize = false;
-    document.removeEventListener('mousemove', move);
-    document.removeEventListener('mouseup', up);
-    document.removeEventListener('touchmove', move);
-    document.removeEventListener('touchend', up);
-  }
-}
-
-// ==================================================================
-// DOWNLOAD SIGNED
-// ==================================================================
-async function downloadSigned(){
-  if(placedSignatures.length === 0){
-    showToast('Add at least one signature first', true);
-    return;
-  }
-  const btn = document.getElementById('downloadBtn');
-  const originalHtml = btn.innerHTML;
-  btn.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Processing...';
-  btn.disabled = true;
-
-  try {
-    let blob;
-    if(currentFileType === 'pdf'){
-      blob = await buildSignedPdf();
-    } else {
-      blob = await buildSignedImagePdf();
-    }
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    const base = currentFile.name.replace(/\.[^.]+$/, '');
-    a.href = url;
-    a.download = base + '_signed.pdf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-    showToast('Signed document downloaded');
-    if(window.trackEvent) trackEvent('document_signed', {file_type: currentFileType, signature_count: placedSignatures.length});
-  } catch(err){
-    console.error(err);
-    showToast('Something went wrong: ' + err.message, true);
-    if(window.trackEvent) trackEvent('sign_error', {message: err.message});
-  } finally {
-    btn.innerHTML = originalHtml;
-    btn.disabled = false;
-  }
-}
-
-async function buildSignedPdf(){
-  const { PDFDocument } = PDFLib;
-  const buf = await currentFile.arrayBuffer();
-  const pdfDocLib = await PDFDocument.load(buf);
-  const pages = pdfDocLib.getPages();
-  const docPage = document.getElementById('docPage');
-  const displayW = docPage.clientWidth;
-  const displayH = docPage.clientHeight;
-
-  // Group signatures by page
-  const byPage = {};
-  placedSignatures.forEach(s => { (byPage[s.page] = byPage[s.page] || []).push(s); });
-
-  for(const pageNumStr of Object.keys(byPage)){
-    const pageNum = parseInt(pageNumStr, 10);
-    const libPage = pages[pageNum - 1];
-    const {width: pw, height: ph} = libPage.getSize();
-
-    // We need the display size of THIS page specifically.
-    // If multi-page, each page may have different dimensions. Re-render to get accurate scale.
-    let thisDisplayW = displayW, thisDisplayH = displayH;
-    if(totalPages > 1){
-      const jsPage = await pdfDoc.getPage(pageNum);
-      const vp = jsPage.getViewport({scale: pageScale});
-      thisDisplayW = vp.width;
-      thisDisplayH = vp.height;
-    }
-
-    for(const sig of byPage[pageNum]){
-      const left = parseFloat(sig.el.style.left);
-      const top = parseFloat(sig.el.style.top);
-      const w = parseFloat(sig.el.style.width);
-      const h = parseFloat(sig.el.style.height);
-
-      // Convert display coords -> PDF coords (PDF origin is bottom-left)
-      const xRatio = left / thisDisplayW;
-      const yRatio = top / thisDisplayH;
-      const wRatio = w / thisDisplayW;
-      const hRatio = h / thisDisplayH;
-
-      const pdfX = xRatio * pw;
-      const pdfY = ph - (yRatio * ph) - (hRatio * ph);
-      const pdfW = wRatio * pw;
-      const pdfH = hRatio * ph;
-
-      const pngBytes = dataUrlToBytes(sig.dataUrl);
-      const pngImg = await pdfDocLib.embedPng(pngBytes);
-      libPage.drawImage(pngImg, {x: pdfX, y: pdfY, width: pdfW, height: pdfH});
-    }
-  }
-
-  const outBytes = await pdfDocLib.save();
-  return new Blob([outBytes], {type:'application/pdf'});
-}
-
-async function buildSignedImagePdf(){
-  // Convert image + placed sigs into a flat PDF
-  const { PDFDocument } = PDFLib;
-  const pdfDocLib = await PDFDocument.create();
-  // Read original image
-  const imgBuf = await currentFile.arrayBuffer();
-  const isPng = currentFile.type === 'image/png' || currentFile.name.toLowerCase().endsWith('.png');
-  const embedded = isPng ? await pdfDocLib.embedPng(imgBuf) : await pdfDocLib.embedJpg(imgBuf);
-  const page = pdfDocLib.addPage([embedded.width, embedded.height]);
-  page.drawImage(embedded, {x:0, y:0, width: embedded.width, height: embedded.height});
-
-  const docPage = document.getElementById('docPage');
-  const displayW = docPage.clientWidth;
-  const displayH = docPage.clientHeight;
-
-  for(const sig of placedSignatures){
-    const left = parseFloat(sig.el.style.left);
-    const top = parseFloat(sig.el.style.top);
-    const w = parseFloat(sig.el.style.width);
-    const h = parseFloat(sig.el.style.height);
-
-    const pdfX = (left / displayW) * embedded.width;
-    const pdfW = (w / displayW) * embedded.width;
-    const pdfH = (h / displayH) * embedded.height;
-    const pdfY = embedded.height - (top / displayH) * embedded.height - pdfH;
-
-    const pngBytes = dataUrlToBytes(sig.dataUrl);
-    const pngImg = await pdfDocLib.embedPng(pngBytes);
-    page.drawImage(pngImg, {x: pdfX, y: pdfY, width: pdfW, height: pdfH});
-  }
-
-  const outBytes = await pdfDocLib.save();
-  return new Blob([outBytes], {type:'application/pdf'});
-}
-
-function dataUrlToBytes(dataUrl){
-  const base64 = dataUrl.split(',')[1];
-  const bin = atob(base64);
-  const arr = new Uint8Array(bin.length);
-  for(let i=0;i<bin.length;i++) arr[i] = bin.charCodeAt(i);
-  return arr;
-}
-
-// Auto-detect logged-in user on page load
-(function(){
-  try {
-    const u = JSON.parse(localStorage.getItem('sr_user') || 'null');
-    if(u && u.name){
-      // Could update nav to show "Hi, <name>" — kept minimal for now.
-    }
-  } catch(e){}
-})();
-</script>
-</body>
-</html>
+-- =====================================================================
+-- SignRight Database Schema
+-- Run this entire file in Supabase SQL Editor (one-time setup)
+-- =====================================================================
+
+-- =====================================================================
+-- TABLE 1: profiles
+-- Extends Supabase's built-in auth.users with app-specific data.
+-- Auto-created when someone signs up (via the trigger below).
+-- =====================================================================
+create table public.profiles (
+  id uuid references auth.users(id) on delete cascade primary key,
+  email text unique not null,
+  full_name text,
+  plan text not null default 'free' check (plan in ('free', 'unlimited')),
+  plan_expires_at timestamptz,  -- null for free, future date for unlimited subscribers
+  is_admin boolean default false,
+  created_at timestamptz default now() not null,
+  updated_at timestamptz default now() not null
+);
+
+-- Index for fast lookups by email (login, admin search)
+create index profiles_email_idx on public.profiles(email);
+
+-- =====================================================================
+-- TABLE 2: form_purchases
+-- Records every one-time form purchase ($4.99 NDA, etc.)
+-- =====================================================================
+create table public.form_purchases (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references auth.users(id) on delete cascade not null,
+  form_slug text not null,              -- e.g. 'nda', 'rental-agreement', 'bill-of-sale'
+  form_name text not null,              -- human-readable: 'Non-Disclosure Agreement'
+  amount_usd numeric(10,2) not null,    -- e.g. 4.99
+  payment_provider text not null default 'paypal' check (payment_provider in ('paypal', 'stripe', 'manual')),
+  payment_id text,                       -- provider's transaction ID for reconciliation
+  status text not null default 'completed' check (status in ('pending', 'completed', 'refunded', 'failed')),
+  created_at timestamptz default now() not null
+);
+
+create index form_purchases_user_id_idx on public.form_purchases(user_id);
+create index form_purchases_form_slug_idx on public.form_purchases(form_slug);
+create index form_purchases_status_idx on public.form_purchases(status);
+
+-- =====================================================================
+-- TABLE 3: subscriptions
+-- For the optional "$19.99/month unlimited" plan upsell
+-- =====================================================================
+create table public.subscriptions (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references auth.users(id) on delete cascade not null,
+  plan text not null check (plan in ('unlimited_monthly', 'unlimited_annual')),
+  amount_usd numeric(10,2) not null,
+  status text not null default 'active' check (status in ('active', 'cancelled', 'expired', 'past_due')),
+  payment_provider text not null default 'paypal',
+  payment_id text,
+  current_period_start timestamptz not null,
+  current_period_end timestamptz not null,
+  cancelled_at timestamptz,
+  created_at timestamptz default now() not null
+);
+
+create index subscriptions_user_id_idx on public.subscriptions(user_id);
+create index subscriptions_status_idx on public.subscriptions(status);
+
+-- =====================================================================
+-- TABLE 4: documents
+-- Users' saved/signed documents (the "vault")
+-- We store metadata here; actual files will live in Supabase Storage (later)
+-- =====================================================================
+create table public.documents (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references auth.users(id) on delete cascade not null,
+  name text not null,
+  storage_path text,                     -- path in Supabase Storage bucket (added later)
+  source text not null default 'upload' check (source in ('upload', 'form', 'template')),
+  form_slug text,                        -- if created from a form, which one
+  size_bytes bigint,
+  signed boolean default false,
+  created_at timestamptz default now() not null
+);
+
+create index documents_user_id_idx on public.documents(user_id);
+create index documents_created_at_idx on public.documents(created_at desc);
+
+-- =====================================================================
+-- TABLE 5: events
+-- Server-side event log (backend counterpart to Clarity's frontend events)
+-- Useful for admin analytics, conversion funnel analysis
+-- =====================================================================
+create table public.events (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references auth.users(id) on delete set null,  -- null for anonymous events
+  event_name text not null,             -- 'signup', 'purchase', 'form_completed', etc.
+  metadata jsonb,                       -- flexible extra data
+  ip_address inet,
+  user_agent text,
+  created_at timestamptz default now() not null
+);
+
+create index events_event_name_idx on public.events(event_name);
+create index events_user_id_idx on public.events(user_id);
+create index events_created_at_idx on public.events(created_at desc);
+
+-- =====================================================================
+-- TRIGGER: auto-create profile row when a user signs up
+-- =====================================================================
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  insert into public.profiles (id, email, full_name)
+  values (
+    new.id,
+    new.email,
+    coalesce(new.raw_user_meta_data->>'full_name', split_part(new.email, '@', 1))
+  );
+  return new;
+end;
+$$;
+
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute function public.handle_new_user();
+
+-- =====================================================================
+-- TRIGGER: auto-update "updated_at" on profile changes
+-- =====================================================================
+create or replace function public.set_updated_at()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+create trigger profiles_set_updated_at
+  before update on public.profiles
+  for each row execute function public.set_updated_at();
+
+-- =====================================================================
+-- ROW LEVEL SECURITY (RLS)
+-- Locks down the database so users can only see/modify their own data
+-- =====================================================================
+
+-- Enable RLS on all tables
+alter table public.profiles enable row level security;
+alter table public.form_purchases enable row level security;
+alter table public.subscriptions enable row level security;
+alter table public.documents enable row level security;
+alter table public.events enable row level security;
+
+-- -------- profiles policies --------
+-- Users can read their own profile
+create policy "Users can view own profile"
+  on public.profiles for select
+  using (auth.uid() = id);
+
+-- Users can update their own profile (but NOT plan, is_admin, or plan_expires_at)
+create policy "Users can update own profile"
+  on public.profiles for update
+  using (auth.uid() = id)
+  with check (auth.uid() = id);
+
+-- Admins can view all profiles
+create policy "Admins can view all profiles"
+  on public.profiles for select
+  using (
+    exists (
+      select 1 from public.profiles
+      where id = auth.uid() and is_admin = true
+    )
+  );
+
+-- -------- form_purchases policies --------
+create policy "Users can view own purchases"
+  on public.form_purchases for select
+  using (auth.uid() = user_id);
+
+create policy "Admins can view all purchases"
+  on public.form_purchases for select
+  using (
+    exists (
+      select 1 from public.profiles
+      where id = auth.uid() and is_admin = true
+    )
+  );
+-- Note: INSERT into form_purchases happens server-side via webhook with secret key,
+-- so no public INSERT policy. This prevents users from faking purchases.
+
+-- -------- subscriptions policies --------
+create policy "Users can view own subscriptions"
+  on public.subscriptions for select
+  using (auth.uid() = user_id);
+
+create policy "Admins can view all subscriptions"
+  on public.subscriptions for select
+  using (
+    exists (
+      select 1 from public.profiles
+      where id = auth.uid() and is_admin = true
+    )
+  );
+
+-- -------- documents policies --------
+create policy "Users can view own documents"
+  on public.documents for select
+  using (auth.uid() = user_id);
+
+create policy "Users can insert own documents"
+  on public.documents for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can update own documents"
+  on public.documents for update
+  using (auth.uid() = user_id);
+
+create policy "Users can delete own documents"
+  on public.documents for delete
+  using (auth.uid() = user_id);
+
+-- -------- events policies --------
+-- Anyone authenticated can log their own events
+create policy "Users can insert own events"
+  on public.events for insert
+  with check (auth.uid() = user_id or user_id is null);
+
+-- Only admins can read events
+create policy "Admins can view all events"
+  on public.events for select
+  using (
+    exists (
+      select 1 from public.profiles
+      where id = auth.uid() and is_admin = true
+    )
+  );
+
+-- =====================================================================
+-- USEFUL VIEWS FOR ADMIN
+-- These make your admin panel queries trivial
+-- =====================================================================
+
+-- View: paid users with lifetime spend
+create view public.admin_user_overview as
+select
+  p.id,
+  p.email,
+  p.full_name,
+  p.plan,
+  p.plan_expires_at,
+  p.created_at as signed_up_at,
+  coalesce(sum(fp.amount_usd) filter (where fp.status = 'completed'), 0) as lifetime_spend_usd,
+  count(fp.id) filter (where fp.status = 'completed') as total_purchases,
+  max(fp.created_at) as last_purchase_at
+from public.profiles p
+left join public.form_purchases fp on fp.user_id = p.id
+group by p.id, p.email, p.full_name, p.plan, p.plan_expires_at, p.created_at;
+
+-- =====================================================================
+-- DONE
+-- =====================================================================
+-- After running this, head to Table Editor in the Supabase sidebar
+-- and you should see 5 tables: profiles, form_purchases, subscriptions,
+-- documents, events. You're ready to wire up auth in the frontend.
+-- =====================================================================
