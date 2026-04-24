@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/forms", "destination": "/forms-index.html" },
+    { "source": "/forms/nda", "destination": "/forms-nda.html" },
+    { "source": "/forms/residential-lease", "destination": "/forms-residential-lease.html" },
+    { "source": "/forms/month-to-month-rental", "destination": "/forms-month-to-month-rental.html" },
+    { "source": "/forms/rental-application", "destination": "/forms-rental-application.html" },
+    { "source": "/forms/lease-termination", "destination": "/forms-lease-termination.html" },
+    { "source": "/forms/roommate-agreement", "destination": "/forms-roommate-agreement.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
