@@ -8,7 +8,11 @@
     { "source": "/forms/month-to-month-rental", "destination": "/forms-month-to-month-rental.html" },
     { "source": "/forms/rental-application", "destination": "/forms-rental-application.html" },
     { "source": "/forms/lease-termination", "destination": "/forms-lease-termination.html" },
-    { "source": "/forms/roommate-agreement", "destination": "/forms-roommate-agreement.html" }
+    { "source": "/forms/roommate-agreement", "destination": "/forms-roommate-agreement.html" },
+    { "source": "/forms/vehicle-bill-of-sale", "destination": "/forms-vehicle-bill-of-sale.html" },
+    { "source": "/forms/bill-of-sale", "destination": "/forms-bill-of-sale.html" },
+    { "source": "/forms/promissory-note", "destination": "/forms-promissory-note.html" },
+    { "source": "/forms/loan-agreement", "destination": "/forms-loan-agreement.html" }
   ],
   "headers": [
     {
