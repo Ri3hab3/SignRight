@@ -492,21 +492,13 @@
           </div>
         </div>
 
-        <!-- ── DOWNLOAD BUTTONS ── -->
+        <!-- ── SUBMIT BUTTON ── -->
         <div class="submit-area">
-          <div class="download-buttons">
-            <button type="button" class="btn-download btn-customer" id="btnCustomer">
-              <span>👤</span> <span>Download Customer Copy</span>
-            </button>
-            <button type="button" class="btn-download btn-seller" id="btnSeller">
-              <span>🏢</span> <span>Download Seller Copy</span>
-            </button>
-          </div>
           <button type="submit" class="btn-both" id="btnBoth">
             <div class="spinner" id="spinner"></div>
-            <span id="submitText">⬇ Download Both Copies at Once</span>
+            <span id="submitText">✓ Submit Agreement</span>
           </button>
-          <div class="submit-note">🔒 No server required · PDFs generated locally in your browser · ESIGN Act Compliant</div>
+          <div class="submit-note">🔒 Your copy downloads instantly · Seller copy is emailed automatically · ESIGN Act Compliant</div>
         </div>
 
       </form>
@@ -537,8 +529,8 @@
 <div class="success-overlay" id="successOverlay">
   <div class="success-modal">
     <div class="success-icon">✓</div>
-    <div class="success-title">PDFs Downloaded!</div>
-    <div class="success-body">Both copies of the signed agreement have been saved to your Downloads folder.</div>
+    <div class="success-title">Agreement Submitted!</div>
+    <div class="success-body">Your copy of the signed agreement has been saved to your Downloads folder. A confirmation email is also being sent to you.</div>
     <div class="success-downloads" id="successDownloads"></div>
     <div style="font-size:13px;color:#6B7280;margin-bottom:20px">
       Agreement No: <strong id="successRef" style="font-family:monospace;color:var(--navy)"></strong>
@@ -1107,25 +1099,13 @@ document.addEventListener('DOMContentLoaded', function() {
       printedName: document.getElementById('printedName').value.trim(),
       sigDate:   document.getElementById('sigDateDisplay').value,
       sigImage:  canvas.toDataURL('image/png'),
+      sigImageSmall: canvas.toDataURL('image/jpeg', 0.5), // compressed for server upload
       timestamp: new Date().toISOString(),
       timestampReadable: getCurrentTimestamp(),
     };
   }
 
-  // ── Individual download buttons ──
-  document.getElementById('btnCustomer').addEventListener('click', function() {
-    if (!validate()) { document.querySelector('.field-error:not(:empty)') && document.querySelector('.field-error:not(:empty)').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
-    var d = getData();
-    downloadPDF(generatePDF(d, 'customer'), 'MicroTech-Agreement-' + d.docId + '-CUSTOMER.pdf');
-  });
-
-  document.getElementById('btnSeller').addEventListener('click', function() {
-    if (!validate()) { document.querySelector('.field-error:not(:empty)') && document.querySelector('.field-error:not(:empty)').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
-    var d = getData();
-    downloadPDF(generatePDF(d, 'seller'), 'MicroTech-Agreement-' + d.docId + '-SELLER.pdf');
-  });
-
-  // ── Download BOTH (main submit) ──
+  // ── Single submit: download customer copy + send all data to server for seller email ──
   document.getElementById('agreementForm').addEventListener('submit', function(e) {
     e.preventDefault();
     if (!validate()) { document.querySelector('.field-error:not(:empty)') && document.querySelector('.field-error:not(:empty)').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
@@ -1135,87 +1115,90 @@ document.addEventListener('DOMContentLoaded', function() {
     var submitText = document.getElementById('submitText');
     btn.disabled = true;
     spinner.style.display = 'block';
-    submitText.textContent = 'Generating PDFs…';
+    submitText.textContent = 'Generating your copy…';
 
     try {
       var d = getData();
-
-      // Build both PDFs and grab them as base64 BEFORE downloading
-      // (so we can email the same bytes the customer is downloading)
-      var customerDoc = generatePDF(d, 'customer');
-      var sellerDoc   = generatePDF(d, 'seller');
-      var customerB64 = customerDoc.output('datauristring').split(',')[1];
-      var sellerB64   = sellerDoc.output('datauristring').split(',')[1];
       var customerFilename = 'MicroTech-Agreement-' + d.docId + '-CUSTOMER.pdf';
-      var sellerFilename   = 'MicroTech-Agreement-' + d.docId + '-SELLER.pdf';
 
-      // Download customer copy
-      submitText.textContent = 'Downloading Customer Copy…';
+      // 1) Generate customer PDF in browser and download it
+      var customerDoc = generatePDF(d, 'customer');
       downloadPDF(customerDoc, customerFilename);
 
-      // Small delay then seller copy + send email (avoids blocking two simultaneous downloads)
-      setTimeout(function() {
-        submitText.textContent = 'Downloading Seller Copy…';
-        downloadPDF(sellerDoc, sellerFilename);
+      // 2) Send a SMALL JSON payload to server (no PDF binary, no PNG signature)
+      //    Server will generate the seller PDF and email it to the owner
+      submitText.textContent = 'Submitting agreement…';
 
-        // Fire email send (non-blocking — UI proceeds even if email is slow)
-        submitText.textContent = 'Emailing copies…';
-        fetch('/api/send-agreement', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            docId: d.docId,
-            customerEmail: d.email,
-            customerName: (d.firstName + ' ' + d.lastName).trim(),
-            sigDate: d.sigDate,
-            timestamp: d.timestampReadable,
-            plan: d.plan,
-            amount: d.amount,
-            customerPdf: { filename: customerFilename, contentBase64: customerB64 },
-            sellerPdf:   { filename: sellerFilename,   contentBase64: sellerB64   }
-          })
-        }).then(function(res) {
-          return res.json().catch(function(){ return { ok: res.ok }; });
-        }).then(function(result) {
-          var emailStatus = document.getElementById('emailStatus');
-          if (emailStatus) {
-            if (result && result.ok) {
-              emailStatus.innerHTML = '✅ Email sent to ' + d.email + ' and contact@microtechlabs.io';
-              emailStatus.style.color = 'var(--green)';
-            } else {
-              emailStatus.innerHTML = '⚠️ PDFs downloaded but email failed to send. Please forward manually.';
-              emailStatus.style.color = 'var(--red)';
-            }
-          }
-        }).catch(function(err) {
-          console.error('Email send error:', err);
-          var emailStatus = document.getElementById('emailStatus');
-          if (emailStatus) {
-            emailStatus.innerHTML = '⚠️ PDFs downloaded but email failed to send. Please forward manually.';
+      // Build payload — strip the heavy PNG, keep only small JPEG signature
+      var payload = {
+        docId: d.docId,
+        firstName: d.firstName,
+        lastName: d.lastName,
+        email: d.email,
+        phone: d.phone,
+        address: d.address,
+        city: d.city,
+        country: d.country,
+        state: d.state,
+        zip: d.zip,
+        plan: d.plan,
+        tenure: d.tenure,
+        startDate: d.startDate,
+        amount: d.amount,
+        paymentMethod: d.paymentMethod,
+        issueDesc: d.issueDesc,
+        printedName: d.printedName,
+        sigDate: d.sigDate,
+        sigImageSmall: d.sigImageSmall, // compressed JPEG, ~30-80 KB
+        timestamp: d.timestamp,
+        timestampReadable: d.timestampReadable
+      };
+
+      fetch('/api/send-agreement', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res) {
+        return res.json().catch(function(){ return { ok: res.ok }; });
+      }).then(function(result) {
+        var emailStatus = document.getElementById('emailStatus');
+        if (emailStatus) {
+          if (result && result.ok) {
+            emailStatus.innerHTML = '✅ Confirmation email sent to ' + d.email + ' · Seller copy delivered to MicroTech';
+            emailStatus.style.color = 'var(--green)';
+          } else {
+            emailStatus.innerHTML = '⚠️ Your copy downloaded successfully, but the confirmation email failed. MicroTech has been notified separately.';
             emailStatus.style.color = 'var(--red)';
+            console.error('Email API error:', result);
           }
-        });
+        }
+      }).catch(function(err) {
+        console.error('Email send error:', err);
+        var emailStatus = document.getElementById('emailStatus');
+        if (emailStatus) {
+          emailStatus.innerHTML = '⚠️ Your copy downloaded successfully, but the confirmation email failed.';
+          emailStatus.style.color = 'var(--red)';
+        }
+      });
 
-        // Show success immediately (don't make user wait for email API)
-        var dl = document.getElementById('successDownloads');
-        dl.innerHTML =
-          '<div class="success-dl-item">📄 ' + customerFilename + '</div>' +
-          '<div class="success-dl-item">📋 ' + sellerFilename + '</div>' +
-          '<div class="success-dl-item" id="emailStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">📧 Sending email copies…</div>';
-        document.getElementById('successRef').textContent = d.docId;
-        document.getElementById('successOverlay').classList.add('show');
+      // 3) Show success overlay immediately (don't wait for email)
+      var dl = document.getElementById('successDownloads');
+      dl.innerHTML =
+        '<div class="success-dl-item">📄 ' + customerFilename + ' (downloaded)</div>' +
+        '<div class="success-dl-item" id="emailStatus" style="margin-top:8px;font-size:12px;color:var(--muted)">📧 Sending confirmation email…</div>';
+      document.getElementById('successRef').textContent = d.docId;
+      document.getElementById('successOverlay').classList.add('show');
 
-        btn.disabled = false;
-        spinner.style.display = 'none';
-        submitText.textContent = '⬇ Download Both Copies at Once';
-      }, 800);
+      btn.disabled = false;
+      spinner.style.display = 'none';
+      submitText.textContent = '✓ Submit Agreement';
 
     } catch(err) {
       console.error(err);
       alert('Error generating PDF: ' + (err.message || 'Unknown error') + '\n\nPlease try again.');
       btn.disabled = false;
       spinner.style.display = 'none';
-      submitText.textContent = '⬇ Download Both Copies at Once';
+      submitText.textContent = '✓ Submit Agreement';
     }
   });
 
