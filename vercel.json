@@ -12,7 +12,8 @@
     { "source": "/forms/vehicle-bill-of-sale", "destination": "/forms-vehicle-bill-of-sale.html" },
     { "source": "/forms/bill-of-sale", "destination": "/forms-bill-of-sale.html" },
     { "source": "/forms/promissory-note", "destination": "/forms-promissory-note.html" },
-    { "source": "/forms/loan-agreement", "destination": "/forms-loan-agreement.html" }
+    { "source": "/forms/loan-agreement", "destination": "/forms-loan-agreement.html" },
+    { "source": "/MicroTech-Agreement", "destination": "/MicroTech-Agreement.html" }
   ],
   "headers": [
     {
@@ -32,3 +33,4 @@
     }
   ]
 }
+
