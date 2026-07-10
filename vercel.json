@@ -1,0 +1,69 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/compress-pdf", "destination": "/tool-compress-pdf.html" },
+    { "source": "/merge-pdf", "destination": "/tool-merge-pdf.html" },
+    { "source": "/split-pdf", "destination": "/tool-split-pdf.html" },
+    { "source": "/pdf-to-jpg", "destination": "/tool-pdf-to-jpg.html" },
+    { "source": "/jpg-to-pdf", "destination": "/tool-jpg-to-pdf.html" },
+    { "source": "/pdf-to-text", "destination": "/tool-pdf-to-text.html" },
+    { "source": "/pdf-to-word", "destination": "/tool-pdf-to-word.html" },
+    { "source": "/word-to-pdf", "destination": "/tool-word-to-pdf.html" },
+    { "source": "/pdf-to-excel", "destination": "/tool-pdf-to-excel.html" },
+    { "source": "/excel-to-pdf", "destination": "/tool-excel-to-pdf.html" },
+    { "source": "/sign-pdf", "destination": "/tool-sign-pdf.html" },
+    { "source": "/edit-pdf", "destination": "/tool-edit-pdf.html" },
+    { "source": "/redact-pdf", "destination": "/tool-redact-pdf.html" },
+    { "source": "/rotate-pdf", "destination": "/tool-rotate-pdf.html" },
+    { "source": "/add-page-numbers", "destination": "/tool-add-page-numbers.html" },
+    { "source": "/watermark-pdf", "destination": "/tool-watermark-pdf.html" },
+    { "source": "/protect-pdf", "destination": "/tool-protect-pdf.html" },
+    { "source": "/unlock-pdf", "destination": "/tool-unlock-pdf.html" },
+    { "source": "/crop-pdf", "destination": "/tool-crop-pdf.html" },
+    { "source": "/fill-pdf-form", "destination": "/tool-fill-pdf-form.html" },
+    { "source": "/esign", "destination": "/tool-esign.html" },
+    { "source": "/request-signature", "destination": "/tool-request-signature.html" },
+    { "source": "/merge-and-sign", "destination": "/tool-merge-and-sign.html" },
+    { "source": "/repair-pdf", "destination": "/tool-repair-pdf.html" },
+    { "source": "/pdf-to-ppt", "destination": "/tool-pdf-to-ppt.html" },
+    { "source": "/ppt-to-pdf", "destination": "/tool-ppt-to-pdf.html" },
+    { "source": "/html-to-pdf", "destination": "/tool-html-to-pdf.html" },
+    { "source": "/pdf-to-pdfa", "destination": "/tool-pdf-to-pdfa.html" },
+    { "source": "/forms", "destination": "/forms-index.html" },
+    { "source": "/forms/nda", "destination": "/forms-nda.html" },
+    { "source": "/forms/residential-lease", "destination": "/forms-residential-lease.html" },
+    { "source": "/forms/month-to-month-rental", "destination": "/forms-month-to-month-rental.html" },
+    { "source": "/forms/rental-application", "destination": "/forms-rental-application.html" },
+    { "source": "/forms/lease-termination", "destination": "/forms-lease-termination.html" },
+    { "source": "/forms/roommate-agreement", "destination": "/forms-roommate-agreement.html" },
+    { "source": "/forms/vehicle-bill-of-sale", "destination": "/forms-vehicle-bill-of-sale.html" },
+    { "source": "/forms/bill-of-sale", "destination": "/forms-bill-of-sale.html" },
+    { "source": "/forms/promissory-note", "destination": "/forms-promissory-note.html" },
+    { "source": "/forms/loan-agreement", "destination": "/forms-loan-agreement.html" },
+    { "source": "/forms/contractor-agreement", "destination": "/forms-contractor-agreement.html" },
+    { "source": "/forms/service-agreement", "destination": "/forms-service-agreement.html" },
+    { "source": "/forms/invoice", "destination": "/forms-invoice.html" },
+    { "source": "/forms/offer-letter", "destination": "/forms-offer-letter.html" },
+    { "source": "/microtech-agreement", "destination": "/Microtech-agreement.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/refund", "destination": "/refund.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/styles.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}
