@@ -3,16 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bill of Sale Template — Free Preview, $9.99 | SignRight</title>
-<meta name="description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $9.99 once. No subscription.">
+<title>Bill of Sale Template — Free Preview, $4.99 | SignRight</title>
+<meta name="description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $4.99 once. No subscription.">
 <meta name="keywords" content="bill of sale template, generic bill of sale, personal property bill of sale, furniture bill of sale, bill of sale pdf free">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://signright.io/forms/bill-of-sale">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bill of Sale Template — Free Preview, $9.99 | SignRight">
-<meta property="og:description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $9.99 once. No subscription.">
+<meta property="og:title" content="Bill of Sale Template — Free Preview, $4.99 | SignRight">
+<meta property="og:description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $4.99 once. No subscription.">
 <meta property="og:url" content="https://signright.io/forms/bill-of-sale">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<!-- FIX 5: Product schema with price for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Bill of Sale Template",
+  "description": "Fill online, preview free, pay $4.99 once. No subscription. Works for furniture, electronics, equipment, jewelry, artwork, or any personal property.",
+  "brand": { "@type": "Brand", "name": "SignRight" },
+  "offers": {
+    "@type": "Offer",
+    "price": "4.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://signright.io/forms/bill-of-sale"
+  }
+}
+</script>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a bill of sale for small personal items?","acceptedAnswer":{"@type":"Answer","text":"Legally, no. But recommended for items over $100 or anything with tax or insurance implications. Takes 3 minutes to create and provides years of legal protection."}},{"@type":"Question","name":"Does this work for selling a vehicle?","acceptedAnswer":{"@type":"Answer","text":"Use our dedicated Vehicle Bill of Sale form instead. It includes VIN, odometer disclosure, and state-specific DMV requirements."}},{"@type":"Question","name":"Should a bill of sale be notarized?","acceptedAnswer":{"@type":"Answer","text":"Not required for most transactions. For high-value items ($500+) or sensitive sales, notarization adds legal weight and costs $5-$25."}},{"@type":"Question","name":"What does As-Is mean?","acceptedAnswer":{"@type":"Answer","text":"The buyer accepts the item in current condition with no warranty. Standard for private sales. The seller is not responsible for future issues or defects that arise after transfer."}}]}
@@ -24,6 +42,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<!-- PayPal SDK — replace YOUR_PAYPAL_CLIENT_ID with your actual client ID -->
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD&intent=capture&components=buttons"></script>
+
 <script>
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wf378dn1ai");
   window.trackEvent = function(name, params){try{if(window.clarity){window.clarity('event', name); if(params) Object.keys(params).forEach(k => window.clarity('set', k, String(params[k])));}}catch(e){}};
@@ -102,6 +124,7 @@ nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,0.92);
 .badge-green{background:#E8F5E9;color:var(--success)}
 .badge-blue{background:var(--accent-soft);color:var(--accent)}
 .badge-gray{background:var(--surface);color:var(--muted)}
+.badge-price{background:var(--ink);color:#fff}
 
 /* ── SPLIT LAYOUT ── */
 .split-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:2rem;align-items:start}
@@ -191,14 +214,16 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
 .preview-doc .info-table td{padding:.3rem .5rem;border:1px solid var(--border);vertical-align:top}
 .preview-doc .info-table td.label{background:var(--surface);font-weight:600;width:40%}
 
-.cta-bar{background:var(--ink);color:#fff;border-radius:12px;padding:1.2rem;margin-top:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+/* ── CTA BAR — FIX 2: price visible, PayPal container ── */
+.cta-bar{background:var(--ink);color:#fff;border-radius:12px;padding:1.2rem;margin-top:1.2rem}
+.cta-bar-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.9rem}
 .cta-bar .cta-text strong{display:block;font-family:'Syne',sans-serif;font-size:1rem;margin-bottom:.15rem}
 .cta-bar .cta-text span{font-size:.83rem;color:rgba(255,255,255,0.7)}
-.cta-bar .cta-actions{display:flex;gap:.5rem;flex-wrap:wrap}
-.cta-bar .t-btn{background:transparent;color:#fff;border-color:rgba(255,255,255,0.2)}
-.cta-bar .t-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4)}
-.cta-bar .t-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-.cta-bar .t-btn.primary:hover{background:var(--accent-dark)}
+.cta-price-tag{background:var(--accent);color:#fff;border-radius:8px;padding:.4rem .9rem;font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;white-space:nowrap}
+.paypal-wrapper{background:rgba(255,255,255,0.06);border-radius:8px;padding:.8rem;border:1px solid rgba(255,255,255,0.1)}
+.paypal-wrapper-label{font-size:.75rem;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:.6rem;letter-spacing:.04em;text-transform:uppercase}
+#paypal-button-container{min-height:45px}
+.paypal-security-note{font-size:.72rem;color:rgba(255,255,255,0.45);text-align:center;margin-top:.55rem}
 
 /* Info sections (SEO content) */
 .info-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
@@ -238,17 +263,35 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
 .toast svg{width:16px;height:16px;stroke:#B4BDFF;fill:none;stroke-width:2.5}
 .toast.error svg{stroke:#FF9B9B}
 
+/* ── FIX 3: Auth modal — keeps user on page, preserves form data ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,22,43,0.6);backdrop-filter:blur(4px);z-index:300;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:16px;padding:2rem;max-width:400px;width:100%;box-shadow:var(--shadow-lg)}
+.modal h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;margin-bottom:.4rem;color:var(--ink)}
+.modal p{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.55}
+.modal .field{margin-bottom:.85rem}
+.modal input{width:100%;padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.9rem;color:var(--ink);outline:none;transition:border-color .15s}
+.modal input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,108,255,0.12)}
+.modal-actions{display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+.modal-btn{width:100%;padding:.7rem 1rem;border-radius:9px;font-family:inherit;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:all .15s}
+.modal-btn-primary{background:var(--accent);color:#fff}
+.modal-btn-primary:hover{background:var(--accent-dark)}
+.modal-btn-secondary{background:transparent;border:1.5px solid var(--border);color:var(--ink)}
+.modal-btn-secondary:hover{border-color:var(--ink)}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.4rem;line-height:1;padding:.3rem}
+.modal-switch{text-align:center;font-size:.82rem;color:var(--muted);margin-top:.8rem}
+.modal-switch a{color:var(--accent);cursor:pointer;font-weight:500}
+.modal-error{font-size:.82rem;color:var(--danger);margin-top:.4rem;display:none}
+.modal-success{font-size:.82rem;color:var(--success);margin-top:.4rem;display:none}
+
 @media(max-width:768px){
   .form-header{grid-template-columns:1fr}
   .form-meta{align-items:flex-start}
   .form-badges{justify-content:flex-start}
   .preview-doc{font-size:.78rem}
   .nav-links{display:none}
-  .cta-bar{flex-direction:column;align-items:stretch}
-  .cta-bar .cta-actions{justify-content:stretch}
-  .cta-bar .t-btn{flex:1;justify-content:center}
+  .cta-bar-top{flex-direction:column;align-items:stretch}
 }
-
 </style>
 </head>
 <body>
@@ -261,6 +304,36 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
   </div>
 </nav>
 
+<!-- FIX 3: Auth modal — inline, form data preserved in background -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="closeAuthModal()" aria-label="Close">&times;</button>
+    <div id="modalSignIn">
+      <h2>Sign in to download</h2>
+      <p>Your form is ready. Create a free account or sign in to get the clean PDF — no subscription needed.</p>
+      <div class="field"><input type="email" id="modalEmail" placeholder="Email address" autocomplete="email"></div>
+      <div class="field"><input type="password" id="modalPassword" placeholder="Password" autocomplete="current-password"></div>
+      <div class="modal-error" id="modalSignInError"></div>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn-primary" onclick="modalSignIn()">Sign in</button>
+      </div>
+      <div class="modal-switch">No account? <a onclick="showModalSignUp()">Create one free</a></div>
+    </div>
+    <div id="modalSignUp" style="display:none">
+      <h2>Create free account</h2>
+      <p>Takes 30 seconds. Then complete your $4.99 payment and download instantly.</p>
+      <div class="field"><input type="email" id="modalSignUpEmail" placeholder="Email address" autocomplete="email"></div>
+      <div class="field"><input type="password" id="modalSignUpPassword" placeholder="Choose a password (8+ chars)" autocomplete="new-password"></div>
+      <div class="modal-error" id="modalSignUpError"></div>
+      <div class="modal-success" id="modalSignUpSuccess"></div>
+      <div class="modal-actions">
+        <button class="modal-btn modal-btn-primary" onclick="modalSignUp()">Create account</button>
+      </div>
+      <div class="modal-switch">Already have one? <a onclick="showModalSignIn()">Sign in</a></div>
+    </div>
+  </div>
+</div>
+
 <div class="page-wrap">
   <div class="breadcrumbs"><a href="/">Home</a><span class="sep">/</span><a href="/forms">Forms</a><span class="sep">/</span><span>Bill of Sale</span></div>
 
@@ -272,6 +345,8 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
     <div class="form-meta">
       <div class="form-badges">
         <span class="badge badge-green">✓ Free preview</span>
+        <!-- FIX 2: price badge added -->
+        <span class="badge badge-price">$4.99 one-time</span>
         <span class="badge badge-blue">3 min</span>
         <span class="badge badge-gray">All states</span>
       </div>
@@ -442,38 +517,65 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
         </div>
       </div>
       <div class="preview-frame"><div class="preview-doc" id="previewDoc"></div></div>
+
+      <!-- FIX 1+2: PayPal CTA bar with visible price -->
       <div class="cta-bar">
-        <div class="cta-text"><strong>Ready to sign?</strong><span>Clean PDF without watermark</span></div>
-        <div class="cta-actions">
-          <button class="t-btn primary" onclick="finalizeDoc()">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Get clean PDF
-          </button>
+        <div class="cta-bar-top">
+          <div class="cta-text">
+            <strong>Get the clean PDF</strong>
+            <span>No watermark · Instant download · No subscription</span>
+          </div>
+          <div class="cta-price-tag">$4.99 once</div>
+        </div>
+        <div class="paypal-wrapper">
+          <div class="paypal-wrapper-label">Secure checkout via PayPal</div>
+          <div id="paypal-button-container"></div>
+          <div class="paypal-security-note">🔒 Pay with PayPal, card, or Venmo · Files auto-deleted after processing</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- FIX 4: Expanded SEO content — 700+ words, multiple H3s for long-tail ranking -->
   <section class="info-section">
-    <h2>About Generic Bill of Sale</h2>
-    <p>A bill of sale is a simple legal document that records the private sale of personal property — furniture, electronics, tools, jewelry, livestock, or any other item. It creates proof of transfer, which protects both the buyer and seller if questions arise later about ownership or condition.</p>
+    <h2>About the Bill of Sale for Personal Property</h2>
+    <p>A bill of sale is a legal document that records the private sale of personal property — furniture, electronics, tools, jewelry, livestock, or any other item. It creates written proof that ownership has transferred from seller to buyer on a specific date, at a specific price, and in a described condition. This simple document protects both parties if questions arise later about ownership, condition, or payment.</p>
+
     <h3>When you need a bill of sale</h3>
     <ul>
-      <li><strong>High-value items</strong> — jewelry, artwork, antiques, musical instruments ($500+)</li>
-      <li><strong>Tax deductible items</strong> — home office equipment, business tools</li>
-      <li><strong>Insurance claims</strong> — proof of purchase price for high-value personal items</li>
-      <li><strong>Online marketplace sales</strong> — eBay, Facebook Marketplace, Craigslist (protects seller from fraud claims)</li>
-      <li><strong>Estate sales</strong> — documenting transfer of inherited items</li>
+      <li><strong>High-value items</strong> — jewelry, artwork, antiques, musical instruments, or anything over $200 where proof of price matters</li>
+      <li><strong>Tax deductible items</strong> — home office equipment, business tools, or assets you may depreciate</li>
+      <li><strong>Insurance claims</strong> — proof of original purchase price for high-value personal property</li>
+      <li><strong>Online marketplace sales</strong> — eBay, Facebook Marketplace, Craigslist (protects seller from fraud claims after delivery)</li>
+      <li><strong>Estate sales</strong> — documenting the transfer of inherited personal property between family members or to third parties</li>
+      <li><strong>Business-to-business transfers</strong> — equipment, furniture, or inventory sold between companies</li>
     </ul>
-    <h3>What to include</h3>
+
+    <h3>Bill of sale vs. receipt — what's the difference?</h3>
+    <p>A receipt confirms payment was received. A bill of sale goes further: it confirms the transfer of ownership, describes the item in detail, sets out the condition of sale (as-is or with warranty), and is signed by both parties. For anything of real value, a bill of sale is the correct document because it is enforceable as a contract in most states.</p>
+
+    <h3>How to fill out a bill of sale step by step</h3>
+    <p>Use this form to fill out each section — the live preview updates as you type. Here is what each section requires:</p>
     <ul>
-      <li>Full description of the item (model, serial numbers, condition)</li>
-      <li>Both parties' names, addresses, and contact info</li>
-      <li>Sale price and payment method</li>
-      <li>Date of sale</li>
-      <li>"As-Is" clause or warranty terms</li>
-      <li>Signatures of both parties</li>
+      <li><strong>Item description:</strong> Be specific. Include model, make, color, approximate dimensions, and any identifying marks or damage. Vague descriptions lead to disputes.</li>
+      <li><strong>Serial numbers:</strong> Include for electronics, appliances, tools, or any item with a traceable identifier. This is critical for insurance claims.</li>
+      <li><strong>Seller and buyer details:</strong> Full legal name and current address for both parties. Phone and email are optional but recommended.</li>
+      <li><strong>Sale price and date:</strong> State the exact cash amount agreed upon. The date of sale determines when ownership legally transferred.</li>
+      <li><strong>As-Is clause:</strong> Select this for most private sales. It means the buyer inspected the item and accepts it in its current condition, and the seller has no further liability.</li>
+      <li><strong>Governing state:</strong> Select the state where the transaction takes place. This determines which law applies if there is a future dispute.</li>
+      <li><strong>Signatures:</strong> Both parties must sign. Print two copies — one for the buyer, one for the seller. Keep yours.</li>
     </ul>
+
+    <h3>State-specific requirements</h3>
+    <p>For general personal property, no US state requires a specific form — this generic bill of sale is valid in all 50 states. However, a few categories have additional requirements. Firearms transfers must comply with state and federal law, which may require a licensed dealer. Vehicles, boats, and trailers require dedicated title documents and DMV filings in most states — use our <a href="/forms/vehicle-bill-of-sale">Vehicle Bill of Sale</a> for those. For high-value transactions over $500, having signatures notarized strengthens the document considerably.</p>
+
+    <h3>What this template includes</h3>
+    <div class="info-grid">
+      <div class="info-card"><h4>Item details</h4><p>Description, quantity, condition, and serial number fields for precise identification of what was sold.</p></div>
+      <div class="info-card"><h4>Party information</h4><p>Full name, address, phone, and email for both buyer and seller with clear legal identification.</p></div>
+      <div class="info-card"><h4>Sale terms</h4><p>Date, price, payment method, and as-is or warranty clause — the core of any enforceable agreement.</p></div>
+      <div class="info-card"><h4>Governing law</h4><p>State selection clause so the correct jurisdiction applies if either party needs to enforce the agreement.</p></div>
+    </div>
   </section>
 
   <section class="info-section">
@@ -483,15 +585,17 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
       <details class="faq-item"><summary>Does this work for selling a boat, RV, or vehicle?</summary><p>Use our dedicated <a href="/forms/vehicle-bill-of-sale">Vehicle Bill of Sale</a> for those — it includes VIN, odometer disclosure, and other specific fields DMVs require.</p></details>
       <details class="faq-item"><summary>What about selling a firearm?</summary><p>Firearms require a separate bill of sale with specific disclosures that vary by state. Some states require transfers go through a licensed dealer. Don't use this generic form for firearms — consult your state law.</p></details>
       <details class="faq-item"><summary>Can I use this for business inventory?</summary><p>Yes for simple business-to-business transfers. For ongoing commercial supply agreements, use a proper Service Agreement or Supply Contract instead.</p></details>
-      <details class="faq-item"><summary>Should I get a witness or notary?</summary><p>Not required for most transactions. For items over $500 or particularly sensitive sales (family heirlooms, estate items), a notary adds legal weight. Costs $5-$25 at most banks or UPS stores.</p></details>
+      <details class="faq-item"><summary>Should I get a witness or notary?</summary><p>Not required for most transactions. For items over $500 or particularly sensitive sales (family heirlooms, estate items), a notary adds legal weight. Costs $5–$25 at most banks or UPS stores.</p></details>
+      <details class="faq-item"><summary>Is the $4.99 a subscription?</summary><p>No. You pay once and download your clean PDF immediately. No account charges, no monthly fees, no hidden costs. If you need another form, each one is a separate one-time payment.</p></details>
     </div>
   </section>
 </div>
 
+<!-- FIX 6: email corrected to signright.io -->
 <footer>
   <div class="footer-inner">
     <a href="/" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>SignRight</a>
-    <span>&copy; 2026 SignRight &middot; <a href="/">Home</a> &middot; <a href="mailto:hello@signright.app">Contact</a></span>
+    <span>&copy; 2026 SignRight &middot; <a href="/">Home</a> &middot; <a href="mailto:hello@signright.io">Contact</a></span>
   </div>
 </footer>
 
@@ -500,14 +604,11 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
   <span id="toastMsg">Done</span>
 </div>
 
-
 <script>
 /* =====================================================
    SignRight — Shared Form Utilities
-   Handles: Supabase auth, nav state, toast, PDF helpers
    ===================================================== */
 
-// ---------- Supabase ----------
 const SUPABASE_URL = 'https://tpypfgwjfwhdvszvetdx.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_Cc7zHO4GUmnNs4Y3yZzeWg_fAamWicD';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
@@ -528,7 +629,6 @@ async function updateNavForUser(){
   } else {
     navRight.innerHTML = `
       <a href="/" class="btn btn-ghost">Home</a>
-      <button class="btn btn-dark" onclick="location.href='/#top'">Get started</button>
     `;
   }
 }
@@ -540,6 +640,62 @@ async function signOut(){
 }
 
 sb.auth.onAuthStateChange(() => updateNavForUser());
+
+// ---------- FIX 3: Auth modal (keeps user on page) ----------
+function openAuthModal(){
+  document.getElementById('authModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAuthModal(){
+  document.getElementById('authModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showModalSignUp(){
+  document.getElementById('modalSignIn').style.display = 'none';
+  document.getElementById('modalSignUp').style.display = 'block';
+}
+
+function showModalSignIn(){
+  document.getElementById('modalSignUp').style.display = 'none';
+  document.getElementById('modalSignIn').style.display = 'block';
+}
+
+async function modalSignIn(){
+  const email = document.getElementById('modalEmail').value.trim();
+  const password = document.getElementById('modalPassword').value;
+  const errEl = document.getElementById('modalSignInError');
+  errEl.style.display = 'none';
+  if(!email || !password){ errEl.textContent = 'Please enter email and password.'; errEl.style.display = 'block'; return; }
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  if(error){ errEl.textContent = error.message; errEl.style.display = 'block'; return; }
+  closeAuthModal();
+  updateNavForUser();
+  showToast('Signed in — complete your payment below');
+  // Re-render PayPal buttons now that user is authenticated
+  renderPayPalButtons();
+}
+
+async function modalSignUp(){
+  const email = document.getElementById('modalSignUpEmail').value.trim();
+  const password = document.getElementById('modalSignUpPassword').value;
+  const errEl = document.getElementById('modalSignUpError');
+  const succEl = document.getElementById('modalSignUpSuccess');
+  errEl.style.display = 'none';
+  succEl.style.display = 'none';
+  if(!email || !password){ errEl.textContent = 'Please enter email and password.'; errEl.style.display = 'block'; return; }
+  if(password.length < 8){ errEl.textContent = 'Password must be at least 8 characters.'; errEl.style.display = 'block'; return; }
+  const { error } = await sb.auth.signUp({ email, password });
+  if(error){ errEl.textContent = error.message; errEl.style.display = 'block'; return; }
+  succEl.textContent = 'Account created! Check your email to confirm, then sign in.';
+  succEl.style.display = 'block';
+}
+
+// Close modal on overlay click
+document.getElementById('authModal').addEventListener('click', function(e){
+  if(e.target === this) closeAuthModal();
+});
 
 // ---------- Toast ----------
 let toastTimer;
@@ -556,317 +712,159 @@ function showToast(msg, isError=false){
 // ---------- Helpers ----------
 function escapeHtml(str){
   if(str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 }
-
-function pad(v, ph){
-  return (v || '').trim()
-    ? escapeHtml(v.trim())
-    : `<span class="placeholder">[${ph}]</span>`;
-}
-
-function padPlain(v, ph){
-  return (v || '').trim() || `[${ph}]`;
-}
-
+function pad(v, ph){ return (v||'').trim() ? escapeHtml(v.trim()) : `<span class="placeholder">[${ph}]</span>`; }
+function padPlain(v, ph){ return (v||'').trim() || `[${ph}]`; }
 function formatDate(isoStr){
   if(!isoStr) return null;
-  try {
-    return new Date(isoStr + 'T00:00:00').toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
-  } catch(e){ return isoStr; }
+  try { return new Date(isoStr+'T00:00:00').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}); } catch(e){ return isoStr; }
 }
-
 function formatCurrency(num){
-  if(num == null || num === '') return null;
+  if(num==null||num==='') return null;
   const n = parseFloat(num);
   if(isNaN(n)) return null;
-  return n.toLocaleString('en-US', {style:'currency', currency:'USD'});
+  return n.toLocaleString('en-US',{style:'currency',currency:'USD'});
 }
-
-// Set all date inputs on the page to today's date if empty
 function setDefaultDates(){
   const today = new Date().toISOString().split('T')[0];
-  document.querySelectorAll('input[type=date][data-default-today]').forEach(el => {
-    if(!el.value) el.value = today;
-  });
+  document.querySelectorAll('input[type=date][data-default-today]').forEach(el=>{ if(!el.value) el.value=today; });
 }
-
-// Wire up live updates for all form inputs
 function wireLiveUpdates(renderFn, updateLabelsFn){
-  document.querySelectorAll('input, textarea, select').forEach(el => {
-    el.addEventListener('input', () => renderFn());
-    el.addEventListener('change', () => {
-      if(updateLabelsFn) updateLabelsFn();
-      renderFn();
-    });
+  document.querySelectorAll('input, textarea, select').forEach(el=>{
+    el.addEventListener('input',()=>renderFn());
+    el.addEventListener('change',()=>{ if(updateLabelsFn) updateLabelsFn(); renderFn(); });
   });
 }
 
-// ---------- PDF generation helpers (shared across all forms) ----------
+// ---------- PDF helpers ----------
 const PDF_DEFAULTS = {
-  pageSize: { width: 612, height: 792 },  // US Letter
-  margin: 64,
-  inkColor: [0.08, 0.09, 0.17],
-  mutedColor: [0.36, 0.37, 0.46],
-  lightGray: [0.92, 0.93, 0.98]
+  pageSize:{width:612,height:792},
+  margin:64,
+  inkColor:[0.08,0.09,0.17],
+  mutedColor:[0.36,0.37,0.46],
+  lightGray:[0.92,0.93,0.98]
 };
 
 async function createPdfDoc(){
-  const { PDFDocument, StandardFonts } = PDFLib;
+  const {PDFDocument,StandardFonts} = PDFLib;
   const doc = await PDFDocument.create();
   const font = await doc.embedFont(StandardFonts.Helvetica);
   const boldFont = await doc.embedFont(StandardFonts.HelveticaBold);
   const italicFont = await doc.embedFont(StandardFonts.HelveticaOblique);
-  return { doc, font, boldFont, italicFont };
+  return {doc,font,boldFont,italicFont};
 }
 
-// Create a page writer object with draw helpers and auto-page-break
-function createPageWriter(pdfDoc, fonts, withWatermark, watermarkText = 'SIGNRIGHT PREVIEW'){
-  const { rgb, degrees } = PDFLib;
-  const { pageSize, margin, inkColor, mutedColor, lightGray } = PDF_DEFAULTS;
-  const contentWidth = pageSize.width - margin * 2;
+function createPageWriter(pdfDoc, fonts, withWatermark, watermarkText='SIGNRIGHT PREVIEW'){
+  const {rgb,degrees} = PDFLib;
+  const {pageSize,margin,inkColor,mutedColor,lightGray} = PDF_DEFAULTS;
+  const contentWidth = pageSize.width - margin*2;
   const ink = rgb(...inkColor);
   const muted = rgb(...mutedColor);
   const wmColor = rgb(...lightGray);
-
-  let page = pdfDoc.addPage([pageSize.width, pageSize.height]);
+  let page = pdfDoc.addPage([pageSize.width,pageSize.height]);
   let y = pageSize.height - margin;
-
-  const addWatermark = (p) => {
-    if(!withWatermark) return;
-    p.drawText(watermarkText, {
-      x: 110, y: pageSize.height / 2,
-      size: 60, font: fonts.boldFont,
-      color: wmColor, rotate: degrees(-35)
-    });
-  };
+  const addWatermark = (p)=>{ if(!withWatermark) return; p.drawText(watermarkText,{x:110,y:pageSize.height/2,size:60,font:fonts.boldFont,color:wmColor,rotate:degrees(-35)}); };
   addWatermark(page);
-
-  const newPage = () => {
-    page = pdfDoc.addPage([pageSize.width, pageSize.height]);
-    y = pageSize.height - margin;
-    addWatermark(page);
-  };
-
-  const wrap = (text, f, size, width) => {
-    const words = String(text || '').split(' ');
-    const lines = [];
-    let cur = '';
-    for(const w of words){
-      const test = cur ? cur + ' ' + w : w;
-      if(f.widthOfTextAtSize(test, size) > width && cur){ lines.push(cur); cur = w; }
-      else cur = test;
-    }
-    if(cur) lines.push(cur);
-    return lines;
-  };
-
-  const drawParagraph = (text, opts = {}) => {
-    const useFont = opts.bold ? fonts.boldFont : (opts.italic ? fonts.italicFont : fonts.font);
-    const size = opts.size || 10.5;
-    const color = opts.color || ink;
-    const lineH = size * 1.55;
-    const after = opts.after != null ? opts.after : 6;
-    const lines = wrap(text, useFont, size, contentWidth);
-    for(const line of lines){
-      if(y < margin + lineH) newPage();
-      const x = opts.center
-        ? (pageSize.width - useFont.widthOfTextAtSize(line, size)) / 2
-        : margin;
-      page.drawText(line, { x, y: y - size, size, font: useFont, color });
-      y -= lineH;
-    }
-    y -= after;
-  };
-
-  const drawHeading = (text) => {
-    if(y < margin + 30) newPage();
-    y -= 8;
-    drawParagraph(text.toUpperCase(), { bold: true, size: 10.5, after: 3, color: ink });
-  };
-
-  const drawSpacer = (n = 8) => { y -= n; };
-
-  const drawSignatureBlock = (leftLabel, leftName, rightLabel, rightName) => {
-    if(y < margin + 90) newPage();
-    const sigY = y;
-    // Left signature
-    page.drawLine({ start: {x: margin, y: sigY - 20}, end: {x: margin + 200, y: sigY - 20}, thickness: 0.6, color: ink });
-    page.drawText(`${leftLabel}: ${leftName}`, { x: margin, y: sigY - 34, size: 9, font: fonts.font, color: muted });
-    page.drawText('Date: _______________', { x: margin, y: sigY - 52, size: 9, font: fonts.font, color: muted });
-    // Right signature
-    const rightX = margin + 260;
-    page.drawLine({ start: {x: rightX, y: sigY - 20}, end: {x: rightX + 200, y: sigY - 20}, thickness: 0.6, color: ink });
-    page.drawText(`${rightLabel}: ${rightName}`, { x: rightX, y: sigY - 34, size: 9, font: fonts.font, color: muted });
-    page.drawText('Date: _______________', { x: rightX, y: sigY - 52, size: 9, font: fonts.font, color: muted });
-    y -= 70;
-  };
-
-  const drawFooter = () => {
-    const footerText = withWatermark
-      ? 'Generated by SignRight — preview version. Upgrade for the clean, finalized PDF.'
-      : 'Generated by SignRight.';
-    page.drawText(footerText, {
-      x: margin, y: margin - 28,
-      size: 8, font: fonts.italicFont, color: muted
-    });
-  };
-
-  return { drawParagraph, drawHeading, drawSpacer, drawSignatureBlock, drawFooter, newPage, get page() { return page; }, get y() { return y; } };
+  const newPage = ()=>{ page=pdfDoc.addPage([pageSize.width,pageSize.height]); y=pageSize.height-margin; addWatermark(page); };
+  const wrap = (text,f,size,width)=>{ const words=String(text||'').split(' '); const lines=[]; let cur=''; for(const w of words){ const test=cur?cur+' '+w:w; if(f.widthOfTextAtSize(test,size)>width&&cur){lines.push(cur);cur=w;}else cur=test; } if(cur) lines.push(cur); return lines; };
+  const drawParagraph = (text,opts={})=>{ const useFont=opts.bold?fonts.boldFont:(opts.italic?fonts.italicFont:fonts.font); const size=opts.size||10.5; const color=opts.color||ink; const lineH=size*1.55; const after=opts.after!=null?opts.after:6; const lines=wrap(text,useFont,size,contentWidth); for(const line of lines){ if(y<margin+lineH) newPage(); const x=opts.center?(pageSize.width-useFont.widthOfTextAtSize(line,size))/2:margin; page.drawText(line,{x,y:y-size,size,font:useFont,color}); y-=lineH; } y-=after; };
+  const drawHeading = (text)=>{ if(y<margin+30) newPage(); y-=8; drawParagraph(text.toUpperCase(),{bold:true,size:10.5,after:3,color:ink}); };
+  const drawSpacer = (n=8)=>{ y-=n; };
+  const drawSignatureBlock = (leftLabel,leftName,rightLabel,rightName)=>{ if(y<margin+90) newPage(); const sigY=y; page.drawLine({start:{x:margin,y:sigY-20},end:{x:margin+200,y:sigY-20},thickness:0.6,color:ink}); page.drawText(`${leftLabel}: ${leftName}`,{x:margin,y:sigY-34,size:9,font:fonts.font,color:muted}); page.drawText('Date: _______________',{x:margin,y:sigY-52,size:9,font:fonts.font,color:muted}); const rightX=margin+260; page.drawLine({start:{x:rightX,y:sigY-20},end:{x:rightX+200,y:sigY-20},thickness:0.6,color:ink}); page.drawText(`${rightLabel}: ${rightName}`,{x:rightX,y:sigY-34,size:9,font:fonts.font,color:muted}); page.drawText('Date: _______________',{x:rightX,y:sigY-52,size:9,font:fonts.font,color:muted}); y-=70; };
+  const drawFooter = ()=>{ const footerText=withWatermark?'Generated by SignRight — preview version. Upgrade for the clean, finalized PDF.':'Generated by SignRight.'; page.drawText(footerText,{x:margin,y:margin-28,size:8,font:fonts.italicFont,color:muted}); };
+  return {drawParagraph,drawHeading,drawSpacer,drawSignatureBlock,drawFooter,newPage,get page(){return page;},get y(){return y;}};
 }
 
-// Download bytes as PDF
-function downloadPdf(bytes, filename){
-  const blob = new Blob([bytes], {type: 'application/pdf'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
+function downloadPdf(bytes,filename){
+  const blob=new Blob([bytes],{type:'application/pdf'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click(); a.remove();
   URL.revokeObjectURL(url);
 }
 
-// Validate required fields (IDs in array), focus first empty one
 function validateRequired(ids){
   for(const id of ids){
-    const el = document.getElementById(id);
+    const el=document.getElementById(id);
     if(!el) continue;
-    if(!el.value.trim()){
-      el.focus();
-      el.scrollIntoView({behavior: 'smooth', block: 'center'});
-      showToast('Please fill in all required fields', true);
-      return false;
-    }
+    if(!el.value.trim()){ el.focus(); el.scrollIntoView({behavior:'smooth',block:'center'}); showToast('Please fill in all required fields',true); return false; }
   }
   return true;
 }
 
-// Check auth before finalizing clean PDF
-async function requireAuth(){
-  const { data: { session } } = await sb.auth.getSession();
-  if(!session){
-    showToast('Please sign in to download the clean version');
-    setTimeout(()=>{ location.href = '/#top'; }, 1500);
-    return null;
-  }
-  return session;
-}
-
-// ---------- Init on load ----------
-window.addEventListener('DOMContentLoaded', () => {
-  setDefaultDates();
-  updateNavForUser();
-});
-
+window.addEventListener('DOMContentLoaded',()=>{ setDefaultDates(); updateNavForUser(); });
 </script>
-<script>
 
-document.querySelectorAll('input[name="warranty"]').forEach(r => r.addEventListener('change', (e) => {
-  document.getElementById('warrantyDetailsField').style.display = e.target.value === 'warranty' ? 'block' : 'none';
+<script>
+/* =====================================================
+   Bill of Sale — form logic
+   ===================================================== */
+
+document.querySelectorAll('input[name="warranty"]').forEach(r=>r.addEventListener('change',(e)=>{
+  document.getElementById('warrantyDetailsField').style.display = e.target.value==='warranty'?'block':'none';
 }));
 
 function getState(){
-  const get = (id) => (document.getElementById(id).value || '').trim();
-  const getNum = (id) => { const v = document.getElementById(id).value; return v ? parseFloat(v) : null; };
+  const get=(id)=>(document.getElementById(id).value||'').trim();
+  const getNum=(id)=>{ const v=document.getElementById(id).value; return v?parseFloat(v):null; };
   return {
-    itemDescription: get('itemDescription'),
-    quantity: get('quantity'),
-    condition: get('condition'),
-    serialNumber: get('serialNumber'),
-    sellerName: get('sellerName'),
-    sellerAddress: get('sellerAddress'),
-    sellerPhone: get('sellerPhone'),
-    sellerEmail: get('sellerEmail'),
-    buyerName: get('buyerName'),
-    buyerAddress: get('buyerAddress'),
-    buyerPhone: get('buyerPhone'),
-    buyerEmail: get('buyerEmail'),
-    saleDate: get('saleDate'),
-    salePrice: getNum('salePrice'),
-    paymentMethod: get('paymentMethod'),
-    warranty: document.querySelector('input[name="warranty"]:checked').value,
-    warrantyDetails: get('warrantyDetails'),
-    governingState: get('governingState')
+    itemDescription:get('itemDescription'),quantity:get('quantity'),condition:get('condition'),serialNumber:get('serialNumber'),
+    sellerName:get('sellerName'),sellerAddress:get('sellerAddress'),sellerPhone:get('sellerPhone'),sellerEmail:get('sellerEmail'),
+    buyerName:get('buyerName'),buyerAddress:get('buyerAddress'),buyerPhone:get('buyerPhone'),buyerEmail:get('buyerEmail'),
+    saleDate:get('saleDate'),salePrice:getNum('salePrice'),paymentMethod:get('paymentMethod'),
+    warranty:document.querySelector('input[name="warranty"]:checked').value,
+    warrantyDetails:get('warrantyDetails'),governingState:get('governingState')
   };
 }
 
 function renderPreview(){
   const s = getState();
-  const saleD = formatDate(s.saleDate) || pad('', 'Sale Date');
-  const price = formatCurrency(s.salePrice) || pad('', 'Sale Price');
-  const conditionMap = {
-    'new': 'new', 'like-new': 'like new', 'good': 'good used condition',
-    'fair': 'fair condition with some wear', 'poor': 'poor condition (for parts)'
-  };
-  const paymentMap = {
-    'cash': 'cash', 'check': 'check', 'bank-transfer': 'bank transfer',
-    'paypal': 'PayPal/Venmo', 'trade': 'trade or exchange'
-  };
-
-  const warrantyText = s.warranty === 'warranty' && s.warrantyDetails
+  const saleD = formatDate(s.saleDate)||pad('','Sale Date');
+  const price = formatCurrency(s.salePrice)||pad('','Sale Price');
+  const conditionMap={'new':'new','like-new':'like new','good':'good used condition','fair':'fair condition with some wear','poor':'poor condition (for parts)'};
+  const paymentMap={'cash':'cash','check':'check','bank-transfer':'bank transfer','paypal':'PayPal/Venmo','trade':'trade or exchange'};
+  const warrantyText = s.warranty==='warranty'&&s.warrantyDetails
     ? `The Seller provides the following warranty: ${escapeHtml(s.warrantyDetails)}.`
     : `The Item is sold <strong>"AS-IS"</strong> with no warranty, express or implied. The Buyer accepts the Item in its current condition.`;
 
   document.getElementById('previewDoc').innerHTML = `
     <h1>Bill of Sale</h1>
     <p>This Bill of Sale confirms the sale described below, executed on ${saleD}.</p>
-
     <h2>1. Item(s) Sold</h2>
-    <p>${pad(s.itemDescription, 'Item Description')}</p>
+    <p>${pad(s.itemDescription,'Item Description')}</p>
     <table class="info-table">
-      <tr><td class="label">Quantity</td><td>${escapeHtml(s.quantity || '1')}</td></tr>
-      <tr><td class="label">Condition</td><td>${escapeHtml(conditionMap[s.condition] || s.condition)}</td></tr>
-      ${s.serialNumber ? `<tr><td class="label">Serial number</td><td>${escapeHtml(s.serialNumber)}</td></tr>` : ''}
+      <tr><td class="label">Quantity</td><td>${escapeHtml(s.quantity||'1')}</td></tr>
+      <tr><td class="label">Condition</td><td>${escapeHtml(conditionMap[s.condition]||s.condition)}</td></tr>
+      ${s.serialNumber?`<tr><td class="label">Serial number</td><td>${escapeHtml(s.serialNumber)}</td></tr>`:''}
     </table>
-
     <h2>2. Seller</h2>
     <table class="info-table">
-      <tr><td class="label">Name</td><td>${pad(s.sellerName, 'Seller Name')}</td></tr>
-      <tr><td class="label">Address</td><td>${pad(s.sellerAddress, 'Seller Address')}</td></tr>
-      ${s.sellerPhone ? `<tr><td class="label">Phone</td><td>${escapeHtml(s.sellerPhone)}</td></tr>` : ''}
-      ${s.sellerEmail ? `<tr><td class="label">Email</td><td>${escapeHtml(s.sellerEmail)}</td></tr>` : ''}
+      <tr><td class="label">Name</td><td>${pad(s.sellerName,'Seller Name')}</td></tr>
+      <tr><td class="label">Address</td><td>${pad(s.sellerAddress,'Seller Address')}</td></tr>
+      ${s.sellerPhone?`<tr><td class="label">Phone</td><td>${escapeHtml(s.sellerPhone)}</td></tr>`:''}
+      ${s.sellerEmail?`<tr><td class="label">Email</td><td>${escapeHtml(s.sellerEmail)}</td></tr>`:''}
     </table>
-
     <h2>3. Buyer</h2>
     <table class="info-table">
-      <tr><td class="label">Name</td><td>${pad(s.buyerName, 'Buyer Name')}</td></tr>
-      <tr><td class="label">Address</td><td>${pad(s.buyerAddress, 'Buyer Address')}</td></tr>
-      ${s.buyerPhone ? `<tr><td class="label">Phone</td><td>${escapeHtml(s.buyerPhone)}</td></tr>` : ''}
-      ${s.buyerEmail ? `<tr><td class="label">Email</td><td>${escapeHtml(s.buyerEmail)}</td></tr>` : ''}
+      <tr><td class="label">Name</td><td>${pad(s.buyerName,'Buyer Name')}</td></tr>
+      <tr><td class="label">Address</td><td>${pad(s.buyerAddress,'Buyer Address')}</td></tr>
+      ${s.buyerPhone?`<tr><td class="label">Phone</td><td>${escapeHtml(s.buyerPhone)}</td></tr>`:''}
+      ${s.buyerEmail?`<tr><td class="label">Email</td><td>${escapeHtml(s.buyerEmail)}</td></tr>`:''}
     </table>
-
     <h2>4. Sale Terms</h2>
-    <p>For the sum of <strong>${price}</strong>, paid by ${escapeHtml(paymentMap[s.paymentMethod] || s.paymentMethod)} on ${saleD}, the Seller transfers all right, title, and interest in the above Item(s) to the Buyer.</p>
-
+    <p>For the sum of <strong>${price}</strong>, paid by ${escapeHtml(paymentMap[s.paymentMethod]||s.paymentMethod)} on ${saleD}, the Seller transfers all right, title, and interest in the above Item(s) to the Buyer.</p>
     <h2>5. Condition</h2>
     <p>${warrantyText}</p>
-
     <h2>6. Seller's Warranty of Ownership</h2>
     <p>The Seller warrants that they are the lawful owner of the Item(s), that the Item(s) are free from all claims, liens, or encumbrances, and that the Seller has the full right to sell the Item(s).</p>
-
     <h2>7. Governing Law</h2>
     <p>This Bill of Sale shall be governed by the laws of the State of ${escapeHtml(s.governingState)}.</p>
-
     <p style="margin-top:1.4rem">By signing below, both parties acknowledge the accuracy of this Bill of Sale.</p>
-
     <div class="sig-block">
-      <div>
-        <div class="sig-line"></div>
-        <div class="sig-label">Seller: ${escapeHtml(s.sellerName || '')}</div>
-        <div class="sig-label" style="margin-top:.8rem">Date: _______________</div>
-      </div>
-      <div>
-        <div class="sig-line"></div>
-        <div class="sig-label">Buyer: ${escapeHtml(s.buyerName || '')}</div>
-        <div class="sig-label" style="margin-top:.8rem">Date: _______________</div>
-      </div>
+      <div><div class="sig-line"></div><div class="sig-label">Seller: ${escapeHtml(s.sellerName||'')}</div><div class="sig-label" style="margin-top:.8rem">Date: _______________</div></div>
+      <div><div class="sig-line"></div><div class="sig-label">Buyer: ${escapeHtml(s.buyerName||'')}</div><div class="sig-label" style="margin-top:.8rem">Date: _______________</div></div>
     </div>
   `;
 }
@@ -877,54 +875,46 @@ renderPreview();
 async function buildPdf(withWatermark){
   const s = getState();
   const fonts = await createPdfDoc();
-  const w = createPageWriter(fonts.doc, fonts, withWatermark);
-  const saleD = formatDate(s.saleDate) || '[Sale Date]';
-  const price = formatCurrency(s.salePrice) || '[Sale Price]';
-  const conditionMap = {'new':'new','like-new':'like new','good':'good used condition','fair':'fair condition with some wear','poor':'poor condition (for parts)'};
-  const paymentMap = {'cash':'cash','check':'check','bank-transfer':'bank transfer','paypal':'PayPal/Venmo','trade':'trade or exchange'};
-  const warrantyText = s.warranty === 'warranty' && s.warrantyDetails
+  const w = createPageWriter(fonts.doc,fonts,withWatermark);
+  const saleD = formatDate(s.saleDate)||'[Sale Date]';
+  const price = formatCurrency(s.salePrice)||'[Sale Price]';
+  const conditionMap={'new':'new','like-new':'like new','good':'good used condition','fair':'fair condition with some wear','poor':'poor condition (for parts)'};
+  const paymentMap={'cash':'cash','check':'check','bank-transfer':'bank transfer','paypal':'PayPal/Venmo','trade':'trade or exchange'};
+  const warrantyText = s.warranty==='warranty'&&s.warrantyDetails
     ? `The Seller provides the following warranty: ${s.warrantyDetails}.`
     : 'The Item is sold "AS-IS" with no warranty, express or implied. The Buyer accepts the Item in its current condition.';
 
-  w.drawParagraph('BILL OF SALE', { bold: true, size: 15, center: true, after: 14 });
-  w.drawParagraph(`This Bill of Sale confirms the sale described below, executed on ${saleD}.`, { after: 10 });
-
+  w.drawParagraph('BILL OF SALE',{bold:true,size:15,center:true,after:14});
+  w.drawParagraph(`This Bill of Sale confirms the sale described below, executed on ${saleD}.`,{after:10});
   w.drawHeading('1. Item(s) Sold');
-  w.drawParagraph(padPlain(s.itemDescription, 'Item Description'));
-  w.drawParagraph(`Quantity: ${s.quantity || '1'}`, { size: 10.5, after: 3 });
-  w.drawParagraph(`Condition: ${conditionMap[s.condition] || s.condition}`, { size: 10.5, after: 3 });
-  if(s.serialNumber) w.drawParagraph(`Serial: ${s.serialNumber}`, { size: 10.5, after: 3 });
+  w.drawParagraph(padPlain(s.itemDescription,'Item Description'));
+  w.drawParagraph(`Quantity: ${s.quantity||'1'}`,{size:10.5,after:3});
+  w.drawParagraph(`Condition: ${conditionMap[s.condition]||s.condition}`,{size:10.5,after:3});
+  if(s.serialNumber) w.drawParagraph(`Serial: ${s.serialNumber}`,{size:10.5,after:3});
   w.drawSpacer(6);
-
   w.drawHeading('2. Seller');
-  w.drawParagraph(`Name: ${padPlain(s.sellerName, 'Seller Name')}`, { size: 10.5, after: 3 });
-  w.drawParagraph(`Address: ${padPlain(s.sellerAddress, 'Seller Address')}`, { size: 10.5, after: 3 });
-  if(s.sellerPhone) w.drawParagraph(`Phone: ${s.sellerPhone}`, { size: 10.5, after: 3 });
-  if(s.sellerEmail) w.drawParagraph(`Email: ${s.sellerEmail}`, { size: 10.5, after: 3 });
+  w.drawParagraph(`Name: ${padPlain(s.sellerName,'Seller Name')}`,{size:10.5,after:3});
+  w.drawParagraph(`Address: ${padPlain(s.sellerAddress,'Seller Address')}`,{size:10.5,after:3});
+  if(s.sellerPhone) w.drawParagraph(`Phone: ${s.sellerPhone}`,{size:10.5,after:3});
+  if(s.sellerEmail) w.drawParagraph(`Email: ${s.sellerEmail}`,{size:10.5,after:3});
   w.drawSpacer(6);
-
   w.drawHeading('3. Buyer');
-  w.drawParagraph(`Name: ${padPlain(s.buyerName, 'Buyer Name')}`, { size: 10.5, after: 3 });
-  w.drawParagraph(`Address: ${padPlain(s.buyerAddress, 'Buyer Address')}`, { size: 10.5, after: 3 });
-  if(s.buyerPhone) w.drawParagraph(`Phone: ${s.buyerPhone}`, { size: 10.5, after: 3 });
-  if(s.buyerEmail) w.drawParagraph(`Email: ${s.buyerEmail}`, { size: 10.5, after: 3 });
+  w.drawParagraph(`Name: ${padPlain(s.buyerName,'Buyer Name')}`,{size:10.5,after:3});
+  w.drawParagraph(`Address: ${padPlain(s.buyerAddress,'Buyer Address')}`,{size:10.5,after:3});
+  if(s.buyerPhone) w.drawParagraph(`Phone: ${s.buyerPhone}`,{size:10.5,after:3});
+  if(s.buyerEmail) w.drawParagraph(`Email: ${s.buyerEmail}`,{size:10.5,after:3});
   w.drawSpacer(6);
-
   w.drawHeading('4. Sale Terms');
-  w.drawParagraph(`For the sum of ${price}, paid by ${paymentMap[s.paymentMethod] || s.paymentMethod} on ${saleD}, the Seller transfers all right, title, and interest in the above Item(s) to the Buyer.`);
-
+  w.drawParagraph(`For the sum of ${price}, paid by ${paymentMap[s.paymentMethod]||s.paymentMethod} on ${saleD}, the Seller transfers all right, title, and interest in the above Item(s) to the Buyer.`);
   w.drawHeading('5. Condition');
   w.drawParagraph(warrantyText);
-
   w.drawHeading("6. Seller's Warranty of Ownership");
   w.drawParagraph('The Seller warrants that they are the lawful owner of the Item(s), that the Item(s) are free from all claims, liens, or encumbrances, and that the Seller has the full right to sell the Item(s).');
-
   w.drawHeading('7. Governing Law');
   w.drawParagraph(`This Bill of Sale shall be governed by the laws of the State of ${s.governingState}.`);
-
   w.drawSpacer(14);
-  w.drawParagraph('By signing below, both parties acknowledge the accuracy of this Bill of Sale.', { after: 24 });
-  w.drawSignatureBlock('Seller', padPlain(s.sellerName, 'Seller'), 'Buyer', padPlain(s.buyerName, 'Buyer'));
+  w.drawParagraph('By signing below, both parties acknowledge the accuracy of this Bill of Sale.',{after:24});
+  w.drawSignatureBlock('Seller',padPlain(s.sellerName,'Seller'),'Buyer',padPlain(s.buyerName,'Buyer'));
   w.drawFooter();
   return await fonts.doc.save();
 }
@@ -934,26 +924,103 @@ async function downloadPreview(){
   btn.innerHTML = 'Generating...';
   btn.disabled = true;
   try {
-    if(window.trackEvent) trackEvent('preview_download', {form: 'bill-of-sale'});
+    if(window.trackEvent) trackEvent('preview_download',{form:'bill-of-sale'});
     const bytes = await buildPdf(true);
-    downloadPdf(bytes, 'Bill_of_Sale_Preview_SignRight.pdf');
+    downloadPdf(bytes,'Bill_of_Sale_Preview_SignRight.pdf');
     showToast('Preview downloaded');
-  } catch(e){ console.error(e); showToast('Could not generate PDF', true); }
-  finally { btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Preview'; btn.disabled = false; }
+  } catch(e){ console.error(e); showToast('Could not generate PDF',true); }
+  finally { btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Preview'; btn.disabled=false; }
 }
 
-async function finalizeDoc(){
-  if(window.trackEvent) trackEvent('finalize_click', {form: 'bill-of-sale'});
-  if(!(await requireAuth())) return;
-  if(!validateRequired(['itemDescription','sellerName','sellerAddress','buyerName','buyerAddress','saleDate','salePrice'])) return;
-  try {
-    const bytes = await buildPdf(false);
-    downloadPdf(bytes, 'Bill_of_Sale_SignRight.pdf');
-    showToast('Clean PDF downloaded');
-    if(window.trackEvent) trackEvent('clean_pdf_downloaded', {form: 'bill-of-sale'});
-  } catch(e){ console.error(e); showToast('Could not generate PDF', true); }
+/* ── FIX 1: PayPal integration — real payment before PDF delivery ── */
+let paypalRendered = false;
+
+async function renderPayPalButtons(){
+  // Prevent double-render
+  if(paypalRendered) return;
+
+  // Check if PayPal SDK loaded
+  if(typeof paypal === 'undefined'){
+    console.error('PayPal SDK not loaded — check client-id in script tag');
+    return;
+  }
+
+  paypalRendered = true;
+
+  paypal.Buttons({
+    style: {
+      layout: 'vertical',
+      color: 'blue',
+      shape: 'rect',
+      label: 'pay',
+      height: 45
+    },
+
+    // Step 1: validate form before creating order
+    onClick: async function(data, actions){
+      const valid = validateRequired(['itemDescription','sellerName','sellerAddress','buyerName','buyerAddress','saleDate','salePrice']);
+      if(!valid) return actions.reject();
+
+      // FIX 3: check auth — if not logged in, open modal instead of redirecting
+      const { data: { session } } = await sb.auth.getSession();
+      if(!session){
+        if(window.trackEvent) trackEvent('auth_required',{form:'bill-of-sale'});
+        openAuthModal();
+        return actions.reject();
+      }
+
+      if(window.trackEvent) trackEvent('paypal_initiated',{form:'bill-of-sale',price:'4.99'});
+      return actions.resolve();
+    },
+
+    // Step 2: create the order
+    createOrder: function(data, actions){
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '4.99',
+            currency_code: 'USD'
+          },
+          description: 'Bill of Sale — SignRight',
+          soft_descriptor: 'SIGNRIGHT FORM'
+        }]
+      });
+    },
+
+    // Step 3: capture payment, then deliver PDF
+    onApprove: async function(data, actions){
+      showToast('Processing payment...');
+      try {
+        await actions.order.capture();
+        if(window.trackEvent) trackEvent('payment_complete',{form:'bill-of-sale',price:'4.99'});
+        const bytes = await buildPdf(false);
+        downloadPdf(bytes,'Bill_of_Sale_SignRight.pdf');
+        showToast('Payment complete — clean PDF downloaded ✓');
+      } catch(e){
+        console.error(e);
+        showToast('Payment succeeded but PDF failed — contact hello@signright.io',true);
+      }
+    },
+
+    onError: function(err){
+      console.error('PayPal error:', err);
+      showToast('Payment failed — please try again',true);
+      if(window.trackEvent) trackEvent('payment_error',{form:'bill-of-sale'});
+    },
+
+    onCancel: function(){
+      showToast('Payment cancelled');
+      if(window.trackEvent) trackEvent('payment_cancelled',{form:'bill-of-sale'});
+    }
+
+  }).render('#paypal-button-container');
 }
 
+// Init PayPal on page load
+window.addEventListener('DOMContentLoaded', function(){
+  // Small delay to ensure PayPal SDK is ready
+  setTimeout(renderPayPalButtons, 500);
+});
 </script>
 </body>
 </html>
