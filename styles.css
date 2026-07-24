@@ -269,3 +269,21 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:clamp(2.5rem,6v
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr 1fr}.hero-trust{gap:1rem}.steps-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:400px){.tool-grid{grid-template-columns:1fr}}
+
+
+/* ---- mobile nav fix: mega-menu ---- */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile-btn{display:block}
+  .nav-drawer{display:block;position:fixed;inset:0;background:rgba(20,22,43,.5);z-index:200;
+              opacity:0;pointer-events:none;transition:opacity .2s}
+  .nav-drawer.open{opacity:1;pointer-events:all}
+  .nav-drawer-panel{position:absolute;top:0;right:0;width:min(320px,86vw);height:100%;
+                    background:#fff;padding:1.2rem;overflow-y:auto}
+  .nav-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+  .drawer-close{background:none;border:none;padding:.3rem}
+  .drawer-section{margin-bottom:1.2rem;display:flex;flex-direction:column;gap:.3rem}
+  .drawer-section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;
+                        letter-spacing:.06em;color:#5C5F75;margin-bottom:.25rem}
+  .drawer-section a{font-size:.9rem;padding:.32rem 0}
+}
