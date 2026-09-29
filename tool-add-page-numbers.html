@@ -25,6 +25,24 @@
 <link rel="stylesheet" href="styles.css">
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wf378dn1ai");</script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGBKN6DP');</script>
+<style>
+/* ---- mobile nav fix: mega-menu ---- */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile-btn{display:block}
+  .nav-drawer{display:block;position:fixed;inset:0;background:rgba(20,22,43,.5);z-index:200;
+              opacity:0;pointer-events:none;transition:opacity .2s}
+  .nav-drawer.open{opacity:1;pointer-events:all}
+  .nav-drawer-panel{position:absolute;top:0;right:0;width:min(320px,86vw);height:100%;
+                    background:#fff;padding:1.2rem;overflow-y:auto}
+  .nav-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+  .drawer-close{background:none;border:none;padding:.3rem}
+  .drawer-section{margin-bottom:1.2rem;display:flex;flex-direction:column;gap:.3rem}
+  .drawer-section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;
+                        letter-spacing:.06em;color:#5C5F75;margin-bottom:.25rem}
+  .drawer-section a{font-size:.9rem;padding:.32rem 0}
+}
+</style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGBKN6DP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

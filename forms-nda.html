@@ -288,6 +288,17 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
   .cta-bar .cta-actions{justify-content:stretch}
   .cta-bar .t-btn{flex:1;justify-content:center}
 }
+
+/* ---- mobile nav fix: simple forms nav ---- */
+@media(max-width:640px){
+  .nav-inner{padding:0 1rem}
+  .nav-links{gap:.9rem}
+  .nav-links a{font-size:.8rem}
+  .btn-ghost,.btn-dark{padding:.45rem .7rem;font-size:.82rem}
+}
+@media(max-width:420px){
+  .nav-links a:nth-child(1),.nav-links a:nth-child(2){display:none}
+}
 </style>
 </head>
 <body>

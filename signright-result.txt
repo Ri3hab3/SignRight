@@ -1,0 +1,49 @@
+URL                                                     | HTTP | X-ROBOTS | META   | WORDS | CANONICAL
+------------------------------------------------------------------------------------------------------------------------------------------------------
+https://signright.io/                                   | 200  | -        | index, follow, max-image-preview:large | 1100  | https://signright.io/
+https://signright.io/pdf-to-word                        | 200  | -        | index, follow, max-image-preview:large | 921   | https://signright.io/pdf-to-word
+https://signright.io/word-to-pdf                        | 200  | -        | index, follow, max-image-preview:large | 915   | https://signright.io/word-to-pdf
+https://signright.io/pdf-to-excel                       | 200  | -        | index, follow, max-image-preview:large | 924   | https://signright.io/pdf-to-excel
+https://signright.io/excel-to-pdf                       | 200  | -        | index, follow, max-image-preview:large | 898   | https://signright.io/excel-to-pdf
+https://signright.io/compress-pdf                       | 200  | -        | index, follow, max-image-preview:large | 1030  | https://signright.io/compress-pdf
+https://signright.io/merge-pdf                          | 200  | -        | index, follow, max-image-preview:large | 1020  | https://signright.io/merge-pdf
+https://signright.io/split-pdf                          | 200  | -        | index, follow, max-image-preview:large | 1077  | https://signright.io/split-pdf
+https://signright.io/pdf-to-jpg                         | 200  | -        | index, follow, max-image-preview:large | 1113  | https://signright.io/pdf-to-jpg
+https://signright.io/jpg-to-pdf                         | 200  | -        | index, follow, max-image-preview:large | 1066  | https://signright.io/jpg-to-pdf
+https://signright.io/pdf-to-text                        | 200  | -        | index, follow, max-image-preview:large | 998   | https://signright.io/pdf-to-text
+https://signright.io/sign-pdf                           | 200  | -        | index, follow, max-image-preview:large | 624   | https://signright.io/sign-pdf
+https://signright.io/edit-pdf                           | 200  | -        | index, follow, max-image-preview:large | 581   | https://signright.io/edit-pdf
+https://signright.io/redact-pdf                         | 200  | -        | index, follow, max-image-preview:large | 585   | https://signright.io/redact-pdf
+https://signright.io/rotate-pdf                         | 200  | -        | index, follow, max-image-preview:large | 581   | https://signright.io/rotate-pdf
+https://signright.io/add-page-numbers                   | 200  | -        | index, follow, max-image-preview:large | 600   | https://signright.io/add-page-numbers
+https://signright.io/watermark-pdf                      | 200  | -        | index, follow, max-image-preview:large | 583   | https://signright.io/watermark-pdf
+https://signright.io/protect-pdf                        | 200  | -        | index, follow, max-image-preview:large | 574   | https://signright.io/protect-pdf
+https://signright.io/unlock-pdf                         | 200  | -        | index, follow, max-image-preview:large | 593   | https://signright.io/unlock-pdf
+https://signright.io/crop-pdf                           | 200  | -        | index, follow, max-image-preview:large | 575   | https://signright.io/crop-pdf
+https://signright.io/fill-pdf-form                      | 200  | -        | index, follow, max-image-preview:large | 606   | https://signright.io/fill-pdf-form
+https://signright.io/esign                              | 200  | -        | index, follow, max-image-preview:large | 626   | https://signright.io/esign
+https://signright.io/request-signature                  | 200  | -        | index, follow, max-image-preview:large | 558   | https://signright.io/request-signature
+https://signright.io/merge-and-sign                     | 200  | -        | index, follow, max-image-preview:large | 604   | https://signright.io/merge-and-sign
+https://signright.io/repair-pdf                         | 200  | -        | index, follow, max-image-preview:large | 604   | https://signright.io/repair-pdf
+https://signright.io/pdf-to-ppt                         | 200  | -        | index, follow, max-image-preview:large | 537   | https://signright.io/pdf-to-ppt
+https://signright.io/ppt-to-pdf                         | 200  | -        | index, follow, max-image-preview:large | 542   | https://signright.io/ppt-to-pdf
+https://signright.io/html-to-pdf                        | 200  | -        | index, follow, max-image-preview:large | 555   | https://signright.io/html-to-pdf
+https://signright.io/pdf-to-pdfa                        | 200  | -        | index, follow, max-image-preview:large | 554   | https://signright.io/pdf-to-pdfa
+https://signright.io/privacy                            | 200  | -        | index, follow | 911   | https://signright.io/privacy
+https://signright.io/terms                              | 200  | -        | index, follow | 1144  | https://signright.io/terms
+https://signright.io/refund                             | 200  | -        | index, follow | 575   | https://signright.io/refund
+https://signright.io/forms                              | 404  | -        | -      | 8     | !! MISSING !!
+https://signright.io/forms/residential-lease            | 200  | -        | index, follow, max-image-preview:large | 3819  | https://signright.io/forms/residential-lease
+https://signright.io/forms/month-to-month-rental        | 200  | -        | index, follow, max-image-preview:large | 2903  | https://signright.io/forms/month-to-month-rental
+https://signright.io/forms/rental-application           | 200  | -        | index, follow, max-image-preview:large | 2868  | https://signright.io/forms/rental-application
+https://signright.io/forms/lease-termination            | 200  | -        | index, follow | 2765  | https://signright.io/forms/lease-termination
+https://signright.io/forms/roommate-agreement           | 200  | -        | index, follow, max-image-preview:large | 3502  | https://signright.io/forms/roommate-agreement
+https://signright.io/forms/nda                          | 200  | -        | index, follow, max-image-preview:large | 3629  | https://signright.io/forms/nda
+https://signright.io/forms/service-agreement            | 200  | -        | index, follow, max-image-preview:large | 3086  | https://signright.io/forms/service-agreement
+https://signright.io/forms/contractor-agreement         | 200  | -        | index, follow, max-image-preview:large | 3152  | https://signright.io/forms/contractor-agreement
+https://signright.io/forms/invoice                      | 200  | -        | index, follow, max-image-preview:large | 3219  | https://signright.io/forms/invoice
+https://signright.io/forms/offer-letter                 | 200  | -        | index, follow, max-image-preview:large | 3144  | https://signright.io/forms/offer-letter
+https://signright.io/forms/vehicle-bill-of-sale         | 200  | -        | index, follow, max-image-preview:large | 4050  | https://signright.io/forms/vehicle-bill-of-sale
+https://signright.io/forms/bill-of-sale                 | 200  | -        | index, follow, max-image-preview:large | 3291  | https://signright.io/forms/bill-of-sale
+https://signright.io/forms/promissory-note              | 200  | -        | index, follow, max-image-preview:large | 3216  | https://signright.io/forms/promissory-note
+https://signright.io/forms/loan-agreement               | 200  | -        | index, follow, max-image-preview:large | 3453  | https://signright.io/forms/loan-agreement

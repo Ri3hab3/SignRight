@@ -1,0 +1,25 @@
+URL                                                     | HTTP | X-ROBOTS | META   | WORDS | CANONICAL
+------------------------------------------------------------------------------------------------------------------------------------------------------
+https://microtechlabs.io/                               | 200  | -        | index, follow | 3635  | !! MISSING !!
+https://microtechlabs.io/microsoft-365                  | 200  | -        | index, follow | 4342  | https://microtechlabs.io/microsoft-365
+https://microtechlabs.io/services                       | 200  | -        | index, follow | 3172  | !! MISSING !!
+https://microtechlabs.io/on-premise                     | 200  | -        | index, follow | 4276  | https://microtechlabs.io/on-premise
+https://microtechlabs.io/about                          | 200  | -        | index, follow | 2613  | !! MISSING !!
+https://microtechlabs.io/contact                        | 200  | -        | index, follow | 1949  | https://microtechlabs.io/contact
+https://microtechlabs.io/get-a-quote                    | 200  | -        | index, follow | 2423  | https://microtechlabs.io/get-a-quote
+https://microtechlabs.io/microsoft-365-migration-guide  | 200  | -        | index, follow | 1348  | https://microtechlabs.io/microsoft-365-migration-guide
+https://microtechlabs.io/microsoft-365-business-premium | 200  | -        | index, follow | 3310  | https://microtechlabs.io/microsoft-365-business-premium-vs-standard
+https://microtechlabs.io/azure-ad-conditional-access-se | 200  | -        | index, follow | 1432  | https://microtechlabs.io/azure-ad-conditional-access-setup
+https://microtechlabs.io/intune-device-enrollment-windo | 200  | -        | index, follow | 1341  | https://microtechlabs.io/intune-device-enrollment-windows
+https://microtechlabs.io/microsoft-365-shared-mailbox-s | 200  | -        | index, follow | 1379  | https://microtechlabs.io/microsoft-365-shared-mailbox-setup
+https://microtechlabs.io/windows-server-2022-hyper-v-se | 200  | -        | index, follow | 1507  | https://microtechlabs.io/windows-server-2022-hyper-v-setup
+https://microtechlabs.io/microsoft-365-support-small-bu | 200  | -        | index, follow | 1143  | https://microtechlabs.io/microsoft-365-support-small-business
+https://microtechlabs.io/microsoft-365-email-not-workin | 200  | -        | index, follow | 1429  | https://microtechlabs.io/microsoft-365-email-not-working-fix
+https://microtechlabs.io/microsoft-csp-reseller-india   | 200  | -        | index, follow | 1011  | https://microtechlabs.io/microsoft-csp-reseller-india
+https://microtechlabs.io/azure-ad-connect-hybrid-setup  | 200  | -        | index, follow | 1191  | https://microtechlabs.io/azure-ad-connect-hybrid-setup
+https://microtechlabs.io/intune-vs-group-policy         | 200  | -        | index, follow | 1143  | https://microtechlabs.io/intune-vs-group-policy
+https://microtechlabs.io/microsoft-365-license-comparis | 200  | -        | index, follow | 2886  | https://microtechlabs.io/microsoft-365-license-comparison
+https://microtechlabs.io/privacy                        | 200  | -        | index, follow | 2106  | https://microtechlabs.io/privacy
+https://microtechlabs.io/terms                          | 200  | -        | index, follow | 2187  | https://microtechlabs.io/terms
+https://microtechlabs.io/refund                         | 200  | -        | index, follow | 1899  | https://microtechlabs.io/refund
+https://microtechlabs.io/disclaimer                     | 200  | -        | index, follow | 1869  | https://microtechlabs.io/disclaimer
