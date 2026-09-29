@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* =====================================================
    SignRight — Shared Form Styles
@@ -62,7 +62,7 @@ a:hover{text-decoration:underline}
 /* ── NAV ── */
 nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:100}
 .nav-inner{max-width:var(--max-w);margin:0 auto;height:100%;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-0.02em;color:var(--ink);display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-0.02em;color:var(--ink);display:flex;align-items:center;gap:8px;text-decoration:none}
 .logo:hover{text-decoration:none}
 .logo-mark{width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center}
 .logo-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.4}
@@ -86,7 +86,7 @@ nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,0.92);
 
 /* ── FORM HEADER ── */
 .form-header{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start;margin-bottom:1.8rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-.form-header h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.3rem);letter-spacing:-.028em;line-height:1.12;color:var(--ink);margin-bottom:.4rem}
+.form-header h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.3rem);letter-spacing:-.028em;line-height:1.12;color:var(--ink);margin-bottom:.4rem}
 .form-header .subtitle{font-size:.96rem;color:var(--muted);line-height:1.5;max-width:560px}
 .form-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem;min-width:180px}
 .form-badges{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
@@ -103,7 +103,7 @@ nav{position:sticky;top:0;height:var(--nav-h);background:rgba(255,255,255,0.92);
 .form-panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:clamp(1.2rem,2.5vw,1.8rem);box-shadow:var(--shadow-sm)}
 .form-section{padding-bottom:1.4rem;margin-bottom:1.4rem;border-bottom:1px dashed var(--border)}
 .form-section:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.section-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.02rem;color:var(--ink);margin-bottom:.15rem;display:flex;align-items:center;gap:.5rem}
+.section-title{font-family:'Inter',sans-serif;font-weight:700;font-size:1.02rem;color:var(--ink);margin-bottom:.15rem;display:flex;align-items:center;gap:.5rem}
 .section-num{width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif}
 .section-desc{font-size:.85rem;color:var(--muted);margin-bottom:.95rem;line-height:1.5}
 
@@ -162,12 +162,12 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);
   font-size:2rem;font-weight:800;color:rgba(91,108,255,0.07);
   white-space:nowrap;pointer-events:none;letter-spacing:.1em;
-  font-family:'Syne',sans-serif;z-index:0
+  font-family:'Inter',sans-serif;z-index:0
 }
 .preview-doc > *{position:relative;z-index:1}
 
-.preview-doc h1{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;text-align:center;margin-bottom:1.4rem;letter-spacing:-.02em;text-transform:uppercase}
-.preview-doc h2{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-top:1.1rem;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}
+.preview-doc h1{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;text-align:center;margin-bottom:1.4rem;letter-spacing:-.02em;text-transform:uppercase}
+.preview-doc h2{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;margin-top:1.1rem;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}
 .preview-doc p{margin-bottom:.65rem;text-align:justify}
 .preview-doc .party{padding-left:1rem;margin-bottom:.8rem}
 .preview-doc .party strong{display:block;margin-bottom:.15rem;font-weight:600}
@@ -184,7 +184,7 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
 .preview-doc .info-table td.label{background:var(--surface);font-weight:600;width:40%}
 
 .cta-bar{background:var(--ink);color:#fff;border-radius:12px;padding:1.2rem;margin-top:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.cta-bar .cta-text strong{display:block;font-family:'Syne',sans-serif;font-size:1rem;margin-bottom:.15rem}
+.cta-bar .cta-text strong{display:block;font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:.15rem}
 .cta-bar .cta-text span{font-size:.83rem;color:rgba(255,255,255,0.7)}
 .cta-bar .cta-actions{display:flex;gap:.5rem;flex-wrap:wrap}
 .cta-bar .t-btn{background:transparent;color:#fff;border-color:rgba(255,255,255,0.2)}
@@ -194,14 +194,14 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
 
 /* Info sections (SEO content) */
 .info-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
-.info-section h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1.45rem;letter-spacing:-.02em;margin-bottom:.8rem;color:var(--ink)}
-.info-section h3{font-family:'Syne',sans-serif;font-weight:600;font-size:1.1rem;margin:1.4rem 0 .5rem;color:var(--ink)}
+.info-section h2{font-family:'Inter',sans-serif;font-weight:700;font-size:1.45rem;letter-spacing:-.02em;margin-bottom:.8rem;color:var(--ink)}
+.info-section h3{font-family:'Inter',sans-serif;font-weight:600;font-size:1.1rem;margin:1.4rem 0 .5rem;color:var(--ink)}
 .info-section p{color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:.9rem;max-width:720px}
 .info-section ul{padding-left:1.3rem;color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:.9rem;max-width:720px}
 .info-section li{margin-bottom:.3rem}
 .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:1.4rem}
 .info-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
-.info-card h4{font-family:'Syne',sans-serif;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.info-card h4{font-family:'Inter',sans-serif;font-size:.96rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
 .info-card p{font-size:.85rem;margin-bottom:0;line-height:1.55}
 
 /* FAQ */
