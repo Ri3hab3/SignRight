@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vehicle Bill of Sale Template — All 50 States | SignRight</title>
-<meta name="description" content="Private car, truck, or motorcycle sale bill of sale. VIN and odometer included. Preview free, $9.99 one-time.">
+<title>Free Vehicle Bill of Sale Template — All 50 States | SignRight</title>
+<meta name="description" content="Private car, truck, or motorcycle sale bill of sale. VIN and odometer included. Completely free.">
 <meta name="keywords" content="vehicle bill of sale, bill of sale car, dmv bill of sale, car bill of sale template, used car bill of sale pdf, motorcycle bill of sale">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://signright.io/forms/vehicle-bill-of-sale">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vehicle Bill of Sale Template — All 50 States | SignRight">
-<meta property="og:description" content="Private car, truck, or motorcycle sale bill of sale. VIN and odometer included. Preview free, $9.99 one-time.">
+<meta property="og:title" content="Free Vehicle Bill of Sale Template — All 50 States | SignRight">
+<meta property="og:description" content="Private car, truck, or motorcycle sale bill of sale. VIN and odometer included. Completely free.">
 <meta property="og:url" content="https://signright.io/forms/vehicle-bill-of-sale">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
@@ -24,7 +24,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=Ad4dTJ5-8H1B7DPXGLAcSP5TS7dzZkROfCciMtLcoQ8hi3j_vDGo-_7CqPl_rybpmEuwY2TRcHVXJYDs&currency=USD&intent=capture"></script>
 <script>
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wf378dn1ai");
   window.trackEvent = function(name, params){try{if(window.clarity){window.clarity('event', name); if(params) Object.keys(params).forEach(k => window.clarity('set', k, String(params[k])));}}catch(e){}};
@@ -495,11 +494,11 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
       </div>
       <div class="preview-frame"><div class="preview-doc" id="previewDoc"></div></div>
       <div class="cta-bar" id="ctaBar">
-        <div class="cta-text"><strong>Ready to sign?</strong><span>Clean PDF — $9.99 one-time, no subscription</span></div>
+        <div class="cta-text"><strong>Ready to sign?</strong><span>Clean PDF — completely free, no subscription</span></div>
         <div class="cta-actions">
-          <button class="t-btn primary" onclick="startPayment()" id="btnFinalize">
+          <button class="t-btn primary" onclick="finalizeDoc()" id="btnFinalize">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Get clean PDF — $9.99
+            Get clean PDF
           </button>
         </div>
       </div>
@@ -508,24 +507,6 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
         Not sure? Have questions?
         <a href="mailto:hello@signright.io?subject=Question%20about%20Vehicle%20Bill%20of%20Sale" style="color:#5B6CFF;font-weight:600;text-decoration:none">Contact us</a>
         — we usually reply within a few hours.
-      </div>
-      <!-- PayPal payment overlay -->
-      <div id="paymentOverlay" style="display:none;margin-top:1rem;padding:1.4rem;background:#fff;border:1.5px solid #5B6CFF;border-radius:12px;box-shadow:0 4px 16px rgba(91,108,255,0.15)">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem">
-          <div>
-            <div style="font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;color:#14162B">Pay $9.99 with PayPal</div>
-            <div style="font-size:.82rem;color:#5C5F75;margin-top:.15rem">One-time payment. No subscription. No card stored.</div>
-          </div>
-          <button onclick="cancelPayment()" style="background:none;border:none;color:#5C5F75;font-size:1.5rem;cursor:pointer;padding:0 .3rem;line-height:1">×</button>
-        </div>
-        <div id="paypal-button-container"></div>
-        <div id="paymentStatus" style="display:none;margin-top:.8rem;padding:.7rem;background:#E8F7F0;border-radius:8px;font-size:.85rem;color:#1F9D55;text-align:center"></div>
-        <div style="margin-top:.7rem;font-size:.72rem;color:#8A8D9F;text-align:center">🔒 Secure payment via PayPal. We never see or store your card.</div>
-        <div style="margin-top:.6rem;padding-top:.7rem;border-top:1px solid #EFEDE7;font-size:.78rem;color:#5C5F75;text-align:center">
-          Payment trouble or questions?
-          <a href="mailto:hello@signright.io?subject=Payment%20help%20-%20Vehicle%20Bill%20of%20Sale" style="color:#5B6CFF;font-weight:600;text-decoration:none">Email us</a>
-          and we'll help right away.
-        </div>
       </div>
     </div>
   </div>
@@ -1057,195 +1038,25 @@ async function downloadPreview(){
   finally { btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Preview'; btn.disabled = false; }
 }
 
-// ===== PAYMENT FLOW =====
-const FORM_PRICE = 9.99;
-const FORM_NAME = 'Vehicle Bill of Sale';
 const FORM_SLUG = 'vehicle-bill-of-sale';
-let paypalButtonsInstance = null;
 
-function startPayment(){
+async function finalizeDoc(){
   if(window.trackEvent) trackEvent('finalize_click', {form: FORM_SLUG});
 
-  // Validate required fields BEFORE showing payment
   if(!validateRequired(['year','make','model','vin','mileage','sellerName','sellerAddress','buyerName','buyerAddress','saleDate','salePrice'])){
     showToast('Please fill all required fields first', true);
     return;
   }
 
-  // Show payment overlay
-  const overlay = document.getElementById('paymentOverlay');
-  const ctaBar = document.getElementById('ctaBar');
-  ctaBar.style.opacity = '0.5';
-  ctaBar.style.pointerEvents = 'none';
-  overlay.style.display = 'block';
-
-  // Track that user started payment
-  if(window.trackEvent) trackEvent('payment_started', {form: FORM_SLUG, price: FORM_PRICE});
-
-  // Render PayPal buttons (only if not already rendered)
-  if(!paypalButtonsInstance){
-    renderPayPalButtons();
-  }
-
-  // Scroll overlay into view smoothly
-  setTimeout(() => {
-    overlay.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 100);
-}
-
-function cancelPayment(){
-  document.getElementById('paymentOverlay').style.display = 'none';
-  const ctaBar = document.getElementById('ctaBar');
-  ctaBar.style.opacity = '1';
-  ctaBar.style.pointerEvents = 'auto';
-  if(window.trackEvent) trackEvent('payment_cancelled', {form: FORM_SLUG});
-}
-
-function renderPayPalButtons(){
-  if(!window.paypal){
-    showToast('Payment system loading... please try again in a moment', true);
-    return;
-  }
-
-  paypalButtonsInstance = window.paypal.Buttons({
-    style: {
-      layout: 'vertical',
-      color: 'blue',
-      shape: 'rect',
-      label: 'paypal',
-      height: 45
-    },
-
-    // Create the order
-    createOrder: (data, actions) => {
-      return actions.order.create({
-        purchase_units: [{
-          description: `SignRight - ${FORM_NAME}`,
-          amount: {
-            currency_code: 'USD',
-            value: FORM_PRICE.toFixed(2)
-          }
-        }],
-        application_context: {
-          shipping_preference: 'NO_SHIPPING',
-          user_action: 'PAY_NOW',
-          brand_name: 'SignRight'
-        }
-      });
-    },
-
-    // Capture the payment on approval
-    onApprove: async (data, actions) => {
-      try {
-        // Show processing state
-        const statusDiv = document.getElementById('paymentStatus');
-        statusDiv.style.display = 'block';
-        statusDiv.style.background = '#FFF3CD';
-        statusDiv.style.color = '#856404';
-        statusDiv.textContent = 'Processing your payment...';
-
-        // Capture the payment
-        const order = await actions.order.capture();
-
-        // Verify it was actually completed
-        if(order.status !== 'COMPLETED'){
-          throw new Error('Payment not completed');
-        }
-
-        // Track successful payment
-        if(window.trackEvent) trackEvent('payment_success', {
-          form: FORM_SLUG,
-          order_id: order.id,
-          amount: FORM_PRICE
-        });
-
-        // Update status to success
-        statusDiv.style.background = '#E8F7F0';
-        statusDiv.style.color = '#1F9D55';
-        statusDiv.innerHTML = '✓ Payment successful — generating your clean PDF...';
-
-        // Wait a moment, then generate and download the clean PDF
-        setTimeout(async () => {
-          try {
-            const bytes = await buildPdf(false);
-            downloadPdf(bytes, 'Vehicle_Bill_of_Sale_SignRight.pdf');
-
-            // Update status
-            statusDiv.innerHTML = `✓ Done! Your PDF has downloaded. Order ID: ${order.id.substring(0, 12)}...`;
-
-            // Show toast
-            showToast('Payment successful — PDF downloaded!');
-
-            // Track download
-            if(window.trackEvent) trackEvent('clean_pdf_downloaded', {form: FORM_SLUG, paid: true});
-
-            // Save purchase to Supabase (best effort, don't block on error)
-            savePurchaseRecord(order.id);
-
-          } catch(e) {
-            console.error('PDF generation failed:', e);
-            statusDiv.style.background = '#FFE8DD';
-            statusDiv.style.color = '#C62828';
-            statusDiv.innerHTML = `Payment succeeded (Order ${order.id.substring(0, 12)}...) but PDF generation failed. Please email hello@signright.io with your order ID and we'll send your PDF immediately.`;
-          }
-        }, 800);
-
-      } catch(error) {
-        console.error('Payment capture error:', error);
-        const statusDiv = document.getElementById('paymentStatus');
-        statusDiv.style.display = 'block';
-        statusDiv.style.background = '#FFE8DD';
-        statusDiv.style.color = '#C62828';
-        statusDiv.textContent = 'Payment processing failed. No charge was made. Please try again.';
-
-        if(window.trackEvent) trackEvent('payment_capture_failed', {form: FORM_SLUG, error: error.message});
-      }
-    },
-
-    // Handle errors
-    onError: (err) => {
-      console.error('PayPal error:', err);
-      const statusDiv = document.getElementById('paymentStatus');
-      statusDiv.style.display = 'block';
-      statusDiv.style.background = '#FFE8DD';
-      statusDiv.style.color = '#C62828';
-      statusDiv.textContent = 'Payment system error. No charge was made. Please try again or contact hello@signright.io.';
-
-      if(window.trackEvent) trackEvent('payment_error', {form: FORM_SLUG, error: String(err).substring(0, 100)});
-    },
-
-    // Handle user cancellation
-    onCancel: (data) => {
-      if(window.trackEvent) trackEvent('payment_user_cancelled', {form: FORM_SLUG});
-    }
-  });
-
-  paypalButtonsInstance.render('#paypal-button-container');
-}
-
-// Best-effort save to Supabase (doesn't block the download)
-async function savePurchaseRecord(orderId){
   try {
-    const { data: { session } } = await sb.auth.getSession();
-    if(!session) return; // Not logged in, skip database save
-
-    await sb.from('form_purchases').insert({
-      user_id: session.user.id,
-      form_slug: FORM_SLUG,
-      amount_cents: Math.round(FORM_PRICE * 100),
-      payment_provider: 'paypal',
-      payment_id: orderId,
-      status: 'completed'
-    });
+    const bytes = await buildPdf(false);
+    downloadPdf(bytes, 'Vehicle_Bill_of_Sale_SignRight.pdf');
+    showToast('Clean PDF downloaded');
+    if(window.trackEvent) trackEvent('clean_pdf_downloaded', {form: FORM_SLUG});
   } catch(e) {
-    // Don't block the user flow on database errors
-    console.warn('Could not save purchase record:', e);
+    console.error(e);
+    showToast('Could not generate PDF', true);
   }
-}
-
-// Keep old finalizeDoc as a fallback (in case anything still references it)
-async function finalizeDoc(){
-  startPayment();
 }
 
 </script>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bill of Sale Template — Free Preview, $4.99 | SignRight</title>
-<meta name="description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $4.99 once. No subscription.">
+<title>Free Bill of Sale Template | SignRight</title>
+<meta name="description" content="Bill of sale for furniture, electronics, or any personal property. Fill online and download — completely free. No subscription.">
 <meta name="keywords" content="bill of sale template, generic bill of sale, personal property bill of sale, furniture bill of sale, bill of sale pdf free">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://signright.io/forms/bill-of-sale">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bill of Sale Template — Free Preview, $4.99 | SignRight">
-<meta property="og:description" content="Bill of sale for furniture, electronics, or any personal property. Fill online, preview free, pay $4.99 once. No subscription.">
+<meta property="og:title" content="Free Bill of Sale Template | SignRight">
+<meta property="og:description" content="Bill of sale for furniture, electronics, or any personal property. Fill online and download — completely free. No subscription.">
 <meta property="og:url" content="https://signright.io/forms/bill-of-sale">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
@@ -20,11 +20,11 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Bill of Sale Template",
-  "description": "Fill online, preview free, pay $4.99 once. No subscription. Works for furniture, electronics, equipment, jewelry, artwork, or any personal property.",
+  "description": "Fill online and download — completely free. No subscription. Works for furniture, electronics, equipment, jewelry, artwork, or any personal property.",
   "brand": { "@type": "Brand", "name": "SignRight" },
   "offers": {
     "@type": "Offer",
-    "price": "4.99",
+    "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://signright.io/forms/bill-of-sale"
@@ -42,9 +42,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-
-<!-- PayPal SDK — replace YOUR_PAYPAL_CLIENT_ID with your actual client ID -->
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD&intent=capture&components=buttons"></script>
 
 <script>
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wf378dn1ai");
@@ -214,16 +211,15 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
 .preview-doc .info-table td{padding:.3rem .5rem;border:1px solid var(--border);vertical-align:top}
 .preview-doc .info-table td.label{background:var(--surface);font-weight:600;width:40%}
 
-/* ── CTA BAR — FIX 2: price visible, PayPal container ── */
-.cta-bar{background:var(--ink);color:#fff;border-radius:12px;padding:1.2rem;margin-top:1.2rem}
-.cta-bar-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.9rem}
+/* ── CTA BAR ── */
+.cta-bar{background:var(--ink);color:#fff;border-radius:12px;padding:1.2rem;margin-top:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .cta-bar .cta-text strong{display:block;font-family:'Inter',sans-serif;font-size:1rem;margin-bottom:.15rem}
 .cta-bar .cta-text span{font-size:.83rem;color:rgba(255,255,255,0.7)}
-.cta-price-tag{background:var(--accent);color:#fff;border-radius:8px;padding:.4rem .9rem;font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;white-space:nowrap}
-.paypal-wrapper{background:rgba(255,255,255,0.06);border-radius:8px;padding:.8rem;border:1px solid rgba(255,255,255,0.1)}
-.paypal-wrapper-label{font-size:.75rem;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:.6rem;letter-spacing:.04em;text-transform:uppercase}
-#paypal-button-container{min-height:45px}
-.paypal-security-note{font-size:.72rem;color:rgba(255,255,255,0.45);text-align:center;margin-top:.55rem}
+.cta-bar .cta-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.cta-bar .t-btn{background:transparent;color:#fff;border-color:rgba(255,255,255,0.2)}
+.cta-bar .t-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4)}
+.cta-bar .t-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.cta-bar .t-btn.primary:hover{background:var(--accent-dark)}
 
 /* Info sections (SEO content) */
 .info-section{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
@@ -332,7 +328,7 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
     </div>
     <div id="modalSignUp" style="display:none">
       <h2>Create free account</h2>
-      <p>Takes 30 seconds. Then complete your $4.99 payment and download instantly.</p>
+      <p>Takes 30 seconds. Then download your clean PDF instantly — completely free.</p>
       <div class="field"><input type="email" id="modalSignUpEmail" placeholder="Email address" autocomplete="email"></div>
       <div class="field"><input type="password" id="modalSignUpPassword" placeholder="Choose a password (8+ chars)" autocomplete="new-password"></div>
       <div class="modal-error" id="modalSignUpError"></div>
@@ -355,9 +351,7 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
     </div>
     <div class="form-meta">
       <div class="form-badges">
-        <span class="badge badge-green">✓ Free preview</span>
-        <!-- FIX 2: price badge added -->
-        <span class="badge badge-price">$4.99 one-time</span>
+        <span class="badge badge-green">✓ 100% free</span>
         <span class="badge badge-blue">3 min</span>
         <span class="badge badge-gray">All states</span>
       </div>
@@ -529,19 +523,17 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
       </div>
       <div class="preview-frame"><div class="preview-doc" id="previewDoc"></div></div>
 
-      <!-- FIX 1+2: PayPal CTA bar with visible price -->
+      <!-- CTA Bar -->
       <div class="cta-bar">
-        <div class="cta-bar-top">
-          <div class="cta-text">
-            <strong>Get the clean PDF</strong>
-            <span>No watermark · Instant download · No subscription</span>
-          </div>
-          <div class="cta-price-tag">$4.99 once</div>
+        <div class="cta-text">
+          <strong>Ready for the final version?</strong>
+          <span>Remove the watermark — completely free</span>
         </div>
-        <div class="paypal-wrapper">
-          <div class="paypal-wrapper-label">Secure checkout via PayPal</div>
-          <div id="paypal-button-container"></div>
-          <div class="paypal-security-note">🔒 Pay with PayPal, card, or Venmo · Files auto-deleted after processing</div>
+        <div class="cta-actions">
+          <button class="t-btn primary" onclick="finalizeDoc()">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Get clean PDF
+          </button>
         </div>
       </div>
     </div>
@@ -597,7 +589,7 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
       <details class="faq-item"><summary>What about selling a firearm?</summary><p>Firearms require a separate bill of sale with specific disclosures that vary by state. Some states require transfers go through a licensed dealer. Don't use this generic form for firearms — consult your state law.</p></details>
       <details class="faq-item"><summary>Can I use this for business inventory?</summary><p>Yes for simple business-to-business transfers. For ongoing commercial supply agreements, use a proper Service Agreement or Supply Contract instead.</p></details>
       <details class="faq-item"><summary>Should I get a witness or notary?</summary><p>Not required for most transactions. For items over $500 or particularly sensitive sales (family heirlooms, estate items), a notary adds legal weight. Costs $5–$25 at most banks or UPS stores.</p></details>
-      <details class="faq-item"><summary>Is the $4.99 a subscription?</summary><p>No. You pay once and download your clean PDF immediately. No account charges, no monthly fees, no hidden costs. If you need another form, each one is a separate one-time payment.</p></details>
+      <details class="faq-item"><summary>Is this really free?</summary><p>Yes. SignRight is currently free to use. Create an account, then download your clean PDF immediately — no charges, no monthly fees, no hidden costs.</p></details>
     </div>
   </section>
 </div>
@@ -683,9 +675,8 @@ async function modalSignIn(){
   if(error){ errEl.textContent = error.message; errEl.style.display = 'block'; return; }
   closeAuthModal();
   updateNavForUser();
-  showToast('Signed in — complete your payment below');
-  // Re-render PayPal buttons now that user is authenticated
-  renderPayPalButtons();
+  showToast('Signed in');
+  finalizeDoc();
 }
 
 async function modalSignUp(){
@@ -943,95 +934,32 @@ async function downloadPreview(){
   finally { btn.innerHTML='<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Preview'; btn.disabled=false; }
 }
 
-/* ── FIX 1: PayPal integration — real payment before PDF delivery ── */
-let paypalRendered = false;
+async function finalizeDoc(){
+  if(window.trackEvent) trackEvent('finalize_click',{form:'bill-of-sale'});
 
-async function renderPayPalButtons(){
-  // Prevent double-render
-  if(paypalRendered) return;
+  const valid = validateRequired(['itemDescription','sellerName','sellerAddress','buyerName','buyerAddress','saleDate','salePrice']);
+  if(!valid) return;
 
-  // Check if PayPal SDK loaded
-  if(typeof paypal === 'undefined'){
-    console.error('PayPal SDK not loaded — check client-id in script tag');
+  const { data: { session } } = await sb.auth.getSession();
+  if(!session){
+    if(window.trackEvent) trackEvent('auth_required',{form:'bill-of-sale'});
+    openAuthModal();
     return;
   }
 
-  paypalRendered = true;
-
-  paypal.Buttons({
-    style: {
-      layout: 'vertical',
-      color: 'blue',
-      shape: 'rect',
-      label: 'pay',
-      height: 45
-    },
-
-    // Step 1: validate form before creating order
-    onClick: async function(data, actions){
-      const valid = validateRequired(['itemDescription','sellerName','sellerAddress','buyerName','buyerAddress','saleDate','salePrice']);
-      if(!valid) return actions.reject();
-
-      // FIX 3: check auth — if not logged in, open modal instead of redirecting
-      const { data: { session } } = await sb.auth.getSession();
-      if(!session){
-        if(window.trackEvent) trackEvent('auth_required',{form:'bill-of-sale'});
-        openAuthModal();
-        return actions.reject();
-      }
-
-      if(window.trackEvent) trackEvent('paypal_initiated',{form:'bill-of-sale',price:'4.99'});
-      return actions.resolve();
-    },
-
-    // Step 2: create the order
-    createOrder: function(data, actions){
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value: '4.99',
-            currency_code: 'USD'
-          },
-          description: 'Bill of Sale — SignRight',
-          soft_descriptor: 'SIGNRIGHT FORM'
-        }]
-      });
-    },
-
-    // Step 3: capture payment, then deliver PDF
-    onApprove: async function(data, actions){
-      showToast('Processing payment...');
-      try {
-        await actions.order.capture();
-        if(window.trackEvent) trackEvent('payment_complete',{form:'bill-of-sale',price:'4.99'});
-        const bytes = await buildPdf(false);
-        downloadPdf(bytes,'Bill_of_Sale_SignRight.pdf');
-        showToast('Payment complete — clean PDF downloaded ✓');
-      } catch(e){
-        console.error(e);
-        showToast('Payment succeeded but PDF failed — contact hello@signright.io',true);
-      }
-    },
-
-    onError: function(err){
-      console.error('PayPal error:', err);
-      showToast('Payment failed — please try again',true);
-      if(window.trackEvent) trackEvent('payment_error',{form:'bill-of-sale'});
-    },
-
-    onCancel: function(){
-      showToast('Payment cancelled');
-      if(window.trackEvent) trackEvent('payment_cancelled',{form:'bill-of-sale'});
-    }
-
-  }).render('#paypal-button-container');
+  try {
+    const bytes = await buildPdf(false);
+    downloadPdf(bytes,'Bill_of_Sale_SignRight.pdf');
+    showToast('Clean PDF downloaded');
+    if(window.trackEvent) trackEvent('clean_pdf_downloaded',{form:'bill-of-sale'});
+  } catch(e){
+    console.error(e);
+    showToast('Could not generate PDF',true);
+  }
 }
 
-// Init PayPal on page load
-window.addEventListener('DOMContentLoaded', function(){
-  // Small delay to ensure PayPal SDK is ready
-  setTimeout(renderPayPalButtons, 500);
-});
+// Init
+updateNavForUser();
 </script>
 </body>
 </html>
