@@ -19,6 +19,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Add Watermark to PDF Online","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"Add a custom text watermark to any PDF online. Set opacity, angle, and text. No signup. Download your watermarked PDF — 100% free.","url":"https://signright.io/watermark-pdf","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"SignRight","url":"https://signright.io"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://signright.io/"},{"@type":"ListItem","position":2,"name":"Add Watermark to PDF Online","item":"https://signright.io/watermark-pdf"}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -78,9 +81,10 @@
   </div>
 </div>
 <div class="file-list" id="fileList"></div>
-<div class="options-panel" id="optPanel">
+<div class="options-panel visible" id="optPanel">
   <div class="options-card">
     <div class="options-title">Options</div>
+    <p class="options-hint">Defaults to <strong>CONFIDENTIAL</strong> — type your own text below to stamp something else, like DRAFT or your company name.</p>
     <div class="option-row"><div><div class="option-label">Watermark text</div></div><input class="option-input" id="wmText" type="text" placeholder="e.g. CONFIDENTIAL" value="CONFIDENTIAL"></div>
 <div class="option-row"><div><div class="option-label">Opacity</div></div><select class="option-select" id="wmOpacity"><option value="0.1">10% — very faint</option><option value="0.2" selected>20% — standard</option><option value="0.4">40% — prominent</option></select></div>
 <div class="option-row"><div><div class="option-label">Angle</div></div><select class="option-select" id="wmAngle"><option value="45">45° diagonal</option><option value="0">0° horizontal</option><option value="90">90° vertical</option></select></div>
@@ -162,7 +166,7 @@ uploadArea.addEventListener('dragleave',function(){uploadArea.classList.remove('
 uploadArea.addEventListener('drop',function(e){e.preventDefault();uploadArea.classList.remove('drag-over');handleFiles(e.dataTransfer.files);});
 fileInput.addEventListener('change',function(){handleFiles(fileInput.files);});
 uploadArea.querySelector('.upload-btn').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();fileInput.click();});
-resetBtn.addEventListener('click',function(){selectedFiles=[];outputBlob=null;fileList.innerHTML='';fileList.classList.remove('visible');optPanel.classList.remove('visible');processBtnWrap.classList.add('hidden');progressState.classList.remove('visible');resultState.classList.remove('visible');uploadArea.parentElement.style.display='';fileInput.value='';});
+resetBtn.addEventListener('click',function(){selectedFiles=[];outputBlob=null;fileList.innerHTML='';fileList.classList.remove('visible');optPanel.classList.add('visible');processBtnWrap.classList.add('hidden');progressState.classList.remove('visible');resultState.classList.remove('visible');uploadArea.parentElement.style.display='';fileInput.value='';});
 function fmtBytes(b){return b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';}
 function renderFiles(files){fileList.innerHTML='';Array.from(files).forEach(function(f,i){var d=document.createElement('div');d.className='file-item';d.innerHTML='<div class="file-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="file-item-name">'+f.name+'</span><span class="file-item-size">'+fmtBytes(f.size)+'</span><button class="file-item-remove" data-i="'+i+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';fileList.appendChild(d);});fileList.querySelectorAll('.file-item-remove').forEach(function(b){b.addEventListener('click',function(){selectedFiles.splice(parseInt(b.dataset.i),1);if(!selectedFiles.length)resetBtn.click();else renderFiles(selectedFiles);});});}
 function showProgress(msg){uploadArea.parentElement.style.display='none';fileList.classList.remove('visible');optPanel.classList.remove('visible');processBtnWrap.classList.add('hidden');progressState.classList.add('visible');progressLabel.textContent=msg||'Processing…';}
