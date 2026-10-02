@@ -57,13 +57,22 @@ nav{position:sticky;top:0;height:var(--nav-h);background:rgba(250,250,247,0.92);
 
 .nav-links{display:flex;align-items:center;gap:.2rem;flex:1;padding:0 1.5rem}
 .nav-item{position:relative}
+/* Hover bridge: lives on the item, not inside the panel, so it stays
+   hit-testable even while the panel is still closed, and it spans the panel's
+   full width instead of just the tab's. */
+.nav-item::after{content:"";position:absolute;top:100%;left:0;width:100%;min-width:320px;height:10px;display:none}
+.nav-item:hover::after,.nav-item.open::after{display:block}
 .nav-tab{display:flex;align-items:center;gap:.3rem;font-size:.875rem;font-weight:500;color:var(--muted);padding:.45rem .7rem;border-radius:var(--radius-sm);cursor:pointer;transition:all .15s;white-space:nowrap;background:none;border:none;font-family:inherit}
-.nav-tab:hover,.nav-item:hover .nav-tab,.nav-item.active .nav-tab{color:var(--ink);background:var(--bg-alt)}
+.nav-tab:hover,.nav-item:hover .nav-tab,.nav-item.open .nav-tab,.nav-item.active .nav-tab{color:var(--ink);background:var(--bg-alt)}
 .nav-tab .chevron{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
-.nav-item:hover .nav-tab .chevron{transform:rotate(180deg)}
+.nav-item:hover .nav-tab .chevron,.nav-item.open .nav-tab .chevron{transform:rotate(180deg)}
 
-.nav-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(6px);background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:1.25rem;min-width:220px;opacity:0;visibility:hidden;transition:all .18s cubic-bezier(.4,0,.2,1);z-index:300;pointer-events:none}
-.nav-item:hover .nav-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+/* Anchored to the item's left edge, not centred: centring made the panel
+   overhang the tab by ~100px, so a diagonal toward its outer columns left the
+   hover region sideways and shut the menu before reaching the panel. */
+.nav-panel{position:absolute;top:calc(100% + 8px);left:0;max-width:calc(100vw - 2rem);transform:translateY(6px);background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:1.25rem;min-width:220px;opacity:0;visibility:hidden;transition:opacity .18s cubic-bezier(.4,0,.2,1),transform .18s cubic-bezier(.4,0,.2,1),visibility .18s;z-index:300;pointer-events:none}
+.nav-panel::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
+.nav-item:hover .nav-panel,.nav-item.open .nav-panel{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
 .nav-panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:.25rem}
 .nav-panel.single-col .nav-panel-grid{grid-template-columns:1fr}
 .nav-panel-label{font-size:.7rem;font-weight:600;color:var(--muted-2);text-transform:uppercase;letter-spacing:.06em;padding:.4rem .5rem .2rem;grid-column:1/-1}
