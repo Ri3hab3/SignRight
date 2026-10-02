@@ -135,6 +135,21 @@ window.trackEvent=function(name,params){try{
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZFGB4KGK2V');</script>
 
 <style>
+  /* Travel Forms adds a fifth footer column and a nav tab; scoped here so the
+     other pages, which still have four columns, are untouched. */
+  .footer-grid{grid-template-columns:1.6fr repeat(5,1fr);gap:2rem}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+  @media(max-width:560px){.footer-grid{grid-template-columns:1fr 1fr}}
+  /* Six tabs plus both CTAs overflow between the 900px drawer breakpoint and
+     ~1080px. 'Legal Forms' is duplicated in the Forms tab, so it yields first. */
+  @media(max-width:1080px){
+    .nav-cta .btn-ghost{display:none}
+    .nav-links{padding:0 .6rem;gap:0}
+    .nav-tab{padding:.45rem .45rem;font-size:.84rem}
+  }
+  .cat-travel .tool-card-icon{background:#E8F1FF;color:#0B5FFF}
+  /* Only three cards here, so stretch them instead of leaving auto-fill gaps. */
+  #travel-forms .tool-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 /* =========================================================
    FALLBACK STYLESHEET — wrapped in @layer.
    CSS rule: ANY unlayered rule beats ANY layered rule,
@@ -500,6 +515,19 @@ window.trackEvent=function(name,params){try{
           </div>
         </div>
       </div>
+      <div class="nav-item">
+        <button class="nav-tab">Travel <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-panel single-col">
+          <div class="nav-panel-grid">
+            <div class="nav-panel-label">India Arrival Forms</div>
+            <a href="/india-arrival-checker"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg> India Arrival Checker</a>
+            <a href="/air-suvidha-form"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Air Suvidha Form</a>
+            <a href="/india-e-arrival-card"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> India e-Arrival Card</a>
+            <a href="/dubai-to-india-travel-requirements"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Dubai to India</a>
+            <a href="/travel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> All Travel Guides →</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="nav-cta">
@@ -564,6 +592,14 @@ window.trackEvent=function(name,params){try{
     <div class="drawer-section">
       <div class="drawer-section-label">Legal Forms</div>
       <a href="/forms">Browse All Forms →</a>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-label">Travel Forms</div>
+      <a href="/india-arrival-checker">India Arrival Checker</a>
+      <a href="/air-suvidha-form">Air Suvidha Form</a>
+      <a href="/india-e-arrival-card">India e-Arrival Card</a>
+      <a href="/dubai-to-india-travel-requirements">Dubai to India</a>
+      <a href="/travel">All Travel Guides →</a>
     </div>
   </div>
 </div>
@@ -782,6 +818,32 @@ window.trackEvent=function(name,params){try{
   </div>
 </div>
 
+<!-- ===== TRAVEL FORMS ===== -->
+<div style="border-top:1px solid var(--border-soft)">
+  <div class="tools-section cat-travel" id="travel-forms">
+    <div class="section-eyebrow">Travel forms</div>
+    <div class="section-title">Flying to India? Fill the right form first.</div>
+    <p class="section-sub">India now requires arrival forms to be submitted online before you land. These guides explain each official form in plain English, and link you straight to the government portal — we never charge for a form the government gives away free.</p>
+    <div class="tool-grid" style="margin-top:1.6rem">
+      <a class="tool-card" href="/india-arrival-checker">
+        <div class="tool-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <span class="tool-card-name">Check which forms I need</span>
+        <span class="tool-card-desc">Enter your passport type and landing time — see your forms and 72-hour window</span>
+      </a>
+      <a class="tool-card" href="/air-suvidha-form">
+        <div class="tool-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <span class="tool-card-name">How to fill the Air Suvidha form</span>
+        <span class="tool-card-desc">Field-by-field guide to the health declaration every arrival must file</span>
+      </a>
+      <a class="tool-card" href="/travel">
+        <div class="tool-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <span class="tool-card-name">Browse all travel form guides</span>
+        <span class="tool-card-desc">Air Suvidha, the India e-Arrival Card and Gulf route checklists</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- ===== FAQ ===== -->
 <section class="faq-section" id="faq">
   <div class="section-eyebrow">Questions</div>
@@ -860,6 +922,14 @@ window.trackEvent=function(name,params){try{
         <a href="/forms/service-agreement">Service Agreement</a>
         <a href="/forms/vehicle-bill-of-sale">Bill of Sale</a>
         <a href="/forms">All 14 Forms</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Travel Forms</div>
+        <a href="/india-arrival-checker">India Arrival Checker</a>
+        <a href="/air-suvidha-form">Air Suvidha Form</a>
+        <a href="/india-e-arrival-card">India e-Arrival Card</a>
+        <a href="/dubai-to-india-travel-requirements">Dubai to India</a>
+        <a href="/travel">All Travel Guides</a>
       </div>
     </div>
     <div class="footer-bottom">
