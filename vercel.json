@@ -35,6 +35,31 @@
       "source": "/hi/dubai-to-india-travel-requirements.html",
       "destination": "/hi/dubai-to-india-travel-requirements",
       "permanent": true
+    },
+    {
+      "source": "/thailand-tdac.html",
+      "destination": "/thailand-tdac",
+      "permanent": true
+    },
+    {
+      "source": "/thailand-tdac-who-needs-it.html",
+      "destination": "/thailand-tdac-who-needs-it",
+      "permanent": true
+    },
+    {
+      "source": "/thailand-tdac-edit-update.html",
+      "destination": "/thailand-tdac-edit-update",
+      "permanent": true
+    },
+    {
+      "source": "/thailand-tdac-for-indians.html",
+      "destination": "/thailand-tdac-for-indians",
+      "permanent": true
+    },
+    {
+      "source": "/thailand-tdac-official-website.html",
+      "destination": "/thailand-tdac-official-website",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -253,6 +278,26 @@
     {
       "source": "/hi/dubai-to-india-travel-requirements",
       "destination": "/hi/dubai-to-india-travel-requirements.html"
+    },
+    {
+      "source": "/thailand-tdac",
+      "destination": "/thailand-tdac.html"
+    },
+    {
+      "source": "/thailand-tdac-who-needs-it",
+      "destination": "/thailand-tdac-who-needs-it.html"
+    },
+    {
+      "source": "/thailand-tdac-edit-update",
+      "destination": "/thailand-tdac-edit-update.html"
+    },
+    {
+      "source": "/thailand-tdac-for-indians",
+      "destination": "/thailand-tdac-for-indians.html"
+    },
+    {
+      "source": "/thailand-tdac-official-website",
+      "destination": "/thailand-tdac-official-website.html"
     }
   ],
   "headers": [
