@@ -4,14 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lease Termination Letter / Notice to Vacate | SignRight</title>
-<meta name="description" content="Write a lease termination or notice to vacate in minutes. Fill and download — completely free.">
+<meta name="description" content="Free lease termination letter and notice to vacate template. Fill in dates and reason, preview live, and download a ready-to-sign PDF in minutes.">
 <meta name="keywords" content="lease termination letter, notice to vacate, notice to quit, tenant moving out letter, landlord termination notice">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://signright.io/forms/lease-termination">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lease Termination Letter / Notice to Vacate | SignRight">
-<meta property="og:description" content="Write a lease termination or notice to vacate in minutes. Fill and download — completely free.">
+<meta property="og:description" content="Free lease termination letter and notice to vacate template. Fill in dates and reason, preview live, and download a ready-to-sign PDF in minutes.">
 <meta property="og:url" content="https://signright.io/forms/lease-termination">
+<meta property="og:site_name" content="SignRight">
+<meta property="og:image" content="https://signright.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lease Termination Letter / Notice to Vacate | SignRight">
+<meta name="twitter:description" content="Free lease termination letter and notice to vacate template. Fill in dates and reason, preview live, and download a ready-to-sign PDF in minutes.">
+<meta name="twitter:image" content="https://signright.io/og-image.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <script type="application/ld+json">
@@ -166,7 +172,7 @@ input:invalid:not(:placeholder-shown){border-color:var(--danger)}
 }
 .preview-doc > *{position:relative;z-index:1}
 
-.preview-doc h1{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;text-align:center;margin-bottom:1.4rem;letter-spacing:-.02em;text-transform:uppercase}
+.preview-doc h2.doc-title{font-size:1.35rem;font-weight:800;text-align:center;margin-bottom:1.4rem;letter-spacing:-.02em;text-transform:uppercase}
 .preview-doc h2{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;margin-top:1.1rem;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.02em}
 .preview-doc p{margin-bottom:.65rem;text-align:justify}
 .preview-doc .party{padding-left:1rem;margin-bottom:.8rem}
@@ -254,8 +260,6 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
 }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wf378dn1ai");
   window.trackEvent = function(name, params){try{if(window.clarity){window.clarity('event', name); if(params) Object.keys(params).forEach(k => window.clarity('set', k, String(params[k])));}}catch(e){}};
@@ -429,7 +433,7 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
 <footer>
   <div class="footer-inner">
     <a href="/" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>SignRight</a>
-    <span>&copy; 2026 SignRight &middot; <a href="/">Home</a> &middot; <a href="mailto:hello@signright.app">Contact</a></span>
+    <span>&copy; 2026 SignRight &middot; <a href="/">Home</a> &middot; <a href="mailto:hello@signright.io">Contact</a></span>
   </div>
 </footer>
 
@@ -438,6 +442,8 @@ footer{background:var(--footer-bg);padding:2rem 0;color:rgba(255,255,255,0.55);m
   <span id="toastMsg">Done</span>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 /* =====================================================
    SignRight — Shared Form Utilities
@@ -752,7 +758,7 @@ function renderPreview(){
     <p style="text-align:right;margin-bottom:1.2rem">${noticeD}</p>
     <p style="margin-bottom:.4rem"><strong>${pad(s.recipientName, 'Recipient Name')}</strong></p>
     <p style="margin-bottom:1.2rem">${pad(s.recipientAddress, 'Recipient Address')}</p>
-    <h1 style="text-align:left;font-size:1.15rem;margin-bottom:1rem">Re: Notice of Lease Termination</h1>
+    <h2 style="text-align:left;font-size:1.15rem;margin-bottom:1rem">Re: Notice of Lease Termination</h2>
     <p>Dear ${pad(s.recipientName, 'Recipient Name')},</p>
     <p>${intro}</p>
     ${reasonText}
