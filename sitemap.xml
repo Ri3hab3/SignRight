@@ -3,72 +3,74 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Homepage -->
-  <url><loc>https://signright.io/</loc><lastmod>2026-09-30</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://signright.io/</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <!-- Batch 1 — Tier 1 Tool Pages -->
-  <url><loc>https://signright.io/pdf-to-word</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/word-to-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/pdf-to-excel</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/excel-to-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/compress-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/merge-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/split-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/pdf-to-jpg</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/jpg-to-pdf</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/pdf-to-text</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/pdf-to-word</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/word-to-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/pdf-to-excel</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/excel-to-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/compress-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/merge-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/split-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/pdf-to-jpg</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/jpg-to-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/pdf-to-text</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Batch 2+3 — Sign, Edit, Security, More Convert -->
-  <url><loc>https://signright.io/sign-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/edit-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/redact-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/rotate-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/add-page-numbers</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/watermark-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/protect-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/unlock-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/crop-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/fill-pdf-form</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/esign</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/request-signature</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/merge-and-sign</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/repair-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/pdf-to-ppt</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/ppt-to-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/html-to-pdf</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/pdf-to-pdfa</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/sign-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/edit-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/redact-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/rotate-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/add-page-numbers</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/watermark-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/protect-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/unlock-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/crop-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/fill-pdf-form</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/esign</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/request-signature</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/merge-and-sign</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/repair-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/pdf-to-ppt</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/ppt-to-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/html-to-pdf</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/pdf-to-pdfa</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Legal Pages -->
-  <url><loc>https://signright.io/privacy</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://signright.io/terms</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://signright.io/refund</loc><lastmod>2026-07-10</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://signright.io/about</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://signright.io/contact</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://signright.io/privacy</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://signright.io/terms</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://signright.io/refund</loc><lastmod>2026-10-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
   <!-- Legal Forms -->
-  <url><loc>https://signright.io/forms</loc><lastmod>2026-10-10</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://signright.io/forms/residential-lease</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/forms/month-to-month-rental</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/forms/rental-application</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/lease-termination</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/roommate-agreement</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/nda</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://signright.io/forms/service-agreement</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/contractor-agreement</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/invoice</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/offer-letter</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/vehicle-bill-of-sale</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/bill-of-sale</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/promissory-note</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://signright.io/forms/loan-agreement</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms</loc><lastmod>2026-10-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://signright.io/forms/residential-lease</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/forms/month-to-month-rental</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/forms/rental-application</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/lease-termination</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/roommate-agreement</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/nda</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/forms/service-agreement</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/contractor-agreement</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/invoice</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/offer-letter</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/vehicle-bill-of-sale</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/bill-of-sale</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/promissory-note</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/forms/loan-agreement</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Travel Forms & Arrival Cards -->
   <url>
     <loc>https://signright.io/travel</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://signright.io/air-suvidha-form</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://signright.io/air-suvidha-form"/>
@@ -77,19 +79,19 @@
   </url>
   <url>
     <loc>https://signright.io/india-e-arrival-card</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://signright.io/india-arrival-checker</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://signright.io/dubai-to-india-travel-requirements</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://signright.io/dubai-to-india-travel-requirements"/>
@@ -98,7 +100,7 @@
   </url>
   <url>
     <loc>https://signright.io/hi/air-suvidha-form</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://signright.io/air-suvidha-form"/>
@@ -107,7 +109,7 @@
   </url>
   <url>
     <loc>https://signright.io/hi/dubai-to-india-travel-requirements</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://signright.io/dubai-to-india-travel-requirements"/>
@@ -118,33 +120,61 @@
   <!-- Thailand TDAC -->
   <url>
     <loc>https://signright.io/thailand-tdac</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://signright.io/thailand-tdac-for-indians</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://signright.io/thailand-tdac-who-needs-it</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://signright.io/thailand-tdac-official-website</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://signright.io/thailand-tdac-edit-update</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Malaysia MDAC -->
+  <url><loc>https://signright.io/malaysia-mdac</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/malaysia-mdac-who-needs-it</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/malaysia-mdac-for-indians</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/malaysia-mdac-official-website</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/malaysia-mdac-edit-pin</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Singapore Arrival Card -->
+  <url><loc>https://signright.io/singapore-arrival-card</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/singapore-arrival-card-who-needs-it</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/singapore-arrival-card-for-indians</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/singapore-arrival-card-official-website</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/singapore-arrival-card-myica-app</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Vietnam Arrival Card -->
+  <url><loc>https://signright.io/vietnam-arrival-card</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/vietnam-arrival-card-who-needs-it</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/vietnam-arrival-card-for-indians</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/vietnam-arrival-card-official-website</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/vietnam-arrival-card-airports</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Form W-8BEN -->
+  <url><loc>https://signright.io/w-8ben-form</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://signright.io/fill-w-8ben-online</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/w-8ben-vs-w-9</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/w-8ben-treaty-line-9-10</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://signright.io/w-8ben-expiry-renewal</loc><lastmod>2026-10-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>

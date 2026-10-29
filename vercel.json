@@ -60,6 +60,116 @@
       "source": "/thailand-tdac-official-website.html",
       "destination": "/thailand-tdac-official-website",
       "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/fill-w-8ben-online.html",
+      "destination": "/fill-w-8ben-online",
+      "permanent": true
+    },
+    {
+      "source": "/w-8ben-form.html",
+      "destination": "/w-8ben-form",
+      "permanent": true
+    },
+    {
+      "source": "/w-8ben-vs-w-9.html",
+      "destination": "/w-8ben-vs-w-9",
+      "permanent": true
+    },
+    {
+      "source": "/w-8ben-treaty-line-9-10.html",
+      "destination": "/w-8ben-treaty-line-9-10",
+      "permanent": true
+    },
+    {
+      "source": "/w-8ben-expiry-renewal.html",
+      "destination": "/w-8ben-expiry-renewal",
+      "permanent": true
+    },
+    {
+      "source": "/malaysia-mdac.html",
+      "destination": "/malaysia-mdac",
+      "permanent": true
+    },
+    {
+      "source": "/malaysia-mdac-who-needs-it.html",
+      "destination": "/malaysia-mdac-who-needs-it",
+      "permanent": true
+    },
+    {
+      "source": "/malaysia-mdac-for-indians.html",
+      "destination": "/malaysia-mdac-for-indians",
+      "permanent": true
+    },
+    {
+      "source": "/malaysia-mdac-official-website.html",
+      "destination": "/malaysia-mdac-official-website",
+      "permanent": true
+    },
+    {
+      "source": "/malaysia-mdac-edit-pin.html",
+      "destination": "/malaysia-mdac-edit-pin",
+      "permanent": true
+    },
+    {
+      "source": "/singapore-arrival-card.html",
+      "destination": "/singapore-arrival-card",
+      "permanent": true
+    },
+    {
+      "source": "/singapore-arrival-card-who-needs-it.html",
+      "destination": "/singapore-arrival-card-who-needs-it",
+      "permanent": true
+    },
+    {
+      "source": "/singapore-arrival-card-for-indians.html",
+      "destination": "/singapore-arrival-card-for-indians",
+      "permanent": true
+    },
+    {
+      "source": "/singapore-arrival-card-official-website.html",
+      "destination": "/singapore-arrival-card-official-website",
+      "permanent": true
+    },
+    {
+      "source": "/singapore-arrival-card-myica-app.html",
+      "destination": "/singapore-arrival-card-myica-app",
+      "permanent": true
+    },
+    {
+      "source": "/vietnam-arrival-card.html",
+      "destination": "/vietnam-arrival-card",
+      "permanent": true
+    },
+    {
+      "source": "/vietnam-arrival-card-who-needs-it.html",
+      "destination": "/vietnam-arrival-card-who-needs-it",
+      "permanent": true
+    },
+    {
+      "source": "/vietnam-arrival-card-for-indians.html",
+      "destination": "/vietnam-arrival-card-for-indians",
+      "permanent": true
+    },
+    {
+      "source": "/vietnam-arrival-card-official-website.html",
+      "destination": "/vietnam-arrival-card-official-website",
+      "permanent": true
+    },
+    {
+      "source": "/vietnam-arrival-card-airports.html",
+      "destination": "/vietnam-arrival-card-airports",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -236,10 +346,6 @@
       "destination": "/forms-offer-letter.html"
     },
     {
-      "source": "/microtech-agreement",
-      "destination": "/Microtech-agreement.html"
-    },
-    {
       "source": "/privacy",
       "destination": "/privacy.html"
     },
@@ -298,6 +404,94 @@
     {
       "source": "/thailand-tdac-official-website",
       "destination": "/thailand-tdac-official-website.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/fill-w-8ben-online",
+      "destination": "/fill-w-8ben-online.html"
+    },
+    {
+      "source": "/w-8ben-form",
+      "destination": "/w-8ben-form.html"
+    },
+    {
+      "source": "/w-8ben-vs-w-9",
+      "destination": "/w-8ben-vs-w-9.html"
+    },
+    {
+      "source": "/w-8ben-treaty-line-9-10",
+      "destination": "/w-8ben-treaty-line-9-10.html"
+    },
+    {
+      "source": "/w-8ben-expiry-renewal",
+      "destination": "/w-8ben-expiry-renewal.html"
+    },
+    {
+      "source": "/malaysia-mdac",
+      "destination": "/malaysia-mdac.html"
+    },
+    {
+      "source": "/malaysia-mdac-who-needs-it",
+      "destination": "/malaysia-mdac-who-needs-it.html"
+    },
+    {
+      "source": "/malaysia-mdac-for-indians",
+      "destination": "/malaysia-mdac-for-indians.html"
+    },
+    {
+      "source": "/malaysia-mdac-official-website",
+      "destination": "/malaysia-mdac-official-website.html"
+    },
+    {
+      "source": "/malaysia-mdac-edit-pin",
+      "destination": "/malaysia-mdac-edit-pin.html"
+    },
+    {
+      "source": "/singapore-arrival-card",
+      "destination": "/singapore-arrival-card.html"
+    },
+    {
+      "source": "/singapore-arrival-card-who-needs-it",
+      "destination": "/singapore-arrival-card-who-needs-it.html"
+    },
+    {
+      "source": "/singapore-arrival-card-for-indians",
+      "destination": "/singapore-arrival-card-for-indians.html"
+    },
+    {
+      "source": "/singapore-arrival-card-official-website",
+      "destination": "/singapore-arrival-card-official-website.html"
+    },
+    {
+      "source": "/singapore-arrival-card-myica-app",
+      "destination": "/singapore-arrival-card-myica-app.html"
+    },
+    {
+      "source": "/vietnam-arrival-card",
+      "destination": "/vietnam-arrival-card.html"
+    },
+    {
+      "source": "/vietnam-arrival-card-who-needs-it",
+      "destination": "/vietnam-arrival-card-who-needs-it.html"
+    },
+    {
+      "source": "/vietnam-arrival-card-for-indians",
+      "destination": "/vietnam-arrival-card-for-indians.html"
+    },
+    {
+      "source": "/vietnam-arrival-card-official-website",
+      "destination": "/vietnam-arrival-card-official-website.html"
+    },
+    {
+      "source": "/vietnam-arrival-card-airports",
+      "destination": "/vietnam-arrival-card-airports.html"
     }
   ],
   "headers": [
@@ -346,6 +540,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/ads.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
         }
       ]
     }
