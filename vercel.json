@@ -258,10 +258,6 @@
       "destination": "/tool-esign.html"
     },
     {
-      "source": "/request-signature",
-      "destination": "/tool-request-signature.html"
-    },
-    {
       "source": "/merge-and-sign",
       "destination": "/tool-merge-and-sign.html"
     },
