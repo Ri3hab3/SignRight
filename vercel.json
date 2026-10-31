@@ -170,6 +170,76 @@
       "source": "/vietnam-arrival-card-airports.html",
       "destination": "/vietnam-arrival-card-airports",
       "permanent": true
+    },
+    {
+      "source": "/irs-fire-system-shutdown-2026.html",
+      "destination": "/irs-fire-system-shutdown-2026",
+      "permanent": true
+    },
+    {
+      "source": "/iris-tcc-application-guide.html",
+      "destination": "/iris-tcc-application-guide",
+      "permanent": true
+    },
+    {
+      "source": "/fire-vs-iris-differences.html",
+      "destination": "/fire-vs-iris-differences",
+      "permanent": true
+    },
+    {
+      "source": "/does-my-fire-tcc-work-with-iris.html",
+      "destination": "/does-my-fire-tcc-work-with-iris",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-file-1099-through-iris.html",
+      "destination": "/how-to-file-1099-through-iris",
+      "permanent": true
+    },
+    {
+      "source": "/1099-deadlines-2027-filing-season.html",
+      "destination": "/1099-deadlines-2027-filing-season",
+      "permanent": true
+    },
+    {
+      "source": "/1099-threshold-600-to-2000.html",
+      "destination": "/1099-threshold-600-to-2000",
+      "permanent": true
+    },
+    {
+      "source": "/1099-nec-2026-changes.html",
+      "destination": "/1099-nec-2026-changes",
+      "permanent": true
+    },
+    {
+      "source": "/reporting-cash-tips-1099-w2-2026.html",
+      "destination": "/reporting-cash-tips-1099-w2-2026",
+      "permanent": true
+    },
+    {
+      "source": "/reporting-overtime-1099-2026.html",
+      "destination": "/reporting-overtime-1099-2026",
+      "permanent": true
+    },
+    {
+      "source": "/treasury-tipped-occupation-code.html",
+      "destination": "/treasury-tipped-occupation-code",
+      "permanent": true
+    },
+    {
+      "source": "/form-1098-vli-vehicle-loan-interest.html",
+      "destination": "/form-1098-vli-vehicle-loan-interest",
+      "permanent": true
+    },
+    {
+      "source": "/1099-r-box-7-changes-2026.html",
+      "destination": "/1099-r-box-7-changes-2026",
+      "permanent": true
+    },
+    {
+      "source": "/1099-k-2026-changes.html",
+      "destination": "/1099-k-2026-changes",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -488,6 +558,62 @@
     {
       "source": "/vietnam-arrival-card-airports",
       "destination": "/vietnam-arrival-card-airports.html"
+    },
+    {
+      "source": "/irs-fire-system-shutdown-2026",
+      "destination": "/irs-fire-system-shutdown-2026.html"
+    },
+    {
+      "source": "/iris-tcc-application-guide",
+      "destination": "/iris-tcc-application-guide.html"
+    },
+    {
+      "source": "/fire-vs-iris-differences",
+      "destination": "/fire-vs-iris-differences.html"
+    },
+    {
+      "source": "/does-my-fire-tcc-work-with-iris",
+      "destination": "/does-my-fire-tcc-work-with-iris.html"
+    },
+    {
+      "source": "/how-to-file-1099-through-iris",
+      "destination": "/how-to-file-1099-through-iris.html"
+    },
+    {
+      "source": "/1099-deadlines-2027-filing-season",
+      "destination": "/1099-deadlines-2027-filing-season.html"
+    },
+    {
+      "source": "/1099-threshold-600-to-2000",
+      "destination": "/1099-threshold-600-to-2000.html"
+    },
+    {
+      "source": "/1099-nec-2026-changes",
+      "destination": "/1099-nec-2026-changes.html"
+    },
+    {
+      "source": "/reporting-cash-tips-1099-w2-2026",
+      "destination": "/reporting-cash-tips-1099-w2-2026.html"
+    },
+    {
+      "source": "/reporting-overtime-1099-2026",
+      "destination": "/reporting-overtime-1099-2026.html"
+    },
+    {
+      "source": "/treasury-tipped-occupation-code",
+      "destination": "/treasury-tipped-occupation-code.html"
+    },
+    {
+      "source": "/form-1098-vli-vehicle-loan-interest",
+      "destination": "/form-1098-vli-vehicle-loan-interest.html"
+    },
+    {
+      "source": "/1099-r-box-7-changes-2026",
+      "destination": "/1099-r-box-7-changes-2026.html"
+    },
+    {
+      "source": "/1099-k-2026-changes",
+      "destination": "/1099-k-2026-changes.html"
     }
   ],
   "headers": [
