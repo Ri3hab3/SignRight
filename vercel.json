@@ -272,6 +272,10 @@
       "destination": "/tool-reduce-file-size.html"
     },
     {
+      "source": "/free-pdf-tools",
+      "destination": "/free-pdf-tools.html"
+    },
+    {
       "source": "/pdf-to-text",
       "destination": "/tool-pdf-to-text.html"
     },
