@@ -268,6 +268,10 @@
       "destination": "/tool-remove-background.html"
     },
     {
+      "source": "/reduce-file-size",
+      "destination": "/tool-reduce-file-size.html"
+    },
+    {
       "source": "/pdf-to-text",
       "destination": "/tool-pdf-to-text.html"
     },

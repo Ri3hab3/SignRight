@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reduce File Size Online — Compress PDF, DOCX & Images to 20MB, 50MB | SignRight</title>
+<meta name="description" content="Reduce file size to the exact size you need. Compress PDF, Word, PowerPoint, Excel, JPG and PNG files to 20 MB, 50 MB or any target with a slider. Free, private, no upload.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://signright.io/reduce-file-size">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SignRight">
+<meta property="og:title" content="Reduce File Size Online | SignRight">
+<meta property="og:description" content="Reduce file size to the exact size you need. Compress PDF, Word, PowerPoint, Excel, JPG and PNG files to 20 MB, 50 MB or any target with a slider. Free, private, no upload.">
+<meta property="og:url" content="https://signright.io/reduce-file-size">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reduce File Size Online | SignRight">
+<meta name="twitter:description" content="Reduce file size to the exact size you need. Compress PDF, Word, PowerPoint, Excel, JPG and PNG files to 20 MB, 50 MB or any target with a slider. Free, private, no upload.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Reduce File Size Online","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"Reduce file size to the exact size you need. Compress PDF, Word, PowerPoint, Excel, JPG and PNG files to 20 MB, 50 MB or any target with a slider. Free, private, no upload.","url":"https://signright.io/reduce-file-size","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Completely free to use"},"provider":{"@type":"Organization","name":"SignRight","url":"https://signright.io"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I compress a file to a specific size like 20 MB or 50 MB?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your file, drag the slider to the size you want (or tap a preset such as 20 MB or 50 MB), then click Compress. The tool lowers image quality and resolution step by step until the file fits under your target."}}, {"@type": "Question", "name": "Which file types can I reduce?", "acceptedAnswer": {"@type": "Answer", "text": "PDF, Word (.docx), PowerPoint (.pptx), Excel (.xlsx), and images in JPG, PNG, WebP, BMP and AVIF format. Old binary formats like .doc, .ppt and .xls should be saved in the newer format first."}}, {"@type": "Question", "name": "Will my file always reach the exact size I choose?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always for files that contain photos or scans, which is where most of the size comes from. Files that are mostly text, fonts or video have little to shrink, so the result may land above a very aggressive target. The tool tells you when that happens."}}, {"@type": "Question", "name": "Is my file uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Compression runs entirely in your browser, so your documents and photos never leave your device. Very large files (hundreds of MB) need enough free memory on your computer, so close other heavy tabs first."}}, {"@type": "Question", "name": "Will text in my PDF still be selectable?", "acceptedAnswer": {"@type": "Answer", "text": "To reach small sizes, PDF pages are re-rendered as compressed images, so text is no longer selectable or searchable afterwards. Keep your original if you need searchable text."}}, {"@type": "Question", "name": "What happens to my Word, PowerPoint and Excel files?", "acceptedAnswer": {"@type": "Answer", "text": "Only the embedded pictures are recompressed. Text, formatting, tables and layout stay exactly as they were, and the file still opens normally in Office."}}, {"@type": "Question", "name": "Is there a file size limit?", "acceptedAnswer": {"@type": "Answer", "text": "You can try files up to 1 GB. Whether a huge file succeeds depends on your device's memory, since everything is processed locally."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wf378dn1ai");</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KGBKN6DP');</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M8 20 Q12 12 16 20 T24 16' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+/* ---- mobile nav fix: mega-menu ---- */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile-btn{display:block}
+  .nav-drawer{display:block;position:fixed;inset:0;background:rgba(20,22,43,.5);z-index:200;
+              opacity:0;pointer-events:none;transition:opacity .2s}
+  .nav-drawer.open{opacity:1;pointer-events:all}
+  .nav-drawer-panel{position:absolute;top:0;right:0;width:min(320px,86vw);height:100%;
+                    background:#fff;padding:1.2rem;overflow-y:auto}
+  .nav-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+  .drawer-close{background:none;border:none;padding:.3rem}
+  .drawer-section{margin-bottom:1.2rem;display:flex;flex-direction:column;gap:.3rem}
+  .drawer-section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;
+                        letter-spacing:.06em;color:#5C5F75;margin-bottom:.25rem}
+  .drawer-section a{font-size:.9rem;padding:.32rem 0}
+}
+</style>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8173139997421073"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGBKN6DP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+      SignRight
+    </a>
+    <div class="nav-links">
+      <div class="nav-item"><button class="nav-tab">Convert <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-panel"><div class="nav-panel-grid"><div class="nav-panel-label">PDF to Other</div><a href="/pdf-to-word"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF to Word</a><a href="/pdf-to-excel"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>PDF to Excel</a><a href="/pdf-to-jpg"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>PDF to JPG</a><a href="/pdf-to-ppt"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>PDF to PPT</a><a href="/pdf-to-text"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>PDF to Text</a><div class="nav-panel-label">Other to PDF</div><a href="/word-to-pdf"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Word to PDF</a><a href="/excel-to-pdf"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Excel to PDF</a><a href="/jpg-to-pdf"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>JPG to PDF</a><a href="/ppt-to-pdf"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>PPT to PDF</a><a href="/html-to-pdf"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>HTML to PDF</a></div></div></div>
+      <div class="nav-item"><button class="nav-tab">Organize <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-panel single-col"><div class="nav-panel-grid"><a href="/merge-pdf"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>Merge PDF</a><a href="/split-pdf"><svg viewBox="0 0 24 24"><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><line x1="12" y1="3" x2="12" y2="21"/></svg>Split PDF</a><a href="/compress-pdf"><svg viewBox="0 0 24 24"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="3" y1="21" x2="14" y2="10"/></svg>Compress PDF</a><a href="/rotate-pdf"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>Rotate PDF</a><a href="/crop-pdf"><svg viewBox="0 0 24 24"><polyline points="6 2 6 6 2 6"/><polyline points="18 22 18 18 22 18"/><path d="M2 6h4v12h12v4"/><path d="M22 18h-4V6H6V2"/></svg>Crop PDF</a><a href="/add-page-numbers"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>Add Page Numbers</a><a href="/watermark-pdf"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Watermark PDF</a></div></div></div>
+      <div class="nav-item"><button class="nav-tab">Sign & Edit <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-panel single-col"><div class="nav-panel-grid"><a href="/sign-pdf"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Sign PDF</a><a href="/edit-pdf"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Edit PDF</a><a href="/redact-pdf"><svg viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><line x1="1" y1="1" x2="23" y2="23"/></svg>Redact PDF</a><a href="/fill-pdf-form"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>Fill PDF Form</a><a href="/esign"><svg viewBox="0 0 24 24"><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>Multi-page eSign</a><a href="/merge-and-sign"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M12 20h9"/></svg>Merge + Sign</a></div></div></div>
+      <div class="nav-item"><button class="nav-tab">Security <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-panel single-col"><div class="nav-panel-grid"><a href="/protect-pdf"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Protect PDF</a><a href="/unlock-pdf"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>Unlock PDF</a><a href="/repair-pdf"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Repair PDF</a><a href="/pdf-to-pdfa"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>PDF to PDF/A</a></div></div></div>
+      <div class="nav-item"><button class="nav-tab">Forms <svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button><div class="nav-panel single-col"><div class="nav-panel-grid"><a href="/forms/residential-lease">Residential Lease</a><a href="/forms/nda">NDA</a><a href="/forms/service-agreement">Service Agreement</a><a href="/forms">All 15 Forms →</a></div></div></div>
+    </div>
+    <div class="nav-cta">
+      <a class="btn-ghost" href="/forms">Legal Forms</a>
+      <a class="btn-primary" href="/#tools">All Tools</a>
+    </div>
+    <button class="nav-mobile-btn" id="mobileNavBtn" aria-label="Open menu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer"><div class="nav-drawer-panel"><div class="nav-drawer-header"><a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>SignRight</a><button class="drawer-close" id="drawerClose"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><div class="drawer-section"><div class="drawer-section-label">Convert</div><a href="/pdf-to-word">PDF to Word</a><a href="/word-to-pdf">Word to PDF</a><a href="/pdf-to-excel">PDF to Excel</a><a href="/excel-to-pdf">Excel to PDF</a><a href="/pdf-to-jpg">PDF to JPG</a><a href="/jpg-to-pdf">JPG to PDF</a><a href="/pdf-to-text">PDF to Text</a></div><div class="drawer-section"><div class="drawer-section-label">Organize</div><a href="/merge-pdf">Merge PDF</a><a href="/split-pdf">Split PDF</a><a href="/compress-pdf">Compress PDF</a><a href="/rotate-pdf">Rotate PDF</a><a href="/watermark-pdf">Watermark PDF</a></div><div class="drawer-section"><div class="drawer-section-label">Sign & Edit</div><a href="/sign-pdf">Sign PDF</a><a href="/edit-pdf">Edit PDF</a><a href="/redact-pdf">Redact PDF</a><a href="/protect-pdf">Protect PDF</a><a href="/unlock-pdf">Unlock PDF</a></div><div class="drawer-section"><div class="drawer-section-label">Legal Forms</div><a href="/forms">Browse All Forms →</a></div></div></div>
+
+<style>
+.rf-panel{display:none;max-width:720px;margin:0 auto 1.5rem;padding:0 1.25rem}
+.rf-panel.visible{display:block}
+.rf-card{background:var(--card);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.5rem}
+.rf-file{display:flex;align-items:center;gap:.75rem;padding-bottom:1rem;margin-bottom:1.25rem;border-bottom:1px solid var(--border-soft)}
+.rf-file-name{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rf-file-size{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.rf-change{background:none;border:none;color:var(--accent-dark);font:inherit;font-size:.85rem;cursor:pointer;text-decoration:underline}
+.rf-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.rf-target{font-size:2.2rem;font-weight:800;letter-spacing:-.02em;margin:.25rem 0 .1rem}
+.rf-hint{color:var(--muted);font-size:.9rem}
+.rf-slider{width:100%;margin:1.1rem 0 .3rem;accent-color:var(--accent);height:28px;cursor:pointer}
+.rf-scale{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted-2)}
+.rf-presets{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.25rem}
+.rf-presets button{padding:.4rem .85rem;border:1px solid var(--border);background:#fff;border-radius:100px;font:inherit;font-size:.85rem;cursor:pointer;transition:all .15s}
+.rf-presets button:hover{border-color:var(--accent);color:var(--accent-dark)}
+.rf-presets button.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-dark);font-weight:600}
+.rf-note{font-size:.82rem;color:var(--muted);margin-top:.9rem}
+.rf-warn{background:var(--warning-soft);border-radius:var(--radius-sm);padding:.7rem .9rem;font-size:.88rem;margin-top:1rem;text-align:left}
+.rf-compare{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin:1rem 0;flex-wrap:wrap}
+.rf-compare div{text-align:center}
+.rf-compare .big{font-size:1.7rem;font-weight:800}
+.rf-compare .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.rf-compare .arrow{font-size:1.5rem;color:var(--muted-2)}
+.rf-saved{color:var(--success)}
+.upload-btn{cursor:pointer}
+</style>
+<div class="breadcrumb"><a href="/">Home</a><span class="sep"> › </span><span class="current">Reduce File Size Online</span></div>
+<div class="tool-hero">
+  <div class="eyebrow">Compress</div>
+  <h1>Reduce File Size — Compress to 20 MB, 50 MB or Any Size</h1>
+  <p>Upload a PDF, Word, PowerPoint, Excel or image file, drag the slider to the size you need, and download the smaller file. Everything runs in your browser, so your files stay private.</p>
+</div>
+<div class="upload-section" id="uploadSection">
+  <div class="upload-area" id="uploadArea">
+    <input type="file" id="fileInput" accept=".pdf,.docx,.pptx,.xlsx,.jpg,.jpeg,.png,.webp,.bmp,.avif,application/pdf,image/jpeg,image/png,image/webp,image/bmp,image/avif,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+    <div class="upload-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+    <div class="upload-title">Drop your file here</div>
+    <p class="upload-sub">or click to browse from your computer</p>
+    <button class="upload-btn" type="button"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Choose file</button>
+    <p class="upload-meta">PDF, DOCX, PPTX, XLSX, JPG, PNG, WebP, BMP, AVIF · up to 1GB</p>
+  </div>
+  <p class="rf-hint" style="text-align:center;margin-top:.75rem">🔒 Processed locally in your browser. Your file is never uploaded.</p>
+</div>
+<div class="rf-panel" id="optionsPanel">
+  <div class="rf-card">
+    <div class="rf-file"><div class="file-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="rf-file-name" id="fileName"></span><span class="rf-file-size" id="fileSize"></span><button class="rf-change" id="changeBtn" type="button">Change</button></div>
+    <div class="rf-label">Target file size</div>
+    <div class="rf-target" id="targetLabel">—</div>
+    <div class="rf-hint" id="targetHint"></div>
+    <input type="range" class="rf-slider" id="slider" min="0" max="1000" value="500" aria-label="Target file size">
+    <div class="rf-scale"><span id="minLabel"></span><span id="maxLabel"></span></div>
+    <div class="rf-presets" id="presets"></div>
+    <button class="btn-process" id="processBtn" type="button"><svg viewBox="0 0 24 24"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="3" y1="21" x2="14" y2="10"/></svg>Compress file</button>
+    <p class="rf-note" id="kindNote"></p>
+  </div>
+</div>
+<div class="progress-state" id="progressState">
+  <div class="progress-spinner"></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <p class="progress-label" id="progressLabel">Processing your file…</p>
+</div>
+<div class="result-state" id="resultState">
+  <div class="result-card">
+    <div class="result-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="result-title" id="resultTitle">File compressed</div>
+    <div class="rf-compare"><div><div class="big" id="beforeSize"></div><div class="lbl">Before</div></div><div class="arrow">→</div><div><div class="big rf-saved" id="afterSize"></div><div class="lbl">After</div></div></div>
+    <p class="result-sub" id="resultSub"></p>
+    <div class="rf-warn" id="resultWarn" style="display:none"></div>
+    <div class="result-actions" style="margin-top:1.25rem">
+      <button class="btn-download" id="downloadBtn" type="button"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download</button>
+      <button class="btn-account" id="retryBtn" type="button">Try a different size</button>
+    </div>
+    <p class="result-note">100% free · No subscription · No account required</p>
+    <button class="btn-reset" id="resetBtn" type="button">← Compress another file</button>
+  </div>
+</div>
+<div style="background:var(--bg-alt);border-top:1px solid var(--border-soft)"><div class="how-section"><div class="section-eyebrow">How it works</div><div class="section-title">Three simple steps</div><div class="steps-grid"><div class="step"><div class="step-num">1</div><div class="step-title">Upload your file</div><div class="step-desc">PDF, Word, PowerPoint, Excel or an image. Files up to 1GB are supported.</div></div><div class="step"><div class="step-num">2</div><div class="step-title">Set your target size</div><div class="step-desc">Drag the slider or pick a preset like 20 MB or 50 MB. We tune quality and resolution to fit.</div></div><div class="step"><div class="step-num">3</div><div class="step-title">Download the smaller file</div><div class="step-desc">See the before and after size, then download. Free, private and no account needed.</div></div></div></div></div>
+<section class="faq-section"><div class="section-eyebrow">FAQ</div><div class="section-title">Common questions</div><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">How do I compress a file to a specific size like 20 MB or 50 MB?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">Upload your file, drag the slider to the size you want (or tap a preset such as 20 MB or 50 MB), then click Compress. The tool lowers image quality and resolution step by step until the file fits under your target.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">Which file types can I reduce?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">PDF, Word (.docx), PowerPoint (.pptx), Excel (.xlsx), and images in JPG, PNG, WebP, BMP and AVIF format. Old binary formats like .doc, .ppt and .xls should be saved in the newer format first.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">Will my file always reach the exact size I choose?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">Almost always for files that contain photos or scans, which is where most of the size comes from. Files that are mostly text, fonts or video have little to shrink, so the result may land above a very aggressive target. The tool tells you when that happens.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">Is my file uploaded anywhere?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">No. Compression runs entirely in your browser, so your documents and photos never leave your device. Very large files (hundreds of MB) need enough free memory on your computer, so close other heavy tabs first.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">Will text in my PDF still be selectable?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">To reach small sizes, PDF pages are re-rendered as compressed images, so text is no longer selectable or searchable afterwards. Keep your original if you need searchable text.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">What happens to my Word, PowerPoint and Excel files?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">Only the embedded pictures are recompressed. Text, formatting, tables and layout stay exactly as they were, and the file still opens normally in Office.</p></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-text">Is there a file size limit?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary><p class="faq-a">You can try files up to 1 GB. Whether a huge file succeeds depends on your device's memory, since everything is processed locally.</p></details></section>
+<div class="related-section"><div class="section-eyebrow">Related tools</div><div class="related-grid"><a class="tool-card" href="/compress-pdf"><span class="tool-card-name">Compress PDF</span></a>
+<a class="tool-card" href="/remove-background"><span class="tool-card-name">Remove Background</span></a>
+<a class="tool-card" href="/jpg-to-pdf"><span class="tool-card-name">JPG to PDF</span></a>
+<a class="tool-card" href="/merge-pdf"><span class="tool-card-name">Merge PDF</span></a>
+</div></div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><a class="logo" href="/"><span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>SignRight</a><p class="footer-tagline">Every PDF tool you need. No subscription, ever.</p></div>
+      <div class="footer-col"><div class="footer-col-title">Convert</div><a href="/pdf-to-word">PDF to Word</a><a href="/word-to-pdf">Word to PDF</a><a href="/pdf-to-excel">PDF to Excel</a><a href="/excel-to-pdf">Excel to PDF</a><a href="/pdf-to-jpg">PDF to JPG</a><a href="/jpg-to-pdf">JPG to PDF</a></div>
+      <div class="footer-col"><div class="footer-col-title">Organize</div><a href="/merge-pdf">Merge PDF</a><a href="/split-pdf">Split PDF</a><a href="/compress-pdf">Compress PDF</a><a href="/rotate-pdf">Rotate PDF</a><a href="/watermark-pdf">Watermark PDF</a></div>
+      <div class="footer-col"><div class="footer-col-title">Sign & Edit</div><a href="/sign-pdf">Sign PDF</a><a href="/edit-pdf">Edit PDF</a><a href="/redact-pdf">Redact PDF</a><a href="/protect-pdf">Protect PDF</a><a href="/unlock-pdf">Unlock PDF</a></div>
+      <div class="footer-col"><div class="footer-col-title">Legal Forms</div><a href="/forms/residential-lease">Residential Lease</a><a href="/forms/nda">NDA</a><a href="/forms/service-agreement">Service Agreement</a><a href="/forms">All 15 Forms</a></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2026 MicroTech Cloud LLC · SignRight is a product of MicroTech Cloud LLC</span><div class="footer-legal"><a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refund">Refund Policy</a></div></div>
+  </div>
+</footer>
+<script>
+const mobileBtn=document.getElementById('mobileNavBtn');const drawer=document.getElementById('navDrawer');const drawerClose=document.getElementById('drawerClose');
+mobileBtn.addEventListener('click',()=>drawer.classList.add('open'));
+drawerClose.addEventListener('click',()=>drawer.classList.remove('open'));
+drawer.addEventListener('click',(e)=>{if(e.target===drawer)drawer.classList.remove('open');});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+(function(){
+const $ = id => document.getElementById(id);
+const MB = 1048576, MAX_BYTES = 1024*MB;
+const uploadArea=$('uploadArea'), fileInput=$('fileInput'), uploadSection=$('uploadSection');
+const optionsPanel=$('optionsPanel'), progressState=$('progressState'), progressBar=$('progressBar'), progressLabel=$('progressLabel'), resultState=$('resultState');
+const slider=$('slider');
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+let file=null, kind=null, minB=0, maxB=0, targetB=0, outBlob=null, outName='', cancelled=false;
+
+function fmt(b){ if(b<1024)return b+' B'; if(b<MB)return (b/1024).toFixed(1)+' KB'; if(b<1000*MB)return (b/MB).toFixed(b<10*MB?2:1)+' MB'; return (b/1024/MB).toFixed(2)+' GB'; }
+function detect(f){
+  const n=f.name.toLowerCase();
+  if(/\.pdf$/.test(n)||f.type==='application/pdf') return 'pdf';
+  if(/\.(docx|pptx|xlsx)$/.test(n)) return 'office';
+  if(/\.(jpe?g|png|webp|bmp|avif)$/.test(n)||/^image\/(jpeg|png|webp|bmp|avif)$/.test(f.type)) return 'image';
+  return null;
+}
+function setProgress(p,l){ progressBar.style.width=Math.max(0,Math.min(100,p))+'%'; if(l) progressLabel.textContent=l; }
+const tick=()=>new Promise(r=>setTimeout(r,0));
+
+/* ---------- slider (log scale) ---------- */
+function sliderToBytes(v){ return Math.round(minB*Math.pow(maxB/minB, v/1000)); }
+function bytesToSlider(b){ return Math.round(1000*Math.log(b/minB)/Math.log(maxB/minB)); }
+function updateTarget(){
+  targetB=sliderToBytes(+slider.value);
+  $('targetLabel').textContent=fmt(targetB);
+  $('targetHint').textContent='About '+Math.round(100-targetB/file.size*100)+'% smaller than the original ('+fmt(file.size)+')';
+  document.querySelectorAll('#presets button').forEach(b=>b.classList.toggle('active',Math.abs(+b.dataset.b-targetB)<MB*0.05));
+}
+slider.addEventListener('input',updateTarget);
+
+function openFile(f){
+  if(!f) return;
+  const k=detect(f);
+  if(!k){ alert('This file type is not supported. Please upload a PDF, DOCX, PPTX, XLSX, JPG, PNG, WebP, BMP or AVIF file.'); return; }
+  if(f.size>MAX_BYTES){ alert('That file is larger than 1GB. Please use a smaller file.'); return; }
+  if(f.size<20*1024){ alert('This file is already tiny ('+fmt(f.size)+'), so there is nothing to compress.'); return; }
+  file=f; kind=k;
+  maxB=Math.floor(f.size*0.95); minB=Math.max(30*1024,Math.floor(f.size*0.01));
+  if(minB>=maxB*0.9) minB=Math.floor(maxB*0.5);
+  $('fileName').textContent=f.name; $('fileSize').textContent=fmt(f.size);
+  $('minLabel').textContent=fmt(minB); $('maxLabel').textContent=fmt(maxB);
+  let presets=[1,2,5,10,20,50,100,200,500].map(m=>m*MB).filter(b=>b>=minB&&b<=maxB);
+  if(presets.length<3) presets=[0.1,0.25,0.5,0.75].map(r=>Math.round(f.size*r)).filter(b=>b>=minB&&b<=maxB);
+  const shown=presets.slice(-6);
+  $('presets').innerHTML=shown.map(b=>`<button type="button" data-b="${b}">${fmt(b)}</button>`).join('');
+  $('presets').querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{slider.value=bytesToSlider(+btn.dataset.b);updateTarget();}));
+  const def=Math.min(Math.max(f.size*0.5,minB),f.size>40*MB?50*MB:maxB);
+  slider.value=bytesToSlider(Math.min(Math.max(def,minB),maxB)); updateTarget();
+  $('kindNote').textContent = kind==='pdf' ? 'PDF pages are re-rendered as compressed images to reach small sizes, so text will no longer be selectable.' :
+    kind==='office' ? 'Embedded pictures are recompressed. Text and layout are untouched.' : 'The image is re-encoded with lower quality and, if needed, lower resolution.';
+  uploadSection.style.display='none'; resultState.classList.remove('visible'); progressState.classList.remove('visible');
+  optionsPanel.classList.add('visible');
+}
+uploadArea.addEventListener('dragover',e=>{e.preventDefault();uploadArea.classList.add('drag-over');});
+uploadArea.addEventListener('dragleave',()=>uploadArea.classList.remove('drag-over'));
+uploadArea.addEventListener('drop',e=>{e.preventDefault();uploadArea.classList.remove('drag-over');openFile(e.dataTransfer.files[0]);});
+fileInput.addEventListener('change',()=>{const f=fileInput.files[0];fileInput.value='';openFile(f);});
+uploadArea.querySelector('.upload-btn').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();fileInput.click();});
+
+/* ---------- canvas helpers ---------- */
+function toBlob(canvas,mime,q){ return new Promise(r=>canvas.toBlob(r,mime,q)); }
+function loadBitmap(blob){
+  if(window.createImageBitmap) return createImageBitmap(blob);
+  return new Promise((res,rej)=>{const u=URL.createObjectURL(blob),i=new Image();i.onload=()=>{URL.revokeObjectURL(u);res(i);};i.onerror=rej;i.src=u;});
+}
+const bw=b=>b.width||b.naturalWidth, bh=b=>b.height||b.naturalHeight;
+async function hasAlpha(bmp){
+  const s=Math.min(1,1024/Math.max(bw(bmp),bh(bmp)));
+  const c=document.createElement('canvas'); c.width=Math.max(1,Math.round(bw(bmp)*s)); c.height=Math.max(1,Math.round(bh(bmp)*s));
+  const x=c.getContext('2d'); x.drawImage(bmp,0,0,c.width,c.height);
+  const d=x.getImageData(0,0,c.width,c.height).data;
+  for(let i=3;i<d.length;i+=4) if(d[i]<250) return true;
+  return false;
+}
+const shared=document.createElement('canvas');
+async function encode(bmp,scale,q,mime){
+  const w=Math.max(1,Math.round(bw(bmp)*scale)), h=Math.max(1,Math.round(bh(bmp)*scale));
+  shared.width=w; shared.height=h;
+  const x=shared.getContext('2d');
+  if(mime==='image/jpeg'){ x.fillStyle='#fff'; x.fillRect(0,0,w,h); } else x.clearRect(0,0,w,h);
+  x.imageSmoothingQuality='high'; x.drawImage(bmp,0,0,w,h);
+  return toBlob(shared,mime,q);
+}
+
+/* ---------- IMAGE ---------- */
+async function compressImage(f,target){
+  setProgress(5,'Reading image…');
+  const bmp=await loadBitmap(f);
+  const alpha=/\.(png|webp|avif)$/i.test(f.name) ? await hasAlpha(bmp) : false;
+  const mime=alpha?'image/webp':'image/jpeg';
+  const scales=[1,.85,.7,.55,.42,.3,.2,.12];
+  let best=null, ext=alpha?'webp':'jpg';
+  for(let si=0;si<scales.length;si++){
+    setProgress(10+si/scales.length*85,'Optimizing quality and size…');
+    await tick();
+    const s=scales[si];
+    let b=await encode(bmp,s,.95,mime);
+    if(b.type!==mime){ ext='png'; }
+    if(b.size<=target){ best=b; break; }
+    if(b.type===mime){
+      const lo=await encode(bmp,s,.2,mime);
+      if(lo.size>target){ best=lo; continue; }
+      let L=.2,H=.95; best=lo;
+      for(let i=0;i<7;i++){ const m=(L+H)/2; const t=await encode(bmp,s,m,mime); if(t.size<=target){best=t;L=m;}else H=m; }
+      break;
+    } else best=b;
+  }
+  if(!best||best.size>=f.size) return {blob:f,name:f.name,ok:false,same:true};
+  return {blob:best,name:f.name.replace(/\.[^.]+$/,'')+'-compressed.'+ext,ok:best.size<=target};
+}
+
+/* ---------- OFFICE (docx/pptx/xlsx) ---------- */
+const LADDER=[[1,.9],[1,.8],[1,.7],[.85,.68],[.7,.62],[.6,.56],[.5,.5],[.4,.45],[.3,.4],[.22,.35],[.15,.3],[.1,.25]];
+async function compressOffice(f,target){
+  setProgress(3,'Opening document…');
+  let zip;
+  try{ zip=await JSZip.loadAsync(f); }catch(e){ throw new Error('Could not open this file. It may be corrupted or an older format (.doc/.ppt/.xls).'); }
+  const entries=zip.file(/(^|\/)media\/[^/]+\.(jpe?g|png|bmp|tiff?|webp)$/i);
+  if(!entries.length) return {blob:f,name:f.name,ok:false,noImages:true};
+  async function evalLevel(li,label){
+    const [scale,q]=LADDER[li]; const res=new Map(); let origSum=0,newSum=0;
+    for(let i=0;i<entries.length;i++){
+      const en=entries[i];
+      setProgress(8+((li_progress(i,entries.length))),label+' ('+(i+1)+'/'+entries.length+')');
+      if(i%3===0) await tick();
+      const ob=await en.async('blob'); origSum+=ob.size; let nb=ob;
+      try{
+        const ext=en.name.split('.').pop().toLowerCase();
+        const bmp=await loadBitmap(ob);
+        if(bw(bmp)>96||bh(bmp)>96){
+          const isJpg=/^jpe?g$/.test(ext);
+          const alpha=isJpg?false:await hasAlpha(bmp);
+          let mime=null,newExt=null;
+          if(isJpg){mime='image/jpeg';newExt=ext;}
+          else if(!alpha){mime='image/jpeg';newExt='jpg';}
+          else if(ext==='png'){mime='image/png';newExt='png';}
+          if(mime){
+            const t=await encode(bmp,scale,q,mime);
+            if(t.type===mime && t.size<ob.size*0.95){ nb=t; res.set(en.name,{blob:t,newExt,ext}); }
+          }
+        }
+        if(bmp.close) bmp.close();
+      }catch(e){ /* undecodable image: keep as is */ }
+      newSum+=nb.size;
+    }
+    return {res, total:f.size-origSum+newSum};
+  }
+  function li_progress(i,n){ return (i/n)*70; }
+  const ldr=LADDER.length; let lo=0,hi=ldr-1,best=null,bestIdx=-1;
+  // check lightest level first, then binary search
+  while(lo<=hi){
+    const mid=(lo+hi)>>1;
+    const r=await evalLevel(mid,'Compressing images'+(lo===0&&hi===ldr-1?'':' (refining)'));
+    if(r.total<=target){ best=r; bestIdx=mid; hi=mid-1; } else lo=mid+1;
+  }
+  let ok=true;
+  if(!best){ best=await evalLevel(ldr-1,'Compressing images (maximum)'); ok=false; }
+  setProgress(82,'Rebuilding document…');
+  await tick();
+  // apply
+  const renames=[];
+  for(const [name,v] of best.res){
+    let newName=name;
+    if(v.newExt!==v.ext){
+      newName=name.replace(/\.[^.\/]+$/,'.'+v.newExt);
+      if(zip.file(newName)) newName=name.replace(/\.[^.\/]+$/,'-c.'+v.newExt);
+      zip.remove(name); renames.push([name.split('/').pop(),newName.split('/').pop()]);
+    }
+    zip.file(newName,v.blob,{compression:'STORE',binary:true});
+  }
+  if(renames.length){
+    const rels=zip.file(/\.rels$/i);
+    for(const r of rels){
+      let t=await r.async('string'), changed=false;
+      for(const [o,n] of renames){
+        const re=new RegExp('(media/)'+o.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(")','g');
+        if(re.test(t)){ t=t.replace(re,'$1'+n+'$2'); changed=true; }
+      }
+      if(changed) zip.file(r.name,t);
+    }
+    const ct=zip.file('[Content_Types].xml');
+    if(ct){
+      let t=await ct.async('string');
+      if(!/Extension="jpg"/i.test(t)) t=t.replace(/<Types([^>]*)>/,'<Types$1><Default Extension="jpg" ContentType="image/jpeg"/>');
+      zip.file('[Content_Types].xml',t);
+    }
+  }
+  const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6},mimeType:f.type||undefined},m=>setProgress(84+m.percent*.15,'Writing file…'));
+  return {blob,name:f.name.replace(/(\.[^.]+)$/,'-compressed$1'),ok:blob.size<=target*1.01};
+}
+
+/* ---------- PDF ---------- */
+const PDF_LEVELS=[[2.2,.86],[1.8,.8],[1.5,.75],[1.25,.7],[1.0,.65],[.8,.6],[.6,.55],[.45,.5]];
+async function renderPage(page,li){
+  let [sc,q]=PDF_LEVELS[li];
+  const base=page.getViewport({scale:1});
+  const maxPx=20e6; if(base.width*base.height*sc*sc>maxPx) sc=Math.sqrt(maxPx/(base.width*base.height));
+  const vp=page.getViewport({scale:sc});
+  const c=document.createElement('canvas'); c.width=Math.ceil(vp.width); c.height=Math.ceil(vp.height);
+  const x=c.getContext('2d'); x.fillStyle='#fff'; x.fillRect(0,0,c.width,c.height);
+  await page.render({canvasContext:x,viewport:vp}).promise;
+  const b=await toBlob(c,'image/jpeg',q); c.width=c.height=0;
+  return {blob:b,w:base.width,h:base.height};
+}
+async function compressPdf(f,target){
+  setProgress(3,'Opening PDF…');
+  const buf=await f.arrayBuffer();
+  let pdf;
+  try{ pdf=await pdfjsLib.getDocument({data:buf.slice(0)}).promise; }
+  catch(e){ if(e&&e.name==='PasswordException') throw new Error('This PDF is password protected. Unlock it first, then compress.'); throw new Error('Could not read this PDF. It may be corrupted.'); }
+  const n=pdf.numPages;
+  const sampleIdx=[]; const sn=Math.min(n,6); for(let i=0;i<sn;i++) sampleIdx.push(Math.floor(i*(n-1)/Math.max(1,sn-1))+ (sn===1?0:0));
+  const uniq=[...new Set(sampleIdx)];
+  async function estimate(li){
+    let tot=0;
+    for(const pi of uniq){ const page=await pdf.getPage(pi+1); const r=await renderPage(page,li); tot+=r.blob.size; page.cleanup(); }
+    return tot/uniq.length*n+n*300+2000;
+  }
+  let lo=0,hi=PDF_LEVELS.length-1,pick=hi;
+  while(lo<=hi){
+    const mid=(lo+hi)>>1;
+    setProgress(5+(1-(hi-lo)/PDF_LEVELS.length)*20,'Finding the best quality for your target…');
+    const est=await estimate(mid);
+    if(est<=target){ pick=mid; hi=mid-1; } else { lo=mid+1; pick=Math.min(lo,PDF_LEVELS.length-1); }
+  }
+  let li=pick, out=null, size=0;
+  for(;;){
+    const doc=await PDFLib.PDFDocument.create();
+    for(let p=1;p<=n;p++){
+      setProgress(28+(p/n)*62,'Compressing page '+p+' of '+n+'…');
+      await tick();
+      const page=await pdf.getPage(p); const r=await renderPage(page,li); page.cleanup();
+      const img=await doc.embedJpg(new Uint8Array(await r.blob.arrayBuffer()));
+      const pg=doc.addPage([r.w,r.h]); pg.drawImage(img,{x:0,y:0,width:r.w,height:r.h});
+    }
+    setProgress(92,'Saving PDF…');
+    out=await doc.save(); size=out.length;
+    if(size<=target||li>=PDF_LEVELS.length-1) break;
+    li++;   // estimate was optimistic: step down one quality level and redo
+  }
+  if(size>=f.size) return {blob:f,name:f.name,ok:false,same:true};
+  return {blob:new Blob([out],{type:'application/pdf'}),name:f.name.replace(/\.pdf$/i,'')+'-compressed.pdf',ok:size<=target};
+}
+
+/* ---------- run ---------- */
+$('processBtn').addEventListener('click',async()=>{
+  if(!file) return;
+  optionsPanel.classList.remove('visible'); progressState.classList.add('visible'); setProgress(1,'Starting…');
+  const target=targetB;
+  try{
+    const r = kind==='image' ? await compressImage(file,target) : kind==='office' ? await compressOffice(file,target) : await compressPdf(file,target);
+    setProgress(100);
+    outBlob=r.blob; outName=r.name;
+    $('beforeSize').textContent=fmt(file.size); $('afterSize').textContent=fmt(r.blob.size);
+    const pct=Math.max(0,Math.round(100-r.blob.size/file.size*100));
+    const warn=$('resultWarn');
+    $('resultTitle').textContent = r.same||r.noImages ? 'Could not shrink this file further' : (r.ok ? 'File compressed to your target' : 'File compressed as far as possible');
+    $('resultSub').textContent = pct>0 ? 'Saved '+pct+'% · Target was '+fmt(target) : 'Target was '+fmt(target);
+    warn.style.display='none';
+    if(r.noImages){ warn.textContent='This document has no embedded pictures to compress, so its size comes from text, fonts or other data. It is returned unchanged.'; warn.style.display='block'; }
+    else if(r.same){ warn.textContent='Compression could not make this file smaller than it already is. The original is returned.'; warn.style.display='block'; }
+    else if(!r.ok){ warn.textContent='We reached the smallest size we can without making the file unreadable ('+fmt(r.blob.size)+'). Most of the remaining size is not image data. Try a larger target, or split the file.'; warn.style.display='block'; }
+    progressState.classList.remove('visible'); resultState.classList.add('visible');
+  }catch(e){
+    console.error(e);
+    alert('Compression failed: '+(e&&e.message?e.message:e)+(/memory|allocation/i.test(String(e&&e.message))?'\nThe file is probably too large for this device. Close other tabs and try again.':''));
+    progressState.classList.remove('visible'); optionsPanel.classList.add('visible');
+  }
+});
+
+$('downloadBtn').addEventListener('click',()=>{
+  if(!outBlob) return;
+  const u=URL.createObjectURL(outBlob), a=document.createElement('a');
+  a.href=u; a.download=outName; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(u),2000);
+});
+function reset(){ file=null; outBlob=null; resultState.classList.remove('visible'); progressState.classList.remove('visible'); optionsPanel.classList.remove('visible'); uploadSection.style.display=''; }
+$('resetBtn').addEventListener('click',reset);
+$('changeBtn').addEventListener('click',reset);
+$('retryBtn').addEventListener('click',()=>{ resultState.classList.remove('visible'); optionsPanel.classList.add('visible'); });
+})();
+</script>
+<script src="/nav.js" defer></script>
+</body>
+</html>
